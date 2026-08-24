@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Crowned Essence Empire | Luxury Fashion, Beauty & Lifestyle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-black: #0a0a0a;
+            --surface-black: #141414;
+            --card-black: #1a1a1a;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa8c2c;
+            --cream: #f9f6f0;
+            --nude: #d2b48c;
+            --nude-dark: #b89770;
+            --text-main: #f9f6f0;
+            --text-muted: #b3b3b3;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.05em;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid var(--gold);
+            border-radius: 0;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--bg-black);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--cream);
+            border-color: var(--nude);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background-color: rgba(212, 175, 55, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--nude);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--cream);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 0.5rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 90px;
+            transition: var(--transition);
+        }
+
+        header.scrolled .nav-container {
+            height: 70px;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo span {
+            font-size: 0.65rem;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--cream);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            transition: var(--transition);
+            position: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: rgba(10, 10, 10, 0.4);
+            backdrop-filter: blur(5px);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            font-weight: 300;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Brand Pillars / Marquee Bar */
+        .pillars-bar {
+            background-color: var(--surface-black);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem 0;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .pillar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pillar-item i {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .pillar-item h4 {
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cream);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .pillar-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 8rem 0;
+            background-color: var(--bg-black);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+        }
+
+        .about-img-main {
+            width: 80%;
+            height: 550px;
+            object-fit: cover;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .about-img-sub {
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+            width: 55%;
+            height: 350px;
+            object-fit: cover;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 20px 20px 40px rgba(0,0,0,0.8);
+        }
+
+        .about-content .section-subtitle {
+            text-align: left;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .about-feature-item i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .about-feature-item span {
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Services / Offerings Section */
+        .services-section {
+            padding: 8rem 0;
+            background-color: var(--surface-black);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background-color: var(--card-black);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .service-img-wrapper {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--gold);
+            padding: 0.4rem 1rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+        }
+
+        .service-content {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--cream);
+        }
+
+        .service-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            color: var(--gold-light);
+            gap: 1rem;
+        }
+
+        /* Lifestyle & Luxury Showcase Section */
+        .showcase-section {
+            padding: 8rem 0;
+            background-color: var(--bg-black);
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .showcase-item {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .showcase-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .showcase-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 3rem 2rem 2rem 2rem;
+            background: linear-gradient(to top, rgba(10,10,10,0.95), transparent);
+            transition: var(--transition);
+        }
+
+        .showcase-overlay h4 {
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .showcase-overlay p {
+            color: var(--nude);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        /* Experience / CTA Banner Section */
+        .cta-banner {
+            padding: 7rem 0;
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            background-attachment: fixed;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-banner-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 8rem 0;
+            background-color: var(--surface-black);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+
+        .contact-info h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-black);
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--nude);
+            margin-bottom: 0.25rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .contact-text a, .contact-text p {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .contact-text a:hover {
+            color: var(--gold);
+        }
+
+        .contact-form-wrapper {
+            background-color: var(--card-black);
+            padding: 3.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background-color: var(--surface-black);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--cream);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            background-color: var(--bg-black);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-black);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 5rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-about .logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-about p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--surface-black);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--gold);
+            color: var(--bg-black);
+            border-color: var(--gold);
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #22bf5b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-images {
+                min-height: 400px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background-color: var(--bg-black);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                border-top: 1px solid rgba(212, 175, 55, 0.2);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .about-img-main {
+                width: 100%;
+                height: 350px;
+            }
+
+            .about-img-sub {
+                display: none;
+            }
+
+            .contact-form-wrapper {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                The Crowned Essence
+                <span>Empire</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#lifestyle" class="nav-link">Lifestyle</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="tel:07080081410" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.75rem;">
+                    <i class="fas fa-phone-alt"></i> 0708 008 1410
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">Welcome to Pure Luxury</span>
+                <h1 class="hero-title">Redefining Elegance, Style & Beauty</h1>
+                <p class="hero-description">Experience ultimate sophistication with our professional hair artistry, bespoke wig production, exquisite braiding, luxury fragrances, and high-end fashion.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="https://wa.me/2347080081410" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Pillars Bar -->
+    <div class="pillars-bar">
+        <div class="container">
+            <div class="pillars-grid">
+                <div class="pillar-item">
+                    <i class="fas fa-crown"></i>
+                    <h4>Elite Hair Artistry</h4>
+                    <p>Professional styling & bespoke wig production</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fas fa-spray-can"></i>
+                    <h4>Signature Scents</h4>
+                    <p>Exquisite fragrances that captivate</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fas fa-gem"></i>
+                    <h4>Luxury Fashion</h4>
+                    <p>Curated clothing & premium footwear</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fas fa-star"></i>
+                    <h4>Uncompromised Quality</h4>
+                    <p>Tailored for the discerning individual</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop" alt="Luxury Beauty Salon" class="about-img-main">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop" alt="Fashion and Lifestyle" class="about-img-sub">
+                </div>
+                <div class="about-content">
+                    <span class="section-subtitle">The Crowned Essence Empire</span>
+                    <h2>Where Royalty Meets Modern Sophistication</h2>
+                    <p>The Crowned Essence Empire is a premier fashion, beauty, and lifestyle destination dedicated to elevating your personal presentation. We blend expert craftsmanship with contemporary luxury to offer comprehensive lifestyle solutions.</p>
+                    <p>From impeccable hair-making, precision styling, and custom wig installations to exquisite braiding, signature scents, high-end clothing, footwear, and curated lifestyle products, we cater to individuals who demand excellence in every aspect of their aesthetic.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert Hair Styling</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bespoke Wigs & Braids</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Luxury Fragrances</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Designer Fashion & Footwear</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">Connect With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Expertise</span>
+                <h2 class="section-title">Exclusive Offerings</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop" alt="Hair Making and Wig Production">
+                        <span class="service-badge">Beauty</span>
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Hair & Wig Artistry</h3>
+                            <p>Professional hair-making, precision styling, custom wig production, flawless installations, and intricate braiding crafted to perfection.</p>
+                        </div>
+                        <a href="https://wa.me/2347080081410?text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20hair%20and%20wig%20services." target="_blank" class="service-link">
+                            Book Appointment <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=800&auto=format&fit=crop" alt="Fragrances and Scents">
+                        <span class="service-badge">Aromas</span>
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Fragrances & Scents</h3>
+                            <p>Immerse yourself in our collection of luxury fragrances designed to leave a lasting, unforgettable impression wherever you go.</p>
+                        </div>
+                        <a href="https://wa.me/2347080081410?text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20fragrances." target="_blank" class="service-link">
+                            Shop Scents <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=800&auto=format&fit=crop" alt="Clothing, Footwear & Lifestyle">
+                        <span class="service-badge">Fashion</span>
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <h3>Fashion & Lifestyle</h3>
+                            <p>Discover sophisticated clothing, premium footwear, and fine luxury fashion items tailored to distinct tastes and modern elegance.</p>
+                        </div>
+                        <a href="https://wa.me/2347080081410?text=Hello,%20I%20would%20like%20to%20browse%20your%20fashion%20and%20lifestyle%20products." target="_blank" class="service-link">
+                            Explore Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle & Luxury Showcase -->
+    <section class="showcase-section" id="lifestyle">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Visual Aesthetic</span>
+                <h2 class="section-title">The Empire Experience</h2>
+            </div>
+
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop" alt="Professional Styling">
+                    <div class="showcase-overlay">
+                        <h4>Impeccable Styling</h4>
+                        <p>Artisanal Hair Care</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=800&auto=format&fit=crop" alt="Luxury Footwear">
+                    <div class="showcase-overlay">
+                        <h4>Designer Footwear</h4>
+                        <p>Step In Distinction</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=800&auto=format&fit=crop" alt="Signature Perfumes">
+                    <div class="showcase-overlay">
+                        <h4>Seductive Scents</h4>
+                        <p>Signature Fragrances</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-banner-content">
+                <h2>Elevate Your Standard of Living Today</h2>
+                <p>Contact The Crowned Essence Empire to book your styling session, order custom wigs, purchase luxury fragrances, or explore our high-end fashion line.</p>
+                <a href="tel:07080081410" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now: 0708 008 1410</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2>Let Us Crown Your Lifestyle</h2>
+                    <p>We invite you to reach out for appointments, product inquiries, or personal styling consultations. Our team is dedicated to providing prompt and luxurious service.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Direct Line</h4>
+                                <a href="tel:07080081410">0708 008 1410</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp Chat</h4>
+                                <a href="https://wa.me/2347080081410" target="_blank">Chat with us instantly</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Service Hours</h4>
+                                <p>Monday – Saturday: 9:00 AM – 7:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3 class="serif-font" style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--cream);">Send an Inquiry</h3>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Select Service / Inquiry Type</option>
+                                <option value="hair">Hair Making & Styling / Wigs / Braiding</option>
+                                <option value="fragrance">Fragrances & Scents</option>
+                                <option value="fashion">Clothing & Footwear</option>
+                                <option value="lifestyle">General Luxury Lifestyle Products</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message or Request" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        The Crowned Essence
+                        <span>Empire</span>
+                    </a>
+                    <p>Your premier destination for professional hair styling, wig production, braiding, luxury fragrances, designer fashion, footwear, and exclusive lifestyle products.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/2347080081410" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:07080081410" class="social-link"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#lifestyle">Lifestyle</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Offerings</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Hair & Wig Production</a></li>
+                        <li><a href="#services">Professional Braiding</a></li>
+                        <li><a href="#services">Signature Fragrances</a></li>
+                        <li><a href="#services">Clothing & Footwear</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:07080081410">0708 008 1410</a></li>
+                        <li><a href="https://wa.me/2347080081410" target="_blank">WhatsApp Support</a></li>
+                        <li><a href="#contact">Book Consultation</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> The Crowned Essence Empire. All Rights Reserved.</p>
+                <p>Designed for Luxury & Elegance</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/2347080081410?text=Hello,%20I%20am%20visiting%20The%20Crowned%20Essence%20Empire%20website%20and%20would%20like%20to%20make%20an%20inquiry." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.querySelector('i').classList.remove('fa-times');
+                hamburger.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for reaching out to The Crowned Essence Empire. Your message has been received, and we will contact you shortly.');
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
