@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utenwoo | Level Up Your Mobile Gaming & Keep Your A-Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0b061a;
+            --bg-card: #150b2e;
+            --bg-card-hover: #1f1042;
+            --primary-purple: #8b5cf6;
+            --neon-purple: #a855f7;
+            --electric-blue: #3b82f6;
+            --glow-blue: #00f0ff;
+            --accent-red: #ef4444;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(139, 92, 246, 0.2);
+            --gradient-main: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+            --gradient-hero: radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.25) 0%, rgba(11, 6, 26, 0) 70%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-purple);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-purple);
+        }
+
+        /* Background Glow FX */
+        .bg-glow-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-hero);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 6, 26, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(to right, #fff, var(--neon-purple), var(--glow-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i {
+            color: var(--accent-red);
+            -webkit-text-fill-color: var(--accent-red);
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--glow-blue);
+        }
+
+        .nav-cta {
+            background: var(--gradient-main);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 24px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--neon-purple);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge i {
+            color: var(--accent-red);
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(to right, var(--neon-purple), var(--glow-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 36px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gradient-main);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 25px rgba(139, 92, 246, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(59, 130, 246, 0.8);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--border-color);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--neon-purple);
+            background: rgba(139, 92, 246, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gaming-card-mockup {
+            width: 100%;
+            max-width: 450px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(139, 92, 246, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gaming-card-mockup::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg at 50% 50%, rgba(139, 92, 246, 0) 0%, rgba(139, 92, 246, 0.1) 25%, rgba(0, 240, 255, 0.15) 50%, rgba(139, 92, 246, 0) 100%);
+            animation: rotateGlow 10s linear infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes rotateGlow {
+            100% { transform: rotate(360deg); }
+        }
+
+        .mockup-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mockup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .mockup-title {
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #10b981;
+        }
+
+        .game-badge-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .game-item {
+            background: rgba(11, 6, 26, 0.6);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .game-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .game-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .game-stats {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--glow-blue);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            color: var(--neon-purple);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 38px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .feature-check-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .feature-check-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .feature-check-list i {
+            color: var(--glow-blue);
+            background: rgba(59, 130, 246, 0.15);
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        .about-card-box {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        .about-card-box i.main-icon {
+            font-size: 60px;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .about-card-box h4 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .about-card-box p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Services / Training Programs */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--neon-purple);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.2);
+            background: var(--bg-card-hover);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--neon-purple);
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .service-link {
+            color: var(--glow-blue);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 12px;
+        }
+
+        /* Target Audience Section (Undergrads) */
+        .audience-banner {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audience-banner h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .audience-banner p {
+            color: var(--text-muted);
+            font-size: 17px;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--neon-purple);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-question i {
+            color: var(--neon-purple);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 24px;
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 24px 20px 24px;
+        }
+
+        /* Contact & CTA Section */
+        .contact-section {
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, rgba(11, 6, 26, 1) 70%);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 100px 24px;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-box h2 {
+            font-size: 38px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+
+        .whatsapp-big-btn {
+            background: #25d366;
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-big-btn:hover {
+            transform: translateY(-3px);
+            background: #22bf5b;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #070412;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer span {
+            color: var(--neon-purple);
+            font-weight: 700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 150px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-badge {
+                margin: 0 auto 24px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links, .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+        }
+
+        /* Mobile Menu Drawer */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border-color);
+            z-index: 2000;
+            padding: 80px 40px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            transition: right 0.4s ease;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .close-menu-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow-effect"></div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-gamepad"></i> Utenwoo
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Training</a></li>
+                <li><a href="#audience">Undergrads</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="https://wa.me/2349112636659" class="nav-cta" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu-btn" id="closeMenuBtn">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#services" class="mobile-link">Training</a>
+        <a href="#audience" class="mobile-link">Undergrads</a>
+        <a href="#faq" class="mobile-link">FAQ</a>
+        <a href="https://wa.me/2349112636659" class="btn-primary" target="_blank" style="margin-top: 20px; justify-content: center;">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding-top: 160px;">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-fire"></i> Elite Mobile Gaming Coach
+            </div>
+            <h1>Level Up in eFootball & <span>Maintain Your A-Game</span></h1>
+            <p>Designed specifically for undergraduate students looking to dominate eFootball and other top mobile games without sacrificing their academic success or peak mental performance.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/2349112636659" class="btn-primary" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Join Utenwoo Training
+                </a>
+                <a href="#services" class="btn-secondary">
+                    Explore Services <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="gaming-card-mockup">
+                <div class="mockup-inner">
+                    <div class="mockup-header">
+                        <div class="mockup-title">
+                            <span class="status-dot"></span> Utenwoo Masterclass
+                        </div>
+                        <i class="fa-solid fa-trophy" style="color: #fbbf24; font-size: 20px;"></i>
+                    </div>
+                    <div class="game-badge-list">
+                        <div class="game-item">
+                            <div class="game-info">
+                                <h4>eFootball Mobile</h4>
+                                <p>Tactics, Dribbling & Defense</p>
+                            </div>
+                            <span class="game-stats">PRO LEVEL</span>
+                        </div>
+                        <div class="game-item">
+                            <div class="game-info">
+                                <h4>Mobile Gaming Meta</h4>
+                                <p>Consistency & Mindset</p>
+                            </div>
+                            <span class="game-stats">A-GAME</span>
+                        </div>
+                        <div class="game-item">
+                            <div class="game-info">
+                                <h4>Undergrad Balance</h4>
+                                <p>Study & Play Strategy</p>
+                            </div>
+                            <span class="game-stats">OPTIMIZED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <span class="section-tag">Who is Utenwoo?</span>
+            <h2 class="section-title">Built For Competitive Gamers</h2>
+            <p class="section-desc">Balancing campus life and competitive mobile gaming requires more than just luck—it requires elite coaching, flawless strategies, and the right mental state.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-content">
+                <h3>Transforming Casual Undergrad Gamers Into Elite Competitors</h3>
+                <p>Utenwoo specializes in guiding undergraduate students through the nuances of competitive mobile gaming. Whether you're struggling to climb divisions in eFootball or looking to maintain peak performance during busy exam weeks, Utenwoo gives you the exact blueprint to stay ahead.</p>
+                <ul class="feature-check-list">
+                    <li><i class="fa-solid fa-check"></i> Advanced eFootball gameplay strategies & formation mastering</li>
+                    <li><i class="fa-solid fa-check"></i> Mental toughness techniques to preserve your A-game under pressure</li>
+                    <li><i class="fa-solid fa-check"></i> Time management coaching designed specifically for undergrad schedules</li>
+                </ul>
+            </div>
+            <div class="about-card-box">
+                <i class="fa-solid fa-graduation-cap main-icon"></i>
+                <h4>Undergrad Friendly Coaching</h4>
+                <p>Learn directly from an expert who understands the unique lifestyle of a university student. Flexible session times that respect your lectures, assignments, and study hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-header">
+            <span class="section-tag">Training Programs</span>
+            <h2 class="section-title">How Utenwoo Helps You Win</h2>
+            <p class="section-desc">Choose your path to gaming mastery with personalized coaching sessions tailored to your current skill level.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-futbol"></i>
+                </div>
+                <h3>eFootball Masterclass</h3>
+                <p>Master advanced tactical setups, precise passing controls, defensive positioning, and lethal goal-scoring execution to dominate opponents in online matches.</p>
+                <a href="https://wa.me/2349112636659" class="service-link" target="_blank">Book eFootball Coaching <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>Maintaining Your A-Game</h3>
+                <p>Learn how to conquer tilt, maintain razor-sharp focus during intense matches, and develop the unbeatable psychological endurance of a tournament champion.</p>
+                <a href="https://wa.me/2349112636659" class="service-link" target="_blank">Secure Your A-Game <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+                <h3>Mobile Gaming Strategy</h3>
+                <p>Comprehensive gameplay reviews, personalized feedback on your recorded matches, and hands-on drills designed to accelerate your mechanical skills.</p>
+                <a href="https://wa.me/2349112636659" class="service-link" target="_blank">Start Training <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Undergrad Focus Banner -->
+    <section id="audience" style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="audience-banner">
+            <h2>Are You An Undergraduate Gamer?</h2>
+            <p>Juggling lectures, tests, and mobile gaming can lead to burnout or falling ranks. Utenwoo's coaching is specifically structured to fit into a student's timetable so you can excel in school while keeping your rank at the absolute top.</p>
+            <a href="https://wa.me/2349112636659" class="btn-primary" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Message Utenwoo on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="section-header">
+            <span class="section-tag">Got Questions?</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">Everything you need to know about getting coached by Utenwoo.</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What games does Utenwoo teach?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Utenwoo primarily specializes in eFootball mobile alongside guidance and tactical coaching for other popular competitive mobile titles.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Are coaching sessions suitable for busy university students?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! The entire coaching framework is built with undergraduates in mind, offering flexible hours that align with your academic timetable.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I book a session with Utenwoo?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Booking is quick and straightforward. Simply click any WhatsApp button on this website to chat directly with Utenwoo and get started immediately.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I need to be a pro player already?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Not at all. Whether you're a beginner wanting to learn the fundamentals or an intermediate player looking to break into top tiers, the coaching is tailored to your current level.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-box">
+            <h2>Ready To Level Up Your Game?</h2>
+            <p>Don't stay stuck in lower divisions or let academic stress ruin your performance. Connect with Utenwoo right now via WhatsApp and lock in your A-game!</p>
+            <a href="https://wa.me/2349112636659" class="whatsapp-big-btn" target="_blank">
+                <i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i> Chat on WhatsApp: +234 911 263 6659
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Utenwoo. All rights reserved.</p>
+        <p>Empowering undergrad students to conquer mobile gaming and maintain their A-game.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // FAQ Accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
