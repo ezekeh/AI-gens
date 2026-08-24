@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazee | Premium Retail Clothes & Caps in Nigeria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --milk: #FDFBF7;
+            --milk-dark: #F4EEDC;
+            --pink-light: #FFE5EC;
+            --pink-primary: #FF8FAB;
+            --pink-deep: #FB6F92;
+            --text-dark: #2D2926;
+            --text-muted: #6B6560;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(251, 111, 146, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--milk);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background-color: var(--pink-primary);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--milk-dark);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--pink-deep);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--pink-deep);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--pink-deep);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(251, 111, 146, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #e55a7d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 111, 146, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--pink-deep);
+            color: var(--pink-deep);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--pink-light);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--pink-deep);
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-container {
+            position: relative;
+        }
+
+        .hero-img-main {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hero-badge i {
+            font-size: 2rem;
+            color: var(--pink-deep);
+        }
+
+        .hero-badge-text h4 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-badge-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Features/Highlights */
+        .features {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--milk);
+            padding: 40px 30px;
+            border-radius: 24px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--milk-dark);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--pink-primary);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--pink-light);
+            color: var(--pink-deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 25px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Collection / Gallery Section */
+        .collection {
+            padding: 100px 0;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .collection-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .collection-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .collection-img {
+            height: 280px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .collection-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .collection-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .collection-info p {
+            color: var(--pink-deep);
+            font-weight: 650;
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--pink-light);
+            padding: 100px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-img:nth-child(2) {
+            margin-top: 30px;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-list {
+            margin-top: 30px;
+        }
+
+        .about-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .about-list i {
+            color: var(--pink-deep);
+            background: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Delivery Nationwide Banner */
+        .nationwide {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #433E3A 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .nationwide h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .nationwide p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #D3CDC6;
+            font-size: 1.1rem;
+        }
+
+        /* Contact & CTA Section */
+        .contact-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background-color: var(--milk);
+            border-radius: 30px;
+            padding: 60px;
+            border: 1px solid var(--milk-dark);
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: var(--pink-light);
+            color: var(--pink-deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 3px;
+        }
+
+        .contact-text a, .contact-text span {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .contact-text a:hover {
+            color: var(--pink-deep);
+        }
+
+        .contact-form-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--milk-dark);
+            background-color: var(--milk);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--pink-deep);
+            background-color: var(--white);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            color: var(--pink-primary);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            color: #D3CDC6;
+            max-width: 350px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: #D3CDC6;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--pink-primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #D3CDC6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .collection-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: var(--shadow);
+                border-bottom: 1px solid var(--milk-dark);
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        ✨ Delivering Premium Clothes & Caps Nationwide Across Nigeria! ✨
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">Eazee</a>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Collection</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn btn-primary">Shop With Us</a>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Elevate Your Style With <span>Eazee</span></h1>
+                <p>We sell retail clothes and caps to customers all around Nigeria, we promise a premium customer service ✨</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Order Now</a>
+                    <a href="tel:09112636659" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Us</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=800" alt="Trendy Retail Clothes" class="hero-img-main">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-star"></i>
+                    <div class="hero-badge-text">
+                        <h4>100% Premium</h4>
+                        <p>Quality Clothes & Caps</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Eazee?</h2>
+                <p>We are dedicated to providing you with the best fashion retail experience in Nigeria.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="https://img.icons8.com/ios-filled/50/fb6f92/t-shirt.png" alt="Clothes icon" style="width:35px;height:35px;">
+                    </div>
+                    <h3>Trendy Clothes & Caps</h3>
+                    <p>Carefully curated retail fashion pieces designed to make you stand out with style and comfort.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-heart-circle-check"></i>
+                    </div>
+                    <h3>Premium Customer Service</h3>
+                    <p>Your satisfaction is our priority. We promise a warm, responsive, and delightful shopping journey.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3>Nationwide Delivery</h3>
+                    <p>No matter where you are located in Nigeria, we deliver your favorite items right to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Showcase -->
+    <section class="collection">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Popular Pieces</h2>
+                <p>Explore a snapshot of what we offer to keep your wardrobe fresh.</p>
+            </div>
+            <div class="collection-grid">
+                <div class="collection-card">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=500" alt="Casual Wear" class="collection-img">
+                    <div class="collection-info">
+                        <h3>Casual Wear</h3>
+                        <p>Comfortable & Chic</p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&q=80&w=500" alt="Statement Caps" class="collection-img">
+                    <div class="collection-info">
+                        <h3>Statement Caps</h3>
+                        <p>Top Quality Headwear</p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=500" alt="Trendy Outfits" class="collection-img">
+                    <div class="collection-info">
+                        <h3>Trendy Outfits</h3>
+                        <p>Latest Styles</p>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <img src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&q=80&w=500" alt="Streetwear Caps" class="collection-img">
+                    <div class="collection-info">
+                        <h3>Streetwear Caps</h3>
+                        <p>Bold & Fresh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-images">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=500" alt="Fashion Model" class="about-img">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=500" alt="Clothing Display" class="about-img">
+            </div>
+            <div class="about-content">
+                <h2>About Eazee</h2>
+                <p>Welcome to Eazee! We are a premier retail fashion brand committed to bringing stylish, high-quality clothes and caps straight to customers all around Nigeria.</p>
+                <p>We believe shopping for fashion should be seamless, enjoyable, and reliable. That is why we pair our gorgeous collections with a promise of exceptional customer service every step of the way.</p>
+                <ul class="about-list">
+                    <li><i class="fa-solid fa-check"></i> Quality clothes for everyday wear</li>
+                    <li><i class="fa-solid fa-check"></i> Stylish caps to complete your look</li>
+                    <li><i class="fa-solid fa-check"></i> Swift and reliable delivery across Nigeria</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nationwide Banner -->
+    <section class="nationwide">
+        <div class="container">
+            <h2>Delivering All Around Nigeria</h2>
+            <p>Ready to upgrade your wardrobe? Contact us today to place your order, and let us bring your favorite pieces to your doorstep.</p>
+            <a href="#contact" class="btn btn-primary">Get In Touch Now</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Eazee</h2>
+                <p>Have questions or ready to make a purchase? Reach out to us today!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Let's Talk Fashion</h2>
+                    <p>We are always excited to assist our customers. Give us a call or send us a message, and experience our premium customer service.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <a href="tel:09112636659">0911 263 6659</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <a href="mailto:contact@eazee.com">Send an Email</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <span>Serving Customers Nationwide, Nigeria</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-box">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">What would you like to buy?</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us about the clothes or caps you want..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo">Eazee</span>
+                    <p>We sell retail clothes and caps to customers all around Nigeria, we promise a premium customer service ✨</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Collection</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get In Touch</h4>
+                    <ul>
+                        <li><a href="tel:09112636659">09112636659</a></li>
+                        <li><a href="mailto:contact@eazee.com">Email Us</a></li>
+                        <li><span>Nigeria</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Eazee. All rights reserved. Designed for fashion lovers across Nigeria.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Current Year for Footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Simple form handling with alert feedback
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thank you, ${name}! Your message has been received. We will reach out to you shortly.`);
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
