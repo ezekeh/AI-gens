@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOA | Premium Footwear for Bankers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0a0a0a;
+            --bg-surface: #141414;
+            --bg-card: #1f1f1f;
+            --border-color: #2e2e2e;
+            --text-main: #f3f3f3;
+            --text-muted: #a1a1a1;
+            --accent: #d4af37; /* Subtle champagne gold for luxury touch */
+            --accent-hover: #e6c55c;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.05em;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--text-main);
+            color: var(--bg-deep);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            border-radius: 2px;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background: transparent;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .cart-icon-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+            font-size: 1.1rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-count {
+            background: var(--accent);
+            color: var(--bg-deep);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.1rem 0.4rem;
+            border-radius: 50%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.5), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding-top: 90px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Features/Value Proposition */
+        .features {
+            padding: 6rem 0;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 8rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 5rem auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            border-color: var(--text-muted);
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 380px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background: var(--bg-card);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Cinzel', serif;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Brand Statement */
+        .statement {
+            padding: 8rem 0;
+            background: var(--bg-surface);
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .statement-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .statement h2 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .statement p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Contact/Concierge Section */
+        .concierge {
+            padding: 8rem 0;
+            background: var(--bg-deep);
+        }
+
+        .concierge-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .concierge-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .concierge-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-details li strong {
+            color: var(--text-main);
+        }
+
+        .concierge-form {
+            background: var(--bg-surface);
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-deep);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-family: inherit;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--text-main);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Cart Drawer */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            background: var(--bg-surface);
+            z-index: 2000;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+            transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .cart-drawer.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-body {
+            padding: 2rem;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .cart-empty {
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-card);
+            object-fit: cover;
+        }
+
+        .cart-item-details h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-details p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-footer {
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-deep);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.25rem;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-surface);
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer .logo {
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .concierge-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">KOA</a>
+                <ul class="nav-links">
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#craftsmanship">Craftsmanship</a></li>
+                    <li><a href="#concierge">Private Concierge</a></li>
+                </ul>
+                <button class="cart-icon-btn" id="cartToggle">
+                    <span>Bag</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Footwear Engineered for the Trading Floor</h1>
+                <p>Uncompromising craftsmanship designed to endure 16-hour shifts while commanding absolute respect in the boardroom.</p>
+                <div class="hero-btns">
+                    <a href="#collection" class="btn">Explore Collection</a>
+                    <a href="#concierge" class="btn btn-outline">Private Fitting</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">❖</div>
+                    <h3>All-Day Ergonomics</h3>
+                    <p>Proprietary weight-distribution soles built specifically for endless hours standing and walking across marble floors.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">❖</div>
+                    <h3>Full-Grain Calfskin</h3>
+                    <p>Sourced exclusively from elite European tanneries, offering a mirror-like shine that withstands daily wear.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">❖</div>
+                    <h3>Discreet Authority</h3>
+                    <p>Classic silhouettes modernized for contemporary financial leaders. Zero fluff. Pure, silent status.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="collection">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Executive Lineup</h2>
+                <p>Masterfully constructed for the upper echelons of global finance.</p>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80" alt="The Managing Director Oxford">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">Cap-Toe Oxford</span>
+                        <h3 class="product-title">The Managing Director</h3>
+                        <p class="product-desc">The undisputed standard for high-stakes closings and pitch meetings.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$650</span>
+                            <button class="btn" onclick="addToCart('The Managing Director', 650, 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80')">Acquire</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1533867617858-e7d97e0cfe8b?auto=format&fit=crop&w=800&q=80" alt="The Liquidator Monk Strap">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">Double Monk Strap</span>
+                        <h3 class="product-title">The Liquidator</h3>
+                        <p class="product-desc">Effortless elegance for those who dictate market momentum.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$680</span>
+                            <button class="btn" onclick="addToCart('The Liquidator', 680, 'https://images.unsplash.com/photo-1533867617858-e7d97e0cfe8b?auto=format&fit=crop&w=800&q=80')">Acquire</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80" alt="The Syndicate Loafer">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">Bespoke Penny Loafer</span>
+                        <h3 class="product-title">The Syndicate</h3>
+                        <p class="product-desc">Supreme comfort for private jets, destination off-sites, and weekend portfolios.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$590</span>
+                            <button class="btn" onclick="addToCart('The Syndicate', 590, 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80')">Acquire</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Statement Section -->
+    <section class="statement" id="craftsmanship">
+        <div class="container">
+            <div class="statement-content">
+                <h2>Built for Those Who Move Capital</h2>
+                <p>When millions pivot on your decisions, your focus should be entirely on the numbers—never on your feet. KOA bridges the absolute pinnacle of traditional shoemaking with modern structural physics.</p>
+                <a href="#concierge" class="btn btn-outline">Request Private Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concierge / Contact Section -->
+    <section class="concierge" id="concierge">
+        <div class="container">
+            <div class="concierge-wrapper">
+                <div class="concierge-info">
+                    <h2>Private Concierge Services</h2>
+                    <p>For institutional accounts, corporate gifting, or individualized bespoke sizing, connect directly with our private client division.</p>
+                    <ul class="contact-details">
+                        <li><strong>Director:</strong> Ezekiel James</li>
+                        <li><strong>Direct Line Email:</strong> <a href="mailto:ezekieljames494@gmail.com" style="color: var(--text-main); text-decoration: none;">ezekieljames494@gmail.com</a></li>
+                        <li><strong>Response Time:</strong> Within 2 Business Hours</li>
+                    </ul>
+                </div>
+                <div class="concierge-form">
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required placeholder="e.g., Jonathan Sterling">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Corporate Email</label>
+                            <input type="email" id="email" class="form-control" required placeholder="j.sterling@firm.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Inquiry Details</label>
+                            <textarea id="message" class="form-control" required placeholder="Specify sizing needs, corporate orders, or specific models..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Drawer -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Acquisition Bag</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty" id="cartEmpty">Your bag is currently empty.</div>
+            <!-- Cart items will inject dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotalPrice">$0</span>
+            </div>
+            <button class="btn" style="width: 100%;" onclick="checkout()">Proceed to Secure Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="logo">KOA</a>
+            <p>&copy; <span id="currentYear"></span> KOA Footwear. All Rights Reserved.</p>
+            <p>Institutional Inquiries: ezekieljames494@gmail.com</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Cart State Management
+        let cart = [];
+
+        const cartToggle = document.getElementById('cartToggle');
+        const cartDrawer = document.getElementById('cartDrawer');
+        const closeCart = document.getElementById('closeCart');
+        const overlay = document.getElementById('overlay');
+        const cartBody = document.getElementById('cartBody');
+        const cartEmpty = document.getElementById('cartEmpty');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotalPrice = document.getElementById('cartTotalPrice');
+
+        // Toggle Cart Drawer
+        function toggleCart() {
+            cartDrawer.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+
+        cartToggle.addEventListener('click', toggleCart);
+        closeCart.addEventListener('click', toggleCart);
+        overlay.addEventListener('click', toggleCart);
+
+        // Add to Cart
+        function addToCart(name, price, image) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, image, quantity: 1 });
+            }
+            updateCartUI();
+            
+            // Automatically open cart on add
+            if (!cartDrawer.classList.contains('open')) {
+                toggleCart();
+            }
+        }
+
+        // Remove from Cart
+        function removeFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            updateCartUI();
+        }
+
+        // Update Cart UI
+        function updateCartUI() {
+            // Count
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalCount;
+
+            // Body
+            if (cart.length === 0) {
+                cartBody.innerHTML = '<div class="cart-empty">Your bag is currently empty.</div>';
+                cartTotalPrice.textContent = '$0';
+                return;
+            }
+
+            cartBody.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const cartItemEl = document.createElement('div');
+                cartItemEl.className = 'cart-item';
+                cartItemEl.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                    <div class="cart-item-details" style="flex-grow: 1;">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price} x ${item.quantity}</p>
+                        <button style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.8rem; text-decoration:underline;" onclick="removeFromCart('${item.name}')">Remove</button>
+                    </div>
+                `;
+                cartBody.appendChild(cartItemEl);
+            });
+
+            cartTotalPrice.textContent = `$${total.toLocaleString()}`;
+        }
+
+        // Checkout simulation
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your bag is empty.');
+                return;
+            }
+            alert('Redirecting to institutional secure payment gateway...');
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        // Form submission handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Trigger mailto directly to Ezekiel James
+            const subject = encodeURIComponent(`Private Concierge Inquiry from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nCorporate Email: ${email}\n\nInquiry:\n${message}`);
+            
+            window.location.href = `mailto:ezekieljames494@gmail.com?subject=${subject}&body=${body}`;
+            
+            alert('Thank you. Opening your default mail client to dispatch securely to Ezekiel James.');
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
