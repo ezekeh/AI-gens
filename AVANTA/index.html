@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVANTA - Advanced Educational App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#121212',
+                            card: '#1a1a1a',
+                            border: '#2a2a2a',
+                            gold: '#d4af37',
+                            lightgold: '#f3e5ab'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f3f4f6;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .glow {
+            box-shadow: 0 0 40px -10px rgba(212, 175, 55, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-brand-black text-gray-100 antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl font-black tracking-wider gold-gradient">AVANTA</span>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Features</a>
+                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                    <a href="#benefits" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Benefits</a>
+                    <a href="#faq" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">FAQ</a>
+                    <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                </nav>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="mailto:oparagoodluckchibuike129@gmail.com" class="gold-bg-gradient text-black font-semibold px-5 py-2.5 rounded-full text-sm hover:opacity-95 transition-opacity shadow-lg">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#features" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold">Features</a>
+            <a href="#about" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold">About</a>
+            <a href="#benefits" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold">Benefits</a>
+            <a href="#faq" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold">FAQ</a>
+            <a href="#contact" class="block py-2 text-base font-medium text-gray-300 hover:text-brand-gold">Contact</a>
+            <div class="pt-4">
+                <a href="mailto:oparagoodluckchibuike129@gmail.com" class="block text-center gold-bg-gradient text-black font-semibold py-2.5 rounded-full text-sm">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-brand-border bg-brand-card text-xs text-brand-gold font-medium">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>The Future of Digital Learning</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-none">
+                        Elevate Your Mind With <span class="gold-gradient">AVANTA</span>
+                    </h1>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0">
+                        Discover a seamless, immersive educational app designed to empower learners of all levels. Master new subjects, track your progress, and unlock your ultimate potential.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="mailto:oparagoodluckchibuike129@gmail.com" class="w-full sm:w-auto gold-bg-gradient text-black font-bold px-8 py-4 rounded-xl text-center hover:opacity-95 transition-all shadow-xl">
+                            Request Early Access
+                        </a>
+                        <a href="#features" class="w-full sm:w-auto bg-brand-card hover:bg-brand-border border border-brand-border font-semibold px-8 py-4 rounded-xl text-center transition-all">
+                            Explore Features
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <div class="absolute -inset-1 gold-bg-gradient rounded-3xl blur-xl opacity-30"></div>
+                        <div class="relative glass-card p-8 rounded-3xl glow border border-brand-border space-y-6">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-brand-black border border-brand-border flex items-center justify-center text-brand-gold">
+                                    <i class="fa-solid fa-bolt text-xl"></i>
+                                </div>
+                                <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Active Module</span>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-bold">Smart Learning Dashboard</h3>
+                                <p class="text-sm text-gray-400">Optimized pathways tailored directly to your personal educational goals.</p>
+                            </div>
+                            <div class="space-y-3 pt-2">
+                                <div class="h-2 w-full bg-brand-border rounded-full overflow-hidden">
+                                    <div class="h-full gold-bg-gradient w-3/4"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-400">
+                                    <span>Progress</span>
+                                    <span class="text-brand-gold font-bold">75% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-brand-dark border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Powerful Capabilities</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Designed For Optimal Retention</h3>
+                <p class="text-gray-400">Everything you need to transform the way you study, practice, and master concepts.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card p-8 rounded-2xl border border-brand-border space-y-4 hover:border-brand-gold/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-brand-black border border-brand-border flex items-center justify-center text-brand-gold text-lg">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h4 class="text-xl font-bold">Adaptive Pathways</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">AVANTA dynamically adjusts to your pace, reinforcing areas where you need more focus while accelerating through what you master.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card p-8 rounded-2xl border border-brand-border space-y-4 hover:border-brand-gold/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-brand-black border border-brand-border flex items-center justify-center text-brand-gold text-lg">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-xl font-bold">Detailed Analytics</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Gain deep insights into your study habits, performance trends, and knowledge retention metrics with sleek graphical dashboards.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card p-8 rounded-2xl border border-brand-border space-y-4 hover:border-brand-gold/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-brand-black border border-brand-border flex items-center justify-center text-brand-gold text-lg">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h4 class="text-xl font-bold">Seamless Experience</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Enjoy a distraction-free interface built with modern dark aesthetics, ensuring comfortable studying at any hour of the day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">About AVANTA</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Redefining Modern Self-Directed Education</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        AVANTA is built on the philosophy that education should be accessible, streamlined, and profoundly engaging. By blending clean design with powerful organizational learning tools, our educational app bridges the gap between ambition and achievement.
+                    </p>
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check text-brand-gold mt-1"></i>
+                            <p class="text-sm text-gray-300"><strong class="text-white">Focused Environment:</strong> Clean black interface minimizes visual fatigue and distractions.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check text-brand-gold mt-1"></i>
+                            <p class="text-sm text-gray-300"><strong class="text-white">Built for All Learners:</strong> Scalable framework adapted to diverse academic subjects and professional skills.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="glass-card p-8 sm:p-12 rounded-3xl border border-brand-border space-y-6 glow">
+                        <h4 class="text-2xl font-bold">Our Core Vision</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            To empower every individual with intuitive tools that turn complex learning into structured, achievable milestones. AVANTA puts control back into the hands of the learner.
+                        </p>
+                        <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+                            <div>
+                                <span class="block text-2xl font-black gold-gradient">100%</span>
+                                <span class="text-xs text-gray-400">Committed to Growth</span>
+                            </div>
+                            <a href="mailto:oparagoodluckchibuike129@gmail.com" class="text-sm font-bold text-brand-gold hover:underline flex items-center space-x-2">
+                                <span>Get in Touch</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-brand-dark border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Why Choose AVANTA</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Built For Your Success</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-xl border border-brand-border space-y-3">
+                    <div class="text-brand-gold text-2xl"><i class="fa-solid fa-clock"></i></div>
+                    <h4 class="font-bold text-lg">Save Time</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Streamlined layouts and smart organization cut down on planning time so you can study more efficiently.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-brand-border space-y-3">
+                    <div class="text-brand-gold text-2xl"><i class="fa-solid fa-bullseye"></i></div>
+                    <h4 class="font-bold text-lg">Stay Focused</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Zero clutter design keeps your attention pinned directly on the learning material at hand.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-brand-border space-y-3">
+                    <div class="text-brand-gold text-2xl"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h4 class="font-bold text-lg">Clear Tracking</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Monitor your daily and weekly progress effortlessly to keep your motivation high.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-brand-border space-y-3">
+                    <div class="text-brand-gold text-2xl"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 class="font-bold text-lg">Reliable & Secure</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Your data and personal study progress are securely handled with state-of-the-art protection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Got Questions?</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl border border-brand-border overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none">
+                        <span>What is AVANTA?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-gray-400 leading-relaxed">
+                        AVANTA is an advanced educational application designed to organize, streamline, and elevate your personal or professional learning experience.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl border border-brand-border overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none">
+                        <span>How can I get access to AVANTA?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-gray-400 leading-relaxed">
+                        You can request early access or inquire about availability by reaching out directly to our team via email at oparagoodluckchibuike129@gmail.com.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl border border-brand-border overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none">
+                        <span>Is AVANTA suitable for all learning styles?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-gray-400 leading-relaxed">
+                        Yes! AVANTA features adaptive modules and versatile tracking systems that accommodate various subjects, skill levels, and learning speeds.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-brand-dark border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Get In Touch</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Ready to Transform Your Learning?</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Have questions about AVANTA, need support, or want to request access? Reach out to us directly and our team will get back to you promptly.
+                    </p>
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-black border border-brand-border flex items-center justify-center text-brand-gold">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400">Email Us</span>
+                                <a href="mailto:oparagoodluckchibuike129@gmail.com" class="text-sm font-bold text-white hover:text-brand-gold transition-colors">oparagoodluckchibuike129@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="glass-card p-8 rounded-3xl border border-brand-border space-y-6">
+                        <h4 class="text-2xl font-bold">Send a Message</h4>
+                        <form id="contact-form" class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for reaching out! Please email us directly at oparagoodluckchibuike129@gmail.com');">
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">Your Name</label>
+                                <input type="text" required class="w-full bg-brand-black border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">Your Email</label>
+                                <input type="email" required class="w-full bg-brand-black border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">Message</label>
+                                <textarea rows="4" required class="w-full bg-brand-black border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors" placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full gold-bg-gradient text-black font-bold py-3.5 rounded-xl text-sm hover:opacity-95 transition-opacity shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-brand-border bg-brand-black text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            <div class="text-xl font-black tracking-wider gold-gradient">AVANTA</div>
+            <p>Empowering minds through innovative digital education.</p>
+            <div class="pt-4 border-t border-brand-border/40 text-xs text-gray-600">
+                &copy; <span id="year"></span> AVANTA. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and FAQs -->
+    <script>
+        // Set copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // FAQ accordion functionality
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                // Toggle current
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>
