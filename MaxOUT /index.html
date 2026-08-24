@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxOUT - Turn Extra Time Into Extra Cash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#070F1E',
+                            800: '#0C182E',
+                            700: '#132342',
+                        },
+                        electric: {
+                            DEFAULT: '#0066FF',
+                            hover: '#0052CC',
+                            light: '#3385FF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-effect {
+            box-shadow: 0 0 40px -10px rgba(0, 102, 255, 0.3);
+        }
+        .card-glow:hover {
+            box-shadow: 0 10px 30px -10px rgba(0, 102, 255, 0.4);
+            border-color: rgba(0, 102, 255, 0.5);
+        }
+        /* Custom range slider styling */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #0066FF;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-white font-sans antialiased selection:bg-electric selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-navy-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-black tracking-wider flex items-center gap-2">
+                <span class="bg-electric text-white px-2.5 py-1 rounded-lg">Max</span>OUT
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#hustles" class="hover:text-electric transition-colors">Vetted Hustles</a>
+                <a href="#estimator" class="hover:text-electric transition-colors">Earnings Estimator</a>
+                <a href="#alerts" class="hover:text-electric transition-colors">Cash Alerts</a>
+                <a href="#faq" class="hover:text-electric transition-colors">FAQ</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://chat.whatsapp.com/HhBVrzQS3cw3CYE3J5cX0F" target="_blank" rel="noopener noreferrer" class="bg-electric hover:bg-electric-hover text-white px-5 py-2.5 rounded-xl font-semibold transition-all shadow-lg shadow-electric/20 flex items-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Join Community
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-b border-navy-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hustles" class="block py-2 text-gray-300 hover:text-electric font-medium">Vetted Hustles</a>
+            <a href="#estimator" class="block py-2 text-gray-300 hover:text-electric font-medium">Earnings Estimator</a>
+            <a href="#alerts" class="block py-2 text-gray-300 hover:text-electric font-medium">Cash Alerts</a>
+            <a href="#faq" class="block py-2 text-gray-300 hover:text-electric font-medium">FAQ</a>
+            <div class="pt-2">
+                <a href="https://chat.whatsapp.com/HhBVrzQS3cw3CYE3J5cX0F" target="_blank" rel="noopener noreferrer" class="w-full bg-electric hover:bg-electric-hover text-white px-5 py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Join Community
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Background Gradient Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-electric/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy-800 border border-navy-700 text-electric text-xs sm:text-sm font-semibold mb-6 glow-effect">
+                <span class="flex h-2 w-2 rounded-full bg-electric animate-pulse"></span>
+                Trusted Financial Platform for Limited Incomes
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight sm:leading-none mb-6">
+                Never Max Out. <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-electric-light">Turn Extra Time Into Extra Cash.</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-normal">
+                Discover legit online side hustles and real-time cash-making updates designed to keep your bank account safely in the positive.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#hustles" class="w-full sm:w-auto bg-electric hover:bg-electric-hover text-white font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-electric/25 flex items-center justify-center gap-3 text-lg">
+                    Explore Daily Hustles <i class="fa-solid fa-arrow-down text-sm"></i>
+                </a>
+                <a href="https://chat.whatsapp.com/HhBVrzQS3cw3CYE3J5cX0F" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-navy-800 hover:bg-navy-700 border border-navy-700 text-white font-bold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-3 text-lg">
+                    <i class="fab fa-whatsapp text-green-400 text-xl"></i> Join WhatsApp Hub
+                </a>
+            </div>
+
+            <!-- Stats/Trust Bar -->
+            <div class="mt-16 pt-10 border-t border-navy-700/60 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
+                <div>
+                    <div class="text-2xl sm:text-3xl font-black text-white">100%</div>
+                    <div class="text-xs sm:text-sm text-gray-400 mt-1">Vetted & Legit Gigs</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl font-black text-white">Daily</div>
+                    <div class="text-xs sm:text-sm text-gray-400 mt-1">Instant Cash Updates</div>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <div class="text-2xl sm:text-3xl font-black text-white">Zero</div>
+                    <div class="text-xs sm:text-sm text-gray-400 mt-1">Hidden Fees or Paywalls</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vetted Side Hustles Section -->
+    <section id="hustles" class="py-20 bg-navy-800/50 border-y border-navy-700/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-black mb-4">Daily Vetted Side Hustles</h2>
+                <p class="text-gray-300 text-base sm:text-lg">Skip the scams. Here are hand-reviewed opportunities you can start working on today with fast, reliable payouts.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-navy-800 border border-navy-700 rounded-2xl p-6 transition-all duration-300 card-glow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-electric/15 text-electric text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Micro-Tasks</span>
+                            <span class="text-xs font-semibold text-gray-400 flex items-center gap-1"><i class="fa-regular fa-clock text-electric"></i> Payout: Same Day</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Data Tagging & AI Training</h3>
+                        <p class="text-gray-300 text-sm mb-6">Complete short labeling modules and simple categorization tasks from your phone or laptop during your downtime.</p>
+                    </div>
+                    <div class="pt-4 border-t border-navy-700/80 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 font-medium">Est. $10 - $25 / hr</span>
+                        <a href="https://chat.whatsapp.com/HhBVrzQS3cw3CYE3J5cX0F" target="_blank" rel="noopener noreferrer" class="text-electric hover:text-electric-light font-bold text-sm flex items-center gap-1">Get Link <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-navy-800 border border-navy-700 rounded-2xl p-6 transition-all duration-300 card-glow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-electric/15 text-electric text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">App Testing</span>
+                            <span class="text-xs font-semibold text-gray-400 flex items-center gap-1"><i class="fa-regular fa-clock text-electric"></i> Payout: 24-48 Hours</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Mobile App & UI Reviews</h3>
+                        <p class="text-gray-300 text-sm mb-6">Record your screen while testing new applications for bugs, navigation issues, and providing honest user feedback.</p>
+                    </div>
+                    <div class="pt-4 border-t border-navy-700/80 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 font-medium">Est. $10 - $20 per test</span>
+                        <a href="https://chat.whatsapp.com/HhBVrzQS3cw3CYE3J5cX0F" target="_blank" rel="noopener noreferrer" class="text-electric hover:text-electric-light font-bold text-sm flex items-center gap-1">Get Link <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-navy-800 border border-navy-700 rounded-2xl p-6 transition-all duration-300 card-glow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-electric/15 text-electric text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Remote Gigs</span>
+                            <span class="text-xs font-semibold text-gray-400 flex items-center gap-1"><i class="fa-regular fa-clock text-electric"></i> Payout: Weekly</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Chat Support & Moderation</h3>
+                        <p class="text-gray-300 text-sm mb-6">Help online communities and e-commerce platforms manage customer inquiries and messages right from your browser.</p>
+                    </div>
+                    <div class="pt-4 border-t border-navy-700/80 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 font-medium">Est. $15 - $22 / hr</span>
+                        <a href="https://chat.whatsapp.com/HhBVrzQS3cw3CYE3J5cX0F" target="_blank" rel="noopener noreferrer" class="text-electric hover:text-electric-light font-bold text-sm flex items-center gap-1">Get Link <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-400 text-sm mb-4">Looking for immediate updates on new platform drops?</p>
+                <a href="https://chat.whatsapp.com/HhBVrzQS3cw3CYE3J5cX0F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white bg-navy-700 hover:bg-navy-600 border border-navy-600 px-6 py-3 rounded-xl font-semibold text-sm transition-all">
+                    <i class="fab fa-whatsapp text-green-400 text-lg"></i> Access All Live Gigs in WhatsApp Community
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Earnings Estimator Section -->
+    <section id="estimator" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy-800 border border-navy-700 rounded-3xl p-8 sm:p-12 glow-effect">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <span class="text-electric text-xs font-bold uppercase tracking-widest bg-electric/15 px-3 py-1 rounded-full">Calculator</span>
+                    <h2 class="text-2xl sm:text-3xl font-black mt-3 mb-2">Interactive Earnings Estimator</h2>
+                    <p class="text-gray-300 text-sm sm:text-base">See how much extra cash you could pull in each month based on your available spare time.</p>
+                </div>
+
+                <div class="space-y-8">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label for="hours-slider" class="font-semibold text-sm sm:text-base text-gray-200">Hours spent per week:</label>
+                            <span id="hours-display" class="bg-electric text-white font-bold text-sm px-3 py-1 rounded-lg">10 hours/wk</span>
+                        </div>
+                        <input id="hours-slider" type="range" min="2" max="30" value="10" step="1" class="w-full h-2 bg-navy-900 rounded-lg appearance-none cursor-pointer accent-electric">
+                        <div class="flex justify-between text-xs text-gray-500 mt-2">
+                            <span>2 hrs</span>
+                            <span>15 hrs</span>
+                            <span>30 hrs</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-navy-900/80 border border-navy-700 rounded-2xl p-6 text-center">
+                        <div class="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-1">Estimated Monthly Earnings Potential</div>
+                        <div id="earnings-output" class="text-4xl sm:text-5xl font-black text-electric tracking-tight">$480 - $720</div>
+                        <p class="text-xs text-gray-500 mt-2">*Based on average active hourly rates for vetted micro-tasks and app testing gigs.</p>
+                    </div>
+
+                    <div class="text-center pt-2">
+                        <a href="https://chat.whatsapp.com/HhBVrzQS3cw3CYE3J5cX0F" target="_blank" rel="noopener noreferrer" class="inline-block w-full sm:w-auto bg-electric hover:bg-electric-hover text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-electric/25">
+                            Start Earning This Month
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Newsletter & Instant Cash Alerts Section -->
+    <section id="alerts" class="py-20 bg-navy-800/50 border-t border-navy-700/60">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-electric/15 text-electric mb-6 text-xl">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black mb-4">Get Instant Cash Alerts</h2>
+            <p class="text-gray-300 text-base sm:text-lg mb-8">Never miss a new high-paying gig or financial update. Drop your email below to get instant notifications the moment new opportunities drop.</p>
+
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+                <input type="email" id="newsletter-email" required placeholder="Enter your email address..." class="flex-grow bg-navy-900 border border-navy-700 px-4 py-3.5 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-electric transition-all text-sm">
+                <button type="submit" class="bg-electric hover:bg-electric-hover text-white font-bold px-6 py-3.5 rounded-xl transition-all text-sm whitespace-nowrap shadow-lg shadow-electric/25">
+                    Get Alerts
+                </button>
+            </form>
+            <div id="newsletter-success" class="hidden text-green-400 font-semibold text-sm mt-3">
+                <i class="fa-solid fa-circle-check mr-1"></i> You're on the VIP alert list! Check your inbox soon.
+            </div>
+            <p class="text-xs text-gray-500">No spam ever. Unsubscribe with a single click at any time.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-black mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-300 text-base">Everything you need to know about how MaxOUT helps you protect and build your income.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-navy-800 border border-navy-700 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-base sm:text-lg flex justify-between items-center focus:outline-none">
+                        <span>Is MaxOUT completely free to use?</span>
+                        <i class="fa-solid fa-chevron-down text-electric transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-gray-300 text-sm sm:text-base border-t border-navy-700/60 pt-3">
+                        Yes, 100% free. MaxOUT was built specifically to help people with limited incomes discover legitimate ways to make extra cash without facing upfront fees, hidden paywalls, or financial traps.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-navy-800 border border-navy-700 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-base sm:text-lg flex justify-between items-center focus:outline-none">
+                        <span>How are the side hustles vetted?</span>
+                        <i class="fa-solid fa-chevron-down text-electric transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-gray-300 text-sm sm:text-base border-t border-navy-700/60 pt-3">
+                        We manually check platforms for payment reliability, low payout thresholds, clear terms, and user feedback to ensure you only spend time on gigs that actually pay out.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-navy-800 border border-navy-700 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-bold text-base sm:text-lg flex justify-between items-center focus:outline-none">
+                        <span>How do I join the WhatsApp community?</span>
+                        <i class="fa-solid fa-chevron-down text-electric transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-gray-300 text-sm sm:text-base border-t border-navy-700/60 pt-3">
+                        Simply click any of the WhatsApp community links on this page (such as the one in the navigation or hero section) to join our active group for real-time gig drops and peer discussions.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-800 border-t border-navy-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <a href="#" class="text-2xl font-black tracking-wider flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <span class="bg-electric text-white px-2.5 py-1 rounded-lg">Max</span>OUT
+                </a>
+                <p class="text-xs sm:text-sm text-gray-400 text-center md:text-left">Never Max Out. Turn Extra Time Into Extra Cash.</p>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="https://www.instagram.com/maxwell_idoko" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-navy-900 border border-navy-700 flex items-center justify-center text-gray-300 hover:text-electric hover:border-electric transition-all" aria-label="Instagram">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+                <a href="https://chat.whatsapp.com/HhBVrzQS3cw3CYE3J5cX0F" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-navy-900 border border-navy-700 flex items-center justify-center text-gray-300 hover:text-green-400 hover:border-green-400 transition-all" aria-label="WhatsApp Community">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+
+            <div class="text-xs text-gray-500 text-center md:text-right">
+                &copy; <span id="current-year"></span> MaxOUT. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click of nav items
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Earnings Estimator Slider Logic
+        const hoursSlider = document.getElementById('hours-slider');
+        const hoursDisplay = document.getElementById('hours-display');
+        const earningsOutput = document.getElementById('earnings-output');
+
+        function updateEarnings() {
+            const hours = parseInt(hoursSlider.value);
+            hoursDisplay.textContent = hours + ' hours/wk';
+            
+            // Average calculation logic based on $12 - $18/hr estimated average for vetted tasks
+            const monthlyLow = Math.round(hours * 4 * 12);
+            const monthlyHigh = Math.round(hours * 4 * 18);
+            
+            earningsOutput.textContent = `$${monthlyLow} - $${monthlyHigh}`;
+        }
+
+        hoursSlider.addEventListener('input', updateEarnings);
+        updateEarnings(); // Initial call
+
+        // FAQ Accordion functionality
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Newsletter form submission handler
+        const newsletterForm = document.getElementById('newsletter-form');
+        const newsletterSuccess = document.getElementById('newsletter-success');
+
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('newsletter-email');
+            if(emailInput.value) {
+                newsletterForm.style.display = 'none';
+                newsletterSuccess.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
