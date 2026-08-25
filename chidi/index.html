@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chidi | Kitchen Mastery for Younger Married Women</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --primary-dark: #FF5252;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #2D3047;
+            --light: #F7F9FC;
+            --white: #FFFFFF;
+            --gray: #8D99AE;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            background: linear-gradient(135deg, #FFF0F0 0%, #E6FAF8 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: var(--dark);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .secondary-btn:hover {
+            background-color: var(--dark);
+            color: var(--white);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            object-fit: cover;
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .floating-badge i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background: rgba(78, 205, 196, 0.1);
+            color: var(--secondary);
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            background: rgba(255, 230, 109, 0.2);
+            color: #D4AF37;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .checklist i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        /* Services/Offerings */
+        .services {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .service-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-body h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-body p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Call to Action Banner */
+        .cta-banner {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8E53 100%);
+            border-radius: var(--radius);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .cta-banner h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-banner .cta-btn {
+            background-color: var(--white);
+            color: var(--primary);
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+        }
+
+        .cta-banner .cta-btn:hover {
+            background-color: var(--light);
+            color: var(--primary-dark);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--light);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+            color: var(--gray);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 5rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            color: var(--gray);
+            margin-top: 1rem;
+            max-width: 300px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact p {
+            color: var(--gray);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-contact a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-container, .about-container, .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero {
+                padding-top: 8rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: var(--white);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.4s ease;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-nav-links li {
+            margin: 1.5rem 0;
+        }
+
+        .mobile-nav-links a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .close-menu-btn {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Chi<span>di</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Why Chidi</a></li>
+                <li><a href="#services">Programs</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="tel:09112636659" class="cta-btn"><i class="fas fa-phone-alt"></i> Call 09112636659</a></li>
+            </ul>
+            <div class="mobile-menu-btn" id="mobileOpen">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="close-menu-btn" id="mobileClose">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#features" class="mobile-link">Why Chidi</a></li>
+            <li><a href="#services" class="mobile-link">Programs</a></li>
+            <li><a href="#faq" class="mobile-link">FAQ</a></li>
+            <li><a href="tel:09112636659" class="cta-btn" style="margin-top: 1rem;"><i class="fas fa-phone-alt"></i> Call Now</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Master Your Kitchen, <span>Nurture Your Home</span></h1>
+                <p>Welcome to Chidi! We specialize in guiding and teaching younger married women how to beautifully care for their kitchen, manage meals with joy, and build a warm, inviting home atmosphere.</p>
+                <div class="hero-buttons">
+                    <a href="tel:09112636659" class="cta-btn"><i class="fas fa-phone-alt"></i> Get Started Today</a>
+                    <a href="#about" class="secondary-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800" alt="Happy cooking in a modern kitchen">
+                <div class="floating-badge">
+                    <i class="fas fa-heart"></i>
+                    <div>
+                        <strong>Kitchen Care</strong>
+                        <p style="font-size: 0.85rem; color: var(--gray);">Made simple & joyful</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>Why Choose Chidi?</h2>
+            <p>We make learning kitchen management fun, practical, and tailored specifically for the modern newlywed lifestyle.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Practical Cooking Tips</h3>
+                <p>Learn time-saving meal preparation hacks, flavor pairing basics, and easy recipes that impress family and guests alike.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-broom"></i>
+                </div>
+                <h3>Organization & Hygiene</h3>
+                <p>Discover expert strategies to keep your kitchen spotless, organized, and running efficiently every single day with minimal stress.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-smile-beam"></i>
+                </div>
+                <h3>Friendly & Supportive</h3>
+                <p>Enjoy a welcoming, judgment-free environment designed to build your confidence from the ground up in your culinary journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1507048331197-7d4ac70b11c8?auto=format&fit=crop&q=80&w=800" alt="Cooking and kitchen care">
+            </div>
+            <div class="about-content">
+                <h2>Empowering Younger Married Women in the Kitchen</h2>
+                <p>Stepping into a new home and managing a kitchen can feel overwhelming. At Chidi, we bridge the gap between amateur cooking and confident household management.</p>
+                <p>Our tailored guidance focuses on everyday kitchen routines, smart grocery planning, easy meal organization, and proper equipment maintenance.</p>
+                <ul class="checklist">
+                    <li><i class="fas fa-check-circle"></i> Tailored guidance for newlyweds</li>
+                    <li><i class="fas fa-check-circle"></i> Step-by-step kitchen maintenance routines</li>
+                    <li><i class="fas fa-check-circle"></i> Friendly, supportive learning atmosphere</li>
+                </ul>
+                <a href="tel:09112636659" class="cta-btn"><i class="fas fa-phone-alt"></i> Speak With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Programs Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our Focus Areas</h2>
+            <p>Explore the essential kitchen care topics we teach to help you shine in your home.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&q=80&w=600" alt="Meal Prep" class="service-img">
+                <div class="service-body">
+                    <div>
+                        <h3>Meal Planning & Prep</h3>
+                        <p>Master the art of planning weekly menus, smart shopping, and prepping ingredients ahead of time to save hours in the kitchen.</p>
+                    </div>
+                    <a href="tel:09112636659" class="cta-btn" style="width: 100%; justify-content: center;"><i class="fas fa-phone-alt"></i> Inquire Now</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&q=80&w=600" alt="Kitchen Organization" class="service-img">
+                <div class="service-body">
+                    <div>
+                        <h3>Kitchen Cleanliness & Setup</h3>
+                        <p>Learn efficient cleaning habits, pantry organization tricks, and how to maintain pristine countertops effortlessly.</p>
+                    </div>
+                    <a href="tel:09112636659" class="cta-btn" style="width: 100%; justify-content: center;"><i class="fas fa-phone-alt"></i> Inquire Now</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=600" alt="Culinary Confidence" class="service-img">
+                <div class="service-body">
+                    <div>
+                        <h3>Culinary Confidence Boost</h3>
+                        <p>Overcome kitchen intimidation with simple foundational techniques that make everyday cooking fun and rewarding.</p>
+                    </div>
+                    <a href="tel:09112636659" class="cta-btn" style="width: 100%; justify-content: center;"><i class="fas fa-phone-alt"></i> Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <div class="cta-banner">
+        <h2>Ready to Transform Your Kitchen Experience?</h2>
+        <p>Connect with Chidi today and start your journey towards effortless kitchen management and warm home hospitality.</p>
+        <a href="tel:09112636659" class="cta-btn"><i class="fas fa-phone-alt"></i> Call 09112636659 Now</a>
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Got questions? We've got answers to help you get started.</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Who are these lessons designed for?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Chidi is specifically designed to teach younger married women how to care for their kitchen, manage meal preparations, and gain confidence in domestic home care.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How can I get in touch to start?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can easily reach us directly by calling <a href="tel:09112636659" style="color: var(--primary); text-decoration: none; font-weight: 600;">09112636659</a>. We'll be delighted to talk with you!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I need prior cooking experience?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Not at all! Our approach is friendly, supportive, and beginner-friendly, meeting you right where you are in your culinary journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo" style="color: var(--white);">Chi<span>di</span></a>
+                <p>Teaching younger married women how to care for their kitchen with joy, confidence, and warmth.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Why Chidi</a></li>
+                    <li><a href="#services">Programs</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:09112636659">09112636659</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Chidi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Current Year for Footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileOpen = document.getElementById('mobileOpen');
+        const mobileClose = document.getElementById('mobileClose');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileOpen.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileClose.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
