@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazee Headwears | Modern Caps & Headwarmers for UniAbuja Students</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --milk: #FBF9F5;
+            --milk-dark: #F0EBE1;
+            --azure: #007FFF;
+            --azure-dark: #0063CC;
+            --azure-light: #E6F2FF;
+            --dark: #111827;
+            --gray: #6B7280;
+            --white: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--milk);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(251, 249, 245, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--milk-dark);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--azure);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--azure);
+        }
+
+        .nav-cta {
+            background-color: var(--azure);
+            color: var(--white) !important;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            background-color: var(--azure-dark);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-content h1 span {
+            color: var(--azure);
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background-color: var(--azure);
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            box-shadow: 0 10px 25px rgba(0, 127, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--azure-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 127, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--milk-dark);
+            color: var(--dark);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e2dbcd;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .hero-img-box {
+            background-color: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--milk-dark);
+            transition: var(--transition);
+        }
+
+        .hero-img-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .hero-img-box .img-caption {
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .hero-img-box:nth-child(2) {
+            transform: translateY(20px);
+        }
+        .hero-img-box:nth-child(2):hover {
+            transform: translateY(15px);
+        }
+
+        /* Features/Campus Banner */
+        .campus-banner {
+            background-color: var(--azure);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 1.05rem;
+        }
+
+        /* Collections Section */
+        .collections {
+            padding: 7rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .collection-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--milk-dark);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border-color: var(--azure);
+        }
+
+        .collection-img {
+            height: 260px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .collection-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .collection-card:hover .collection-img img {
+            transform: scale(1.05);
+        }
+
+        .collection-info {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .collection-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge {
+            background-color: var(--azure-light);
+            color: var(--azure);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--milk-dark);
+            padding: 7rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--gray);
+        }
+
+        .about-visual {
+            background-color: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .about-visual img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        /* Why Choose Us / Benefits */
+        .benefits {
+            padding: 7rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--milk-dark);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--azure);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--azure-light);
+            color: var(--azure);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            font-weight: 700;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--milk-dark);
+            padding: 7rem 2rem;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .contact-info {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-info p {
+            color: #9CA3AF;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-detail-item span {
+            color: var(--azure);
+            font-size: 1.25rem;
+        }
+
+        .contact-form-wrapper {
+            padding: 3rem;
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-wrapper p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--milk-dark);
+            background-color: var(--milk);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: var(--dark);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--azure);
+            background-color: var(--white);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: #9CA3AF;
+            margin-top: 1rem;
+            max-width: 350px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--azure);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #9CA3AF;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 8rem;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-content p {
+                margin: 0 auto 2.5rem;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-img-box:nth-child(2) {
+                transform: translateY(0);
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Eazee<span>Headwears</span></a>
+            <nav class="nav-links">
+                <a href="#collections">Collections</a>
+                <a href="#about">About</a>
+                <a href="#benefits">Why Us</a>
+                <a href="#contact" class="nav-cta">Order Now</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Campus Banner -->
+    <div class="campus-banner" style="margin-top: 73px;">
+        🎓 Exclusive Delivery & On-Campus Meetups for University of Abuja (UniAbuja) Students!
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Upgrade Your Look with Modern <span>Headwears</span></h1>
+            <p>Discover top-tier fitted caps, snapbacks, truckers, and cozy headwarmers tailored for the ultimate campus style at UniAbuja.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/2349112636659?text=Hello%20Eazee%20Headwears,%20I%20want%20to%20order%20a%20cap." target="_blank" class="btn-primary">
+                    Order via WhatsApp
+                </a>
+                <a href="#collections" class="btn-secondary">Explore Styles</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-card-grid">
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&q=80&w=600" alt="Modern Cap">
+                    <div class="img-caption">Fitted & Snapbacks</div>
+                </div>
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&q=80&w=600" alt="Trucker & Headwarmer">
+                    <div class="img-caption">Truckers & Headwarmers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="collections">
+        <div class="section-header">
+            <h2>Our Premium Collections</h2>
+            <p>Designed for both male and female students who want to stand out around UniAbuja campus with effortless style.</p>
+        </div>
+        <div class="collection-grid">
+            <div class="collection-card">
+                <div class="collection-img">
+                    <img src="https://images.unsplash.com/photo-1534215754734-18e55d131346?auto=format&fit=crop&q=80&w=600" alt="Fitted Caps">
+                </div>
+                <div class="collection-info">
+                    <div>
+                        <h3>Fitted Caps</h3>
+                        <p>Structured, clean cuts that deliver absolute comfort and a sharp look for lectures or hangouts.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="badge">Unisex</span>
+                        <a href="https://wa.me/2349112636659?text=I'm%20interested%20in%20Fitted%20Caps" target="_blank" style="color: var(--azure); font-weight: 600; font-size: 0.9rem;">Get Yours →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-card">
+                <div class="collection-img">
+                    <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&q=80&w=600" alt="Snapbacks">
+                </div>
+                <div class="collection-info">
+                    <div>
+                        <h3>Snapbacks</h3>
+                        <p>Adjustable, bold, and modern streetwear staples built to elevate your everyday outfit.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="badge">Best Seller</span>
+                        <a href="https://wa.me/2349112636659?text=I'm%20interested%20in%20Snapbacks" target="_blank" style="color: var(--azure); font-weight: 600; font-size: 0.9rem;">Get Yours →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-card">
+                <div class="collection-img">
+                    <img src="https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?auto=format&fit=crop&q=80&w=600" alt="Trucker Caps">
+                </div>
+                <div class="collection-info">
+                    <div>
+                        <h3>Trucker Caps</h3>
+                        <p>Breathable mesh backs combined with classic front panels for that breezy, casual campus vibe.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="badge">Casual Vibe</span>
+                        <a href="https://wa.me/2349112636659?text=I'm%20interested%20in%20Trucker%20Caps" target="_blank" style="color: var(--azure); font-weight: 600; font-size: 0.9rem;">Get Yours →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-card">
+                <div class="collection-img">
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=600" alt="Headwarmers">
+                </div>
+                <div class="collection-info">
+                    <div>
+                        <h3>Headwarmers</h3>
+                        <p>Cozy, premium beanies and headwarmers perfect for chilly mornings and evening study sessions.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="badge">Comfort Fit</span>
+                        <a href="https://wa.me/2349112636659?text=I'm%20interested%20in%20Headwarmers" target="_blank" style="color: var(--azure); font-weight: 600; font-size: 0.9rem;">Get Yours →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Crafted for the Modern UniAbuja Student Style</h2>
+                <p>At Eazee Headwears, we believe your headwear speaks volumes before you even say a word. Styled with our signature milk and azure aesthetic, we bring modern, fashionable male and female caps directly to your doorstep on campus.</p>
+                <p>Whether you're heading to the lecture hall, department hangouts, or hostel relaxation, we’ve got the perfect fit to complete your look.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <h4>Male & Female</h4>
+                        <p>Diverse selections curated for all genders.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Campus Delivery</h4>
+                        <p>Fast drop-offs right within UniAbuja.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&q=80&w=800" alt="Caps Collection">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Benefits -->
+    <section class="benefits" id="benefits">
+        <div class="section-header">
+            <h2>Why Choose Eazee Headwears?</h2>
+            <p>We make upgrading your wardrobe seamless, affordable, and tailored for students.</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">✓</div>
+                <h3>Top-Quality Fabrics</h3>
+                <p>Durable materials designed to withstand daily campus movement while maintaining crisp structure and vibrant colors.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎓</div>
+                <h3>UniAbuja Centered</h3>
+                <p>Conveniently located to serve UniAbuja students with quick delivery options and hassle-free peer meetups.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Instant Response</h3>
+                <p>Quick chat ordering through phone or WhatsApp to lock down your preferred design before it runs out.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div>
+                    <h3>Get In Touch</h3>
+                    <p>Ready to cop your next favorite cap or headwarmer? Send us a message or give us a call directly!</p>
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <span>📞</span>
+                            <a href="tel:09112636659">09112636659</a>
+                        </div>
+                        <div class="contact-detail-item">
+                            <span>💬</span>
+                            <a href="https://wa.me/2349112636659?text=Hello%20Eazee%20Headwears,%20I%20want%20to%20make%20an%20enquiry." target="_blank">Chat on WhatsApp</a>
+                        </div>
+                        <div class="contact-detail-item">
+                            <span>📍</span>
+                            <p style="color: #9CA3AF; margin: 0;">University of Abuja (UniAbuja), Abuja</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 3rem; font-size: 0.85rem; color: #9CA3AF;">
+                    Style: Milk & Azure Aesthetic
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <h3>Quick Order / Enquiry</h3>
+                <p>Fill out the form below and we'll reach out to you instantly.</p>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="e.g. David Johnson" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number / WhatsApp</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="e.g. 09112636659" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="item">Preferred Item</label>
+                        <select id="item" class="form-control" required>
+                            <option value="">Select cap type...</option>
+                            <option value="Fitted Cap">Fitted Cap</option>
+                            <option value="Snapback">Snapback</option>
+                            <option value="Trucker Cap">Trucker Cap</option>
+                            <option value="Headwarmer">Headwarmer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details (Optional)</label>
+                        <textarea id="message" class="form-control" placeholder="Specify color preference or hostel delivery point..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;">Send Order Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo" style="color: var(--white);">Eazee<span>Headwears</span></a>
+                <p>Modern male and female caps, snapbacks, truckers, and headwarmers delivered right to UniAbuja students.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#benefits">Why Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="tel:09112636659">Call: 09112636659</a></li>
+                    <li><a href="https://wa.me/2349112636659" target="_blank">WhatsApp Chat</a></li>
+                    <li><a href="#contact">UniAbuja Campus Drop</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Eazee Headwears. All rights reserved.</p>
+            <p>Designed for UniAbuja Students</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Set dynamic current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Handle Form Submission via WhatsApp redirection
+        const orderForm = document.getElementById('orderForm');
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const item = document.getElementById('item').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `Hello Eazee Headwears! My name is ${name} (${phone}). I would like to order: *${item}*. Additional notes: ${message}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            window.open(`https://wa.me/2349112636659?text=${encodedMessage}`, '_blank');
+        });
+
+        // Mobile Menu Toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'var(--milk)';
+                navLinks.style.padding = '2rem';
+                navLinks.style.borderBottom = '1px solid var(--milk-dark)';
+                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
