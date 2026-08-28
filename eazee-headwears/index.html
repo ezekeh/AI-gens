@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazee Headwears - Confidence Made Easy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #007FFF; /* Azure */
+            --primary-dark: #0060df;
+            --milk: #FAF9F6; /* Milk */
+            --milk-dark: #f0eee6;
+            --dark: #121826;
+            --text-main: #2b3748;
+            --text-muted: #64748b;
+            --accent: #FF5722;
+            --radius: 16px;
+            --shadow: 0 10px 30px rgba(0, 127, 255, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--milk);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Outfit', sans-serif;
+            color: var(--dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 127, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 127, 255, 0.4);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(250, 249, 246, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--milk-dark);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, var(--milk) 0%, #e6f2ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            color: var(--dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 540px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(0, 127, 255, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            height: 480px;
+            border-radius: 30px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 4px solid white;
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: -20px;
+            left: -30px;
+            background: white;
+            padding: 1.25rem 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-card i {
+            font-size: 2rem;
+            color: #25D366;
+        }
+
+        .floating-card-text h4 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .floating-card-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* STATS / TRUST BAR */
+        .trust-bar {
+            background-color: white;
+            padding: 3rem 0;
+            border-top: 1px solid var(--milk-dark);
+            border-bottom: 1px solid var(--milk-dark);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 900;
+            margin-bottom: 0.25rem;
+        }
+
+        .trust-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* ABOUT SECTION */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header span {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 450px;
+            border-radius: var(--radius);
+            object-fit: cover;
+            box-shadow: var(--shadow);
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .ethos-box {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border-left: 5px solid var(--primary);
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .ethos-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .ethos-box p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* CATALOGUE / SERVICES SECTION */
+        .catalog-section {
+            background-color: var(--milk-dark);
+            padding: 100px 0;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .catalog-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 127, 255, 0.12);
+        }
+
+        .catalog-img-container {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalog-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .catalog-card:hover .catalog-img {
+            transform: scale(1.05);
+        }
+
+        .catalog-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(18, 24, 38, 0.8);
+            backdrop-filter: blur(5px);
+            color: white;
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .catalog-info {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .catalog-info h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .catalog-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* HOW IT WORKS */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .step-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 127, 255, 0.3);
+        }
+
+        .step-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* COMMUNITY & REELS PROMO */
+        .community-section {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a2536 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .community-content h2 {
+            color: white;
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .community-content p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .perks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .perkWrap {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .perkWrap i {
+            color: #25D366;
+            background: rgba(37, 211, 102, 0.1);
+            padding: 0.5rem;
+            border-radius: 50%;
+        }
+
+        .instagram-mockup {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 24px;
+            color: var(--dark);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .ig-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .ig-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .ig-name h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .ig-name span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .ig-reel-frame {
+            height: 320px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .ig-reel-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ig-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+        }
+
+        /* FAQ SECTION */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid var(--milk-dark);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 2rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.5rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-about .logo {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-about p {
+            color: #94a3b8;
+            max-width: 350px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* FLOATING WHATSAPP CTA */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #20ba5a;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 968px) {
+            .hero-grid, .about-grid, .community-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.75rem;
+            }
+
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--milk);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Eazee<span>Headwears</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#collection" class="nav-link">Collection</a>
+                <a href="#how-it-works" class="nav-link">How to Order</a>
+                <a href="#community" class="nav-link">Community</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="https://wa.me/2349112636659?text=Hello%20Eazee%20Headwears,%20I%20want%20to%20order%20a%20cap!" target="_blank" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-crown"></i> Confidence Made Easy
+                </div>
+                <h1>Elevate Your Style with Premium <span>Headwears</span></h1>
+                <p>Designed specifically for style-conscious young Nigerians. Discover caps, fitted hats, snapbacks, and warmers crafted to make heads turn.</p>
+                <div class="hero-cta">
+                    <a href="https://wa.me/2349112636659?text=Hello%20Eazee%20Headwears,%20I'd%20like%20to%20see%20your%20available%20caps!" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </a>
+                    <a href="#collection" class="btn btn-outline">
+                        Explore Collection <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80" alt="Stylish young man wearing a cap from Eazee Headwears" class="hero-image-main">
+                <div class="floating-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="floating-card-text">
+                        <h4>Instant Response</h4>
+                        <p>Order directly on WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST / STATS BAR -->
+    <div class="trust-bar">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <h3>100%</h3>
+                <p>Top-Tier Quality Fabric</p>
+            </div>
+            <div class="trust-item">
+                <h3>Fast</h3>
+                <p>WhatsApp Ordering</p>
+            </div>
+            <div class="trust-item">
+                <h3>Vibrant</h3>
+                <p>Youth Streetwear Styles</p>
+            </div>
+            <div class="trust-item">
+                <h3>Nationwide</h3>
+                <p>Delivery Available</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <div class="container about-grid">
+            <img src="https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?auto=format&fit=crop&w=800&q=80" alt="Eazee Headwears lifestyle" class="about-img">
+            <div class="about-content">
+                <span>Who We Are</span>
+                <h3>Crafted for the Bold, Modern Nigerian Youth</h3>
+                <p>At Eazee Headwears, we believe that putting together a fire outfit shouldn't be complicated. That's why we curate and create headwear pieces that instantly level up your aesthetic with zero stress.</p>
+                <p>Whether you're stepping out in a classic snapback, keeping cozy in our stylish headwarmers, or keeping it slick in a fitted hat, we've got your crown covered.</p>
+                <div class="ethos-box">
+                    <h4>The "Confidence Made Easy" Ethos</h4>
+                    <p>No long processes. Pick your favorite style, hit us up on WhatsApp, and secure your piece instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOGUE SECTION -->
+    <section id="collection" class="catalog-section">
+        <div class="container">
+            <div class="section-header">
+                <span>Our Signature Line</span>
+                <h2>Explore The Collection</h2>
+                <p>Handpicked styles designed to match your energy, everyday wear, and street aesthetic.</p>
+            </div>
+            <div class="catalog-grid">
+                <!-- Item 1 -->
+                <div class="catalog-card">
+                    <div class="catalog-img-container">
+                        <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=600&q=80" alt="Classic Caps" class="catalog-img">
+                        <span class="catalog-tag">Classic</span>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Classic Caps</h3>
+                        <p>Clean, structured everyday caps designed for maximum comfort and crisp style.</p>
+                        <a href="https://wa.me/2349112636659?text=Hello,%20I'm%20interested%20in%20ordering%20a%20Classic%20Cap!" target="_blank" class="btn btn-outline" style="width: 100%; font-size: 0.9rem; padding: 0.7rem;">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="catalog-card">
+                    <div class="catalog-img-container">
+                        <img src="https://images.unsplash.com/photo-1534215754734-18e55d13b346?auto=format&fit=crop&w=600&q=80" alt="Fitted Hats" class="catalog-img">
+                        <span class="catalog-tag">Best Seller</span>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Fitted Hats</h3>
+                        <p>Tailored fits with unmatched detail. Built for the clean-cut streetwear look.</p>
+                        <a href="https://wa.me/2349112636659?text=Hello,%20I'm%20interested%20in%20ordering%20a%20Fitted%20Hat!" target="_blank" class="btn btn-outline" style="width: 100%; font-size: 0.9rem; padding: 0.7rem;">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="catalog-card">
+                    <div class="catalog-img-container">
+                        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Snapbacks" class="catalog-img">
+                        <span class="catalog-tag">Trending</span>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Snapbacks</h3>
+                        <p>Bold designs, adjustable backs, and ultimate attitude for everyday hustle.</p>
+                        <a href="https://wa.me/2349112636659?text=Hello,%20I'm%20interested%20in%20ordering%20a%20Snapback!" target="_blank" class="btn btn-outline" style="width: 100%; font-size: 0.9rem; padding: 0.7rem;">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="catalog-card">
+                    <div class="catalog-img-container">
+                        <img src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=600&q=80" alt="Headwarmers" class="catalog-img">
+                        <span class="catalog-tag">Cozy</span>
+                    </div>
+                    <div class="catalog-info">
+                        <h3>Headwarmers</h3>
+                        <p>Plush, comfortable winter/night warmers that keep you cozy without losing drip.</p>
+                        <a href="https://wa.me/2349112636659?text=Hello,%20I'm%20interested%20in%20ordering%20a%20Headwarmer!" target="_blank" class="btn btn-outline" style="width: 100%; font-size: 0.9rem; padding: 0.7rem;">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span>Simple & Direct</span>
+                <h2>How To Get Yours</h2>
+                <p>No complicated checkouts or web forms. Get your gear in 3 easy steps.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-binoculars"></i>
+                    <h3>Browse & Choose</h3>
+                    <p>Check out our latest drops here or on our Instagram page and pick your vibe.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>Chat on WhatsApp</h3>
+                    <p>Click any order button to jump straight into our WhatsApp chat with your choice.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-box-open"></i>
+                    <h3>Secure & Receive</h3>
+                    <p>Confirm your details and receive your fresh headwear right at your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY & REELS SECTION -->
+    <section id="community" class="community-section">
+        <div class="container community-grid">
+            <div class="community-content">
+                <span>Join The Movement</span>
+                <h2>Powered By Reels & Word of Mouth</h2>
+                <p>We love seeing how you style your Eazee piece! Catch our latest styling videos on Instagram, participate in our regular referral giveaways, and join the community of trendsetters.</p>
+                <div class="perks-list">
+                    <div class="perkWrap">
+                        <i class="fas fa-check"></i> Exclusive Instagram Reel Drops & Styling Tips
+                    </div>
+                    <div class="perkWrap">
+                        <i class="fas fa-check"></i> Exciting Referral Giveaways & Freebies
+                    </div>
+                    <div class="perkWrap">
+                        <i class="fas fa-check"></i> Direct, friendly chats with the team
+                    </div>
+                </div>
+                <a href="https://instagram.com" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-instagram"></i> Follow on Instagram
+                </a>
+            </div>
+            <div class="instagram-mockup">
+                <div class="ig-header">
+                    <div class="ig-avatar">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="ig-name">
+                        <h4>eazee_headwears</h4>
+                        <span>Instagram Reel • Fresh Drop</span>
+                    </div>
+                </div>
+                <div class="ig-reel-frame">
+                    <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=600&q=80" alt="Eazee Headwears Instagram Reel Style">
+                    <div class="ig-overlay">
+                        <p style="font-size: 0.9rem; font-weight: 600; margin: 0;">Confidence Made Easy. Grab yours today! 🔥</p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: 0.9rem;">
+                    <span><i class="fas fa-heart" style="color: #dc2743;"></i> Loved by style enthusiasts</span>
+                    <a href="https://wa.me/2349112636659" target="_blank" style="color: var(--primary); font-weight: 700;">Shop Reel Look →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span>Got Questions?</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about ordering from Eazee Headwears.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I place an order?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ordering is super easy! Simply click any of the WhatsApp buttons on our website. It will take you straight to our WhatsApp chat (+234 911 263 6659) where you can tell us the cap or headwear style you want.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you deliver outside my city?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer reliable delivery services so you can get your favourite headwears no matter where you are located.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I join the referral giveaways?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Keep an eye on our Instagram page and WhatsApp updates! We regularly host referral giveaways and reward our loyal community members with free gear.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What types of headwears do you sell?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We specialize in caps, fitted hats, snapbacks, and warmers curated specifically for style-conscious young Nigerians.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">Eazee<span>Headwears</span></a>
+                    <p>Confidence Made Easy. Premium caps, fitted hats, snapbacks, and headwarmers built for the modern Nigerian youth.</p>
+                    <div class="social-icons">
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/2349112636659" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#collection">Collection</a></li>
+                        <li><a href="#how-it-works">How to Order</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><a href="tel:+2349112636659"><i class="fas fa-phone-alt"></i> +234 911 263 6659</a></li>
+                        <li><a href="https://wa.me/2349112636659" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram Reels</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Eazee Headwears. All rights reserved.</p>
+                <p>Confidence Made Easy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/2349112636659?text=Hello%20Eazee%20Headwears,%20I'm%20ready%20to%20order!" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.querySelector('i').classList.remove('fa-times');
+                hamburger.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // FAQ Accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
