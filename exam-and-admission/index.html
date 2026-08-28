@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam and Admission - Premium Academic Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0F172A;
+            --primary-light: #1E293B;
+            --accent: #C5A059;
+            --accent-hover: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #DFBD6D 0%, #C5A059 50%, #9A7B38 100%);
+            --text-main: #334155;
+            --text-light: #64748B;
+            --bg-offwhite: #F8FAFC;
+            --bg-dark: #0B0F19;
+            --white: #FFFFFF;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-elegant: 0 20px 40px -15px rgba(15, 23, 42, 0.07);
+            --shadow-gold: 0 10px 30px -10px rgba(197, 160, 89, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.25rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: var(--bg-dark);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px -5px rgba(197, 160, 89, 0.5);
+            background: linear-gradient(135deg, #E6C87D 0%, #D4AF37 50%, #A68541 100%);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(197, 160, 89, 0.5);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(197, 160, 89, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 90px;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(11, 15, 25, 0.95), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 30px;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 8rem 0;
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .about-badge-box {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            box-shadow: var(--shadow-elegant);
+            max-width: 300px;
+        }
+
+        .about-badge-box h4 {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-badge-box p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 3vw, 2.75rem);
+            line-height: 1.2;
+            color: var(--primary);
+        }
+
+        .about-text {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .feature-item i {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-top: 0.2rem;
+        }
+
+        .feature-item span {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 8rem 0;
+            background-color: var(--bg-offwhite);
+        }
+
+        .services-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-elegant);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--accent);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(197, 160, 89, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gold-gradient);
+            color: var(--bg-dark);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            font-weight: 600;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-link:hover {
+            color: var(--accent);
+        }
+
+        .service-link i {
+            transition: var(--transition);
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* EXPERTISE HIGHLIGHT BANNER */
+        .cta-banner {
+            padding: 6rem 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            color: var(--white);
+            font-size: clamp(2.25rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+        }
+
+        /* WHY CHOOSE US SECTION */
+        .why-us {
+            padding: 8rem 0;
+            background-color: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .why-card {
+            padding: 2.5rem;
+            border: 1px solid rgba(100, 116, 139, 0.15);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .why-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.4;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            padding: 8rem 0;
+            background-color: var(--bg-offwhite);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        .contact-info-box {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 3rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-elegant);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info-box h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-box p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+        }
+
+        .contact-detail-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .contact-detail-item h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-detail-item p, .contact-detail-item a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .contact-detail-item a:hover {
+            color: var(--accent);
+        }
+
+        .contact-form-wrapper {
+            background: var(--white);
+            padding: 4rem 3rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-wrapper p {
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            border-radius: 4px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            color: var(--primary);
+            transition: var(--transition);
+            background: var(--bg-offwhite);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--bg-dark);
+            color: var(--white);
+            padding: 5rem 0 2rem 0;
+            border-top: 1px solid rgba(197, 160, 89, 0.15);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact-item i {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* FLOATING WHATSAPP BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #22bf5b;
+        }
+
+        /* MEDIA QUERIES */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-success {
+            display: none;
+            background: rgba(37, 211, 102, 0.1);
+            border: 1px solid #25D366;
+            color: #1e5c35;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        @media (max-width: 1024px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .about-badge-box {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin-top: -50px;
+                margin-left: 20px;
+                max-width: 100%;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: var(--primary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .hamburger {
+                display: block;
+            }
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .contact-info-box, .contact-form-wrapper {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-text">Exam & Admission</span>
+                <span class="logo-sub">Academic Consulting</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#why-us" class="nav-link">Why Choose Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-graduation-cap"></i> Premier Academic Support
+                </div>
+                <h1>Master Your Exams. Secure Your <span>Admission.</span></h1>
+                <p>Your trusted expert partner for comprehensive solutions to all WAEC, NECO, GCE, and JAMB related issues, guiding you seamlessly to academic excellence and university placement.</p>
+                <div class="hero-btns">
+                    <a href="tel:08067365669" class="btn btn-gold">
+                        <i class="fas fa-phone-alt"></i> Call Us Now
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        Get Professional Help
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1000&auto=format&fit=crop" alt="Students studying successfully" class="about-image">
+                    <div class="about-badge-box">
+                        <h4>Expert Guidance</h4>
+                        <p>Navigating complex registration, result corrections, and placement procedures with precision.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="section-header">
+                        <span class="section-subtitle">About Our Consultancy</span>
+                        <h2 class="section-title">Dedicated to Your Academic Advancement</h2>
+                    </div>
+                    <p class="about-text">At Exam and Admission, we understand that educational milestones can sometimes come with structural and administrative hurdles. Whether it's sorting out irregularities, registration challenges, or admission placement bottlenecks across major examinations, our specialized team is positioned to provide clear, reliable, and swift solutions.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>JAMB Registration & Processing</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>WAEC, NECO & GCE Solutions</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Result Rectification Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>University Admission Tracking</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/2348067365669?text=Hello%2C%20I%20need%20help%20with%20my%20exam%20or%20admission%20issues." target="_blank" class="btn btn-gold">
+                        <i class="fab fa-whatsapp"></i> Chat On WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="services-header">
+                <span class="section-subtitle">Our Core Expertise</span>
+                <h2 class="section-title">Comprehensive Academic Solutions</h2>
+                <p style="color: var(--text-light); margin-top: 1rem;">We handle a wide array of educational administrative bottlenecks so you can focus entirely on your studies and future career.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>JAMB Services</h3>
+                    <p>Complete assistance with UTME/DE registration, profile creation, change of institution/course, result checking, and admission letter printing issues.</p>
+                    <a href="#contact" class="service-link">Resolve Issue <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>WAEC, NECO & GCE</h3>
+                    <p>Guidance and troubleshooting for school and external examinations. Registration support, certificate collection guidance, and result verification procedures.</p>
+                    <a href="#contact" class="service-link">Resolve Issue <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Result Rectification</h3>
+                    <p>Professional assistance with correcting withheld results, data mismatches, name corrections, and missing grades on examination boards database systems.</p>
+                    <a href="#contact" class="service-link">Resolve Issue <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Admission Support</h3>
+                    <p>Strategic counseling and tracking through the central admissions processing system (CAPS) to ensure your university or tertiary placement is successful.</p>
+                    <a href="#contact" class="service-link">Resolve Issue <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Facing Exam or Admission Complications?</h2>
+                <p>Do not let administrative errors or registration delays stall your educational goals. Reach out to our specialist team for fast, effective solutions today.</p>
+                <a href="tel:08067365669" class="btn btn-gold">
+                    <i class="fas fa-phone-alt"></i> Speak With An Expert: 0806 736 5669
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="services-header">
+                <span class="section-subtitle">The Distinction</span>
+                <h2 class="section-title">Why Students Trust Exam & Admission</h2>
+                <p style="color: var(--text-light); margin-top: 1rem;">We combine deep system familiarity with absolute dedication to student success.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-number">01</div>
+                    <h3>Deep Expertise</h3>
+                    <p>Comprehensive understanding of the regulatory frameworks, procedures, and portals for WAEC, NECO, GCE, and JAMB.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-number">02</div>
+                    <h3>Prompt Assistance</h3>
+                    <p>We prioritize urgent academic timelines, ensuring your registration updates or corrections are handled swiftly.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-number">03</div>
+                    <h3>Reliable Guidance</h3>
+                    <p>Honest, direct, and transparent advisory services tailored to clear out barriers standing between you and your admission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 700px; margin: 0 auto 4rem auto;">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Let Us Solve Your Academic Hurdles</h2>
+                <p style="color: var(--text-light); margin-top: 1rem;">Call us directly or send a message detailing your challenge for prompt attention.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-box">
+                    <div>
+                        <h3>Contact Information</h3>
+                        <p>Reach out to us through any of the channels below. We are ready to assist you with your exam and admission needs.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h4>Phone Number</h4>
+                                    <p><a href="tel:08067365669">0806 736 5669</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <h4>WhatsApp Chat</h4>
+                                    <p><a href="https://wa.me/2348067365669?text=Hello%2C%20I%20need%20help%20with%20my%20exam%20or%20admission%20issues." target="_blank">0806 736 5669</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Working Hours</h4>
+                                    <p>Monday – Saturday: 8:00 AM – 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                        Exam and Admission Professional Consultancy Services.
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3>Send Us a Message</h3>
+                    <p>Fill out the form below and we will get back to you promptly.</p>
+                    
+                    <div class="form-success" id="formSuccess">
+                        Thank you! Your message has been received. We will contact you shortly.
+                    </div>
+
+                    <form id="consultForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Select Area of Need</option>
+                                <option value="JAMB">JAMB Related Issue</option>
+                                <option value="WAEC/NECO/GCE">WAEC / NECO / GCE Issue</option>
+                                <option value="Admission">Admission Processing / CAPS</option>
+                                <option value="Result Correction">Result Rectification</option>
+                                <option value="Other">Other Academic Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Describe your challenge in detail..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1.5rem;">
+                        <span class="logo-text">Exam & Admission</span>
+                        <span class="logo-sub">Academic Consulting</span>
+                    </div>
+                    <p>Providing expert advisory and administrative resolution services for students encountering challenges with WAEC, NECO, GCE, and JAMB.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Us</a>
+                        <a href="#services">Services</a>
+                        <a href="#why-us">Why Choose Us</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <div class="footer-links">
+                        <a href="#services">JAMB Processing</a>
+                        <a href="#services">WAEC & NECO Support</a>
+                        <a href="#services">Result Rectification</a>
+                        <a href="#services">Admission Guidance</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:08067365669">0806 736 5669</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/2348067365669?text=Hello%2C%20I%20need%20help%20with%20my%20exam%20or%20admission%20issues." target="_blank">Chat on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Exam and Admission. All Rights Reserved.</p>
+                <p>Professional Academic Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/2348067365669?text=Hello%2C%20I%20need%20help%20with%20my%20exam%20or%20admission%20issues." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Set Current Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if(navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.querySelector('i').classList.remove('fa-times');
+                hamburger.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Form submission simulation
+        const consultForm = document.getElementById('consultForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        consultForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formSuccess.style.display = 'block';
+            consultForm.reset();
+            setTimeout(() => {
+                formSuccess.style.display = 'none';
+            }, 6000);
+        });
+
+        // Header style change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(11, 15, 25, 0.98)';
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
