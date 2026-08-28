@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Design Loft — Crafting Stellar & Memorable Brands</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        loft: {
+                            dark: '#121212',
+                            card: '#1A1A1A',
+                            light: '#F8F9FA',
+                            accent: '#C5A880', /* Soft warm metallic gold */
+                            muted: '#8A8A8A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom smooth aesthetics for minimal dark luxury */
+        body {
+            background-color: #121212;
+            color: #F8F9FA;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D2D2D;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A880;
+        }
+        .glass-nav {
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #C5A880;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#C5A880] selection:text-black">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl tracking-wider font-serif font-bold uppercase text-white flex items-center gap-2">
+                <span class="inline-block w-3 h-3 bg-[#C5A880] rounded-full"></span>
+                The Design Loft
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#about" class="text-zinc-400 hover:text-white transition-colors">About</a>
+                <a href="#services" class="text-zinc-400 hover:text-white transition-colors">Services</a>
+                <a href="#process" class="text-zinc-400 hover:text-white transition-colors">Process</a>
+                <a href="#faq" class="text-zinc-400 hover:text-white transition-colors">FAQ</a>
+                <a href="#contact" class="text-zinc-400 hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA / Phone -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="tel:08143543033" class="text-xs tracking-widest text-[#C5A880] uppercase border border-[#C5A880]/30 px-4 py-2 rounded-full hover:bg-[#C5A880] hover:text-black transition-all duration-300">
+                    <i class="fa-solid fa-phone mr-2"></i> 08143543033
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-white text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-[#121212] border-b border-white/10 px-6 py-6 flex flex-col space-y-4">
+            <a href="#about" class="mobile-link text-zinc-300 text-lg hover:text-[#C5A880]">About</a>
+            <a href="#services" class="mobile-link text-zinc-300 text-lg hover:text-[#C5A880]">Services</a>
+            <a href="#process" class="mobile-link text-zinc-300 text-lg hover:text-[#C5A880]">Process</a>
+            <a href="#faq" class="mobile-link text-zinc-300 text-lg hover:text-[#C5A880]">FAQ</a>
+            <a href="#contact" class="mobile-link text-zinc-300 text-lg hover:text-[#C5A880]">Contact</a>
+            <div class="pt-4 border-t border-white/10">
+                <a href="tel:08143543033" class="inline-block text-center w-full text-xs tracking-widest text-black bg-[#C5A880] uppercase py-3 rounded-full font-semibold">
+                    Call 08143543033
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#C5A880]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs tracking-widest text-[#C5A880] uppercase mb-8">
+                <i class="fa-regular fa-star"></i> Creative Studio & Design Consultancy
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-[1.1] mb-8">
+                Crafting stellar & memorable brands, <span class="italic font-normal text-[#C5A880]">one design at a time.</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-zinc-400 font-light leading-relaxed mb-12">
+                Professional, appointment-only creative design services focused on strategic focus, high-impact visuals, and digital delivery.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-[#C5A880] text-black font-semibold tracking-wider text-sm uppercase rounded-full hover:bg-white transition-all duration-300">
+                    Book an Appointment
+                </a>
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 bg-transparent text-white border border-white/20 font-medium tracking-wider text-sm uppercase rounded-full hover:border-[#C5A880] hover:text-[#C5A880] transition-all duration-300">
+                    Explore Services
+                </a>
+            </div>
+
+            <!-- Quick Trust Bar -->
+            <div class="mt-20 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-1">100%</h3>
+                    <p class="text-xs text-zinc-400 uppercase tracking-wider">Digital Delivery</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-1">9:00 AM</h3>
+                    <p class="text-xs text-zinc-400 uppercase tracking-wider">Daily Start Time</p>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h3 class="text-2xl font-serif font-bold text-white mb-1">Appointment</h3>
+                    <p class="text-xs text-zinc-400 uppercase tracking-wider">Focused Attention</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-[#161616] border-y border-white/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <span class="text-xs tracking-widest text-[#C5A880] uppercase block mb-3">The Design Philosophy</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold leading-snug mb-6">
+                        Dedicated focus for brands that refuse to blend in.
+                    </h2>
+                    <p class="text-zinc-400 leading-relaxed font-light mb-6">
+                        At The Design Loft, quality supersedes quantity. Operating strictly on an appointment-only basis starting from 9:00 AM allows complete dedication of strategic focus to your brand.
+                    </p>
+                    <p class="text-zinc-400 leading-relaxed font-light">
+                        Every asset produced—from comprehensive brand guidelines to specialized event branding—is meticulously crafted and delivered digitally as high-resolution files ready for immediate deployment.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-[#1A1A1A] p-8 rounded-2xl border border-white/5">
+                        <div class="w-12 h-12 rounded-xl bg-[#C5A880]/10 text-[#C5A880] flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold mb-3">Strategic Focus</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                            No rushing or multitasking. Your brand receives uninterrupted creative attention during scheduled slots.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#1A1A1A] p-8 rounded-2xl border border-white/5">
+                        <div class="w-12 h-12 rounded-xl bg-[#C5A880]/10 text-[#C5A880] flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-cloud-arrow-down"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold mb-3">Digital Excellence</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                            All creations are delivered digitally as high-quality documents optimized for print and web applications.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#1A1A1A] p-8 rounded-2xl border border-white/5 sm:col-span-2">
+                        <div class="w-12 h-12 rounded-xl bg-[#C5A880]/10 text-[#C5A880] flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold mb-3">Appointment-Only Workflow</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                            Open daily starting from 9:00 AM. This structured approach guarantees that each project is given the depth and clarity required to stand out in the marketplace.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-28">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <span class="text-xs tracking-widest text-[#C5A880] uppercase block mb-3">What We Offer</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold mb-6">Professional Design Services</h2>
+                <p class="text-zinc-400 font-light">Comprehensive design solutions tailored to elevate your business identity, marketing collateral, and specialized event needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Brand Identity -->
+                <div class="service-card bg-[#1A1A1A] border border-white/10 rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-[#C5A880]/10 text-[#C5A880] flex items-center justify-center text-2xl mb-8">
+                            <i class="fa-solid fa-fingerprint"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Brand Identity</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed mb-6">
+                            Establish a timeless presence with distinctive visual foundations that speak directly to your target audience.
+                        </p>
+                        <ul class="space-y-3 text-sm text-zinc-300 mb-8 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#C5A880] text-xs"></i> Custom Logo Design</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#C5A880] text-xs"></i> Full Business Branding</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#C5A880] text-xs"></i> Comprehensive Brand Guidelines</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs tracking-widest text-[#C5A880] uppercase font-semibold hover:text-white transition-colors">
+                        Book This Service <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Marketing Materials -->
+                <div class="service-card bg-[#1A1A1A] border border-white/10 rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-[#C5A880]/10 text-[#C5A880] flex items-center justify-center text-2xl mb-8">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Marketing Materials</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed mb-6">
+                            Grab attention across physical and digital mediums with compelling graphics designed to convert.
+                        </p>
+                        <ul class="space-y-3 text-sm text-zinc-300 mb-8 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#C5A880] text-xs"></i> Promotional Flyers</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#C5A880] text-xs"></i> Banners & Handbills</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#C5A880] text-xs"></i> High-Impact Social Media Graphics</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs tracking-widest text-[#C5A880] uppercase font-semibold hover:text-white transition-colors">
+                        Book This Service <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Specialized Designs -->
+                <div class="service-card bg-[#1A1A1A] border border-white/10 rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-[#C5A880]/10 text-[#C5A880] flex items-center justify-center text-2xl mb-8">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Specialized Designs</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed mb-6">
+                            Custom solutions for unique occasions, elections, hospitality, and corporate events.
+                        </p>
+                        <ul class="space-y-3 text-sm text-zinc-300 mb-8 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#C5A880] text-xs"></i> Restaurant Menus (Editable Prices)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#C5A880] text-xs"></i> Election & Campaign Materials</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-[#C5A880] text-xs"></i> Event Branding (Tickets, Banners, Panelist Confirmations)</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs tracking-widest text-[#C5A880] uppercase font-semibold hover:text-white transition-colors">
+                        Book This Service <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow / Process Section -->
+    <section id="process" class="py-24 bg-[#161616] border-y border-white/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <span class="text-xs tracking-widest text-[#C5A880] uppercase block mb-3">How We Collaborate</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">A Streamlined Experience</h2>
+                <p class="text-zinc-400 font-light">From initial contact to final digital delivery, working together is effortless.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="relative p-8 rounded-2xl bg-[#1A1A1A] border border-white/5">
+                    <span class="absolute top-6 right-6 text-3xl font-serif font-bold text-white/10">01</span>
+                    <h3 class="text-xl font-serif font-bold mb-4 text-[#C5A880]">Schedule Appointment</h3>
+                    <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                        Reach out via phone or message to secure your dedicated consultation slot starting from 9:00 AM onwards.
+                    </p>
+                </div>
+
+                <div class="relative p-8 rounded-2xl bg-[#1A1A1A] border border-white/5">
+                    <span class="absolute top-6 right-6 text-3xl font-serif font-bold text-white/10">02</span>
+                    <h3 class="text-xl font-serif font-bold mb-4 text-[#C5A880]">Strategic Crafting</h3>
+                    <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                        Focused creative execution tailored specifically to your brand requirements, ensuring memorable visuals.
+                    </p>
+                </div>
+
+                <div class="relative p-8 rounded-2xl bg-[#1A1A1A] border border-white/5">
+                    <span class="absolute top-6 right-6 text-3xl font-serif font-bold text-white/10">03</span>
+                    <h3 class="text-xl font-serif font-bold mb-4 text-[#C5A880]">Digital Handover</h3>
+                    <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                        Receive your completed assets as pristine, high-quality documents ready for immediate print or digital deployment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-28">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-xs tracking-widest text-[#C5A880] uppercase block mb-3">Common Questions</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-[#1A1A1A] border border-white/10 rounded-xl p-6 transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer font-medium text-lg text-white">
+                        <span>How do appointments work?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#C5A880]"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-zinc-400 text-sm font-light leading-relaxed">
+                        We work on a strictly appointment-only basis starting from 9:00 AM every business day. This allows us to dedicate undivided strategic attention to your specific project without distractions.
+                    </p>
+                </details>
+
+                <details class="group bg-[#1A1A1A] border border-white/10 rounded-xl p-6 transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer font-medium text-lg text-white">
+                        <span>How are completed designs delivered?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#C5A880]"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-zinc-400 text-sm font-light leading-relaxed">
+                        Everything created at The Design Loft is delivered digitally as high-quality documents tailored for your specific output requirements (print-ready files, vector formats, or web-optimized social media graphics).
+                    </p>
+                </details>
+
+                <details class="group bg-[#1A1A1A] border border-white/10 rounded-xl p-6 transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer font-medium text-lg text-white">
+                        <span>Can restaurant menus have editable price sections?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#C5A880]"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-zinc-400 text-sm font-light leading-relaxed">
+                        Yes! Specialized restaurant menus are designed with editable price sections so you can conveniently update items and pricing whenever necessary.
+                    </p>
+                </details>
+
+                <details class="group bg-[#1A1A1A] border border-white/10 rounded-xl p-6 transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer font-medium text-lg text-white">
+                        <span>What types of event branding do you handle?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#C5A880]"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="mt-4 text-zinc-400 text-sm font-light leading-relaxed">
+                        We design comprehensive event collateral including custom event tickets, venue banners, election campaign materials, and professional panelist confirmations.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section id="contact" class="py-28 bg-[#161616] border-t border-white/10 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Info Column -->
+                <div class="lg:col-span-5">
+                    <span class="text-xs tracking-widest text-[#C5A880] uppercase block mb-3">Get in Touch</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold mb-6 leading-tight">
+                        Let's craft your stellar brand together.
+                    </h2>
+                    <p class="text-zinc-400 font-light leading-relaxed mb-8">
+                        Ready to give your brand the strategic focus it deserves? Reach out directly to book your appointment starting from 9:00 AM.
+                    </p>
+
+                    <div class="space-y-6">
+                        <a href="tel:08143543033" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-white/10 flex items-center justify-center text-[#C5A880] group-hover:bg-[#C5A880] group-hover:text-black transition-all">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-zinc-500 uppercase tracking-wider block">Direct Phone / WhatsApp</span>
+                                <span class="text-lg font-medium text-white group-hover:text-[#C5A880] transition-colors">08143543033</span>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-white/10 flex items-center justify-center text-[#C5A880]">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-zinc-500 uppercase tracking-wider block">Working Hours</span>
+                                <span class="text-lg font-medium text-white">Appointment Only (From 9:00 AM)</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-white/10 flex items-center justify-center text-[#C5A880]">
+                                <i class="fa-solid fa-cloud"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-zinc-500 uppercase tracking-wider block">Delivery Method</span>
+                                <span class="text-lg font-medium text-white">High-Quality Digital Documents</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7 bg-[#1A1A1A] border border-white/10 p-8 sm:p-10 rounded-2xl">
+                    <h3 class="text-2xl font-serif font-bold mb-2">Book a Consultation</h3>
+                    <p class="text-zinc-400 text-sm font-light mb-8">Fill out the form below or message directly via phone/WhatsApp.</p>
+
+                    <form id="booking-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2 font-medium">Your Name</label>
+                                <input type="text" required class="w-full bg-[#121212] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-zinc-600 focus:outline-none focus:border-[#C5A880] transition-colors text-sm" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2 font-medium">Phone Number</label>
+                                <input type="tel" required class="w-full bg-[#121212] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-zinc-600 focus:outline-none focus:border-[#C5A880] transition-colors text-sm" placeholder="08143543033">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2 font-medium">Select Service Needed</label>
+                            <select class="w-full bg-[#121212] border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-[#C5A880] transition-colors text-sm">
+                                <option>Brand Identity (Logos, Guidelines)</option>
+                                <option>Marketing Materials (Flyers, Banners, Socials)</option>
+                                <option>Specialized Design (Menus, Election, Event Branding)</option>
+                                <option>General Creative Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2 font-medium">Project Details & Preferred Time</label>
+                            <textarea rows="4" required class="w-full bg-[#121212] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-zinc-600 focus:outline-none focus:border-[#C5A880] transition-colors text-sm" placeholder="Tell us about your project... (Appointments start from 9:00 AM)"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-[#C5A880] text-black font-semibold tracking-wider text-sm uppercase rounded-xl hover:bg-white transition-all duration-300">
+                            Submit Request
+                        </button>
+
+                        <div id="form-success" class="hidden text-center text-emerald-400 text-sm mt-4 font-medium">
+                            Thank you! Your inquiry has been received. We will contact you shortly.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#121212] border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <a href="#" class="text-lg tracking-wider font-serif font-bold uppercase text-white flex items-center justify-center md:justify-start gap-2">
+                    <span class="inline-block w-2.5 h-2.5 bg-[#C5A880] rounded-full"></span>
+                    The Design Loft
+                </a>
+                <p class="text-xs text-zinc-500 mt-2">Crafting stellar and memorable brands, one design at a time.</p>
+            </div>
+
+            <div class="flex items-center space-x-6 text-sm text-zinc-400">
+                <a href="tel:08143543033" class="hover:text-[#C5A880] transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-xs text-[#C5A880]"></i> 08143543033
+                </a>
+            </div>
+
+            <div class="text-xs text-zinc-600 text-center md:text-right">
+                &copy; <span id="current-year"></span> The Design Loft. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submission Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successMsg = document.getElementById('form-success');
+            const form = document.getElementById('booking-form');
+            
+            successMsg.classList.remove('hidden');
+            form.reset();
+
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
