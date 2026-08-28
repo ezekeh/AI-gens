@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-vidth, initial-scale=1.0">
+    <title>AVANTA | Timeless Heritage Clothing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #2b1d11;
+            --secondary-dark: #3c2a1a;
+            --accent-gold: #c5a059;
+            --accent-gold-light: #e6c587;
+            --bg-parchment: #f4efe6;
+            --bg-cream: #faf7f2;
+            --text-main: #332211;
+            --text-muted: #665544;
+            --border-antique: #d4c5b9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--bg-parchment);
+            color: var(--text-main);
+            line-height: 1.7;
+            background-image: radial-gradient(var(--border-antique) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background-color: var(--primary-dark);
+            color: var(--accent-gold-light);
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 8px 15px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--bg-cream);
+            border-bottom: 2px solid var(--accent-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(43, 29, 17, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            color: var(--secondary-dark);
+            text-transform: uppercase;
+            position: window;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-cta {
+            border: 1px solid var(--accent-gold);
+            padding: 8px 20px;
+            background: transparent;
+            color: var(--primary-dark);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(43, 29, 17, 0.7), rgba(43, 29, 17, 0.7)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 160px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--bg-parchment);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 14px 35px;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid var(--accent-gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        /* Section Header Layout */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-gold);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--bg-cream);
+            border-bottom: 1px solid var(--border-antique);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border: 8px solid var(--white);
+            box-shadow: 0 10px 30px rgba(43, 29, 17, 0.15);
+            display: block;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 2px solid var(--accent-gold);
+            z-index: -1;
+        }
+
+        /* Collections / Gallery Section */
+        .collections {
+            padding: 100px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            background: var(--white);
+            border: 1px solid var(--border-antique);
+            padding: 12px;
+            box-shadow: 0 6px 20px rgba(43, 29, 17, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 380px;
+        }
+
+        .gallery-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 20px 10px 10px;
+            text-align: center;
+        }
+
+        .gallery-caption h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-caption p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        /* Features / Craftsmanship Section */
+        .craftsmanship {
+            padding: 100px 0;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            background-image: linear-gradient(rgba(43, 29, 17, 0.9), rgba(43, 29, 17, 0.9)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1920&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .craftsmanship .section-header h2 {
+            color: var(--white);
+        }
+
+        .craftsmanship .section-header p {
+            color: var(--accent-gold-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: rgba(60, 42, 26, 0.75);
+            border: 1px solid var(--accent-gold);
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .feature-card p {
+            color: var(--bg-parchment);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--bg-cream);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            background: var(--white);
+            border: 1px solid var(--border-antique);
+            padding: 60px;
+            box-shadow: 0 10px 30px rgba(43, 29, 17, 0.05);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-detail-icon {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            margin-right: 20px;
+            margin-top: 3px;
+        }
+
+        .contact-detail-text h4 {
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-detail-text a, .contact-detail-text span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-detail-text a:hover {
+            color: var(--accent-gold);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--bg-parchment);
+            border: 1px solid var(--border-antique);
+            font-family: 'Lora', serif;
+            color: var(--text-main);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--bg-parchment);
+            padding: 60px 0 30px;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            color: var(--bg-parchment);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            max-width: 350px;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: var(--bg-parchment);
+            font-size: 0.95rem;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 197, 185, 0.2);
+            font-size: 0.85rem;
+            color: var(--border-antique);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .about-grid,
+            .contact-wrapper,
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .gallery-grid,
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-cream);
+                padding: 20px 0;
+                border-bottom: 2px solid var(--accent-gold);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .gallery-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-wrapper {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        EST. FOR THE DISTINGUISHED WARDROBE — BESPOKE CRAFTSMANSHIP & HERITAGE TAILORING
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">Avanta</a>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#craftsmanship">Craftsmanship</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="nav-cta">Inquire Now</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                &#9776;
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>AVANTA</h1>
+            <p>Where classical elegance meets enduring distinction. Discover garments tailored with time-honored artistry.</p>
+            <a href="#collections" class="btn">Explore Collections</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                        <h2 style="font-size: 2rem;">Our Heritage</h2>
+                        <p style="margin-top: 5px;">A dedication to classical sartorial excellence.</p>
+                    </div>
+                    <p>Avanta stands as a beacon of refined tailoring, preserving the meticulous standards of classic haberdashery and apparel design. We believe that true style transcends fleeting seasons.</p>
+                    <p>Every piece in our collection is curated with an unwavering focus on noble silhouettes, exceptional drape, and durable fabrics that speak softly yet command presence.</p>
+                    <a href="#contact" class="btn" style="margin-top: 15px;">Connect With Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Avanta Tailoring Heritage">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections / Gallery Section -->
+    <section id="collections" class="collections">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Collections</h2>
+                <p>Curated attire for the discerning individual.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="Classic Tailoring">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Sartorial Excellence</h4>
+                        <p>Structured cuts and noble wools</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=600&q=80" alt="Heritage Outerwear">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Heritage Outerwear</h4>
+                        <p>Overcoats crafted for longevity</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="Refined Essentials">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Refined Essentials</h4>
+                        <p>Understated elegance for daily wear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craftsmanship Features Section -->
+    <section id="craftsmanship" class="craftsmanship">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Pillars of Avanta</h2>
+                <p>Principles that guide our dedication to fine apparel.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#9830;</div>
+                    <h3>Superior Fabrics</h3>
+                    <p>Sourced exclusively from time-tested textile mills known for genuine weight, texture, and durability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9830;</div>
+                    <h3>Thoughtful Silhouette</h3>
+                    <p>Designed around classic proportions that honor the human form with dignity and grace.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9830;</div>
+                    <h3>Lasting Legacy</h3>
+                    <p>Garments built not merely for the current calendar, but to become treasured staples of your wardrobe for years to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Inquiries & Consultations</h2>
+                <p>Reach out to discuss your apparel preferences and bespoke requests.</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>We welcome your communications regarding our collections, availability, and personalized fittings.</p>
+                    
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">&#9990;</div>
+                        <div class="contact-detail-text">
+                            <h4>Telephone / WhatsApp</h4>
+                            <a href="tel:+2349135962663">+234 913 596 2663</a><br>
+                            <a href="https://wa.me/2349135962663" target="_blank" style="color: var(--accent-gold); font-size: 0.85rem; text-decoration: underline; margin-top: 4px; display: inline-block;">Send a WhatsApp Message</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">&#9993;</div>
+                        <div class="contact-detail-text">
+                            <h4>Direct Correspondence</h4>
+                            <span>inquiries@avanta-brand.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">&#9873;</div>
+                        <div class="contact-detail-text">
+                            <h4>Hours of Operation</h4>
+                            <span>Monday – Saturday: 9:00 AM – 6:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="inquiryForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required placeholder="Lord/Lady/Mr./Ms.">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Telephone / WhatsApp</label>
+                            <input type="tel" id="phone" required placeholder="+234...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Inquiry</label>
+                            <textarea id="message" required placeholder="Kindly state your interest regarding our garments..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Dispatch Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Avanta</a>
+                    <p>Clothing crafted with classical discipline and timeless distinction. Designed for those who appreciate heritage elegance.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#about">About Heritage</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#craftsmanship">Craftsmanship</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Direct Contact</h4>
+                    <p><a href="tel:+2349135962663">+234 913 596 2663</a></p>
+                    <p><a href="https://wa.me/2349135962663" target="_blank">Chat via WhatsApp</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear"></span> AVANTA. All Rights Reserved. Tailored for Eternity.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Dynamic Copyright Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Simple Form Submission Handler routing directly to WhatsApp logic or prompt
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappUrl = `https://wa.me/2349135962663?text=Greeting%20Avanta,%20my%20name%20is%20${encodeURIComponent(name)}%20(${encodeURIComponent(phone)}).%20${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
