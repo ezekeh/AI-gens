@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glory Apparel | Classic Fashion Designer for Men & Women</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1A1A1A;
+            --secondary: #C5A059;
+            --secondary-dark: #A3813E;
+            --light: #F9F8F6;
+            --white: #FFFFFF;
+            --gray: #777777;
+            --light-gray: #EAE6DF;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.9rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--white);
+            border-color: var(--secondary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-dark);
+            border-color: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-dark-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-dark-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-cta {
+            background-color: var(--secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            color: var(--white) !important;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--secondary-dark);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            color: var(--light-gray);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Section Global Styling */
+        section {
+            padding: 7rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+        }
+
+        .about-img-main {
+            width: 85%;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-img-sub {
+            position: absolute;
+            bottom: -30px;
+            right: 0;
+            width: 55%;
+            border-radius: 4px;
+            border: 8px solid var(--light);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-item i {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin-top: 0.2rem;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Services & Collections Section */
+        .services {
+            background-color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .service-img {
+            height: 320px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .service-info {
+            padding: 2rem;
+        }
+
+        .service-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--light-gray);
+            padding-top: 1rem;
+        }
+
+        .service-price {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Gallery / Showcase Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 350px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            color: var(--white);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Why Choose Us Section */
+        .benefits {
+            background-color: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--light);
+            border-radius: 4px;
+            border: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--secondary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--light);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid var(--light-gray);
+        }
+
+        .testimonial-card i {
+            color: var(--secondary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-card p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .client-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .client-info span {
+            font-size: 0.85rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Call To Action Banner */
+        .cta-banner {
+            background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .cta-banner h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            font-weight: 300;
+        }
+
+        /* Contact & Booking Section */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info-box h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-box p {
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light);
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 1px solid var(--light-gray);
+        }
+
+        .contact-text h4 {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-text a, .contact-text span {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .contact-text a:hover {
+            color: var(--secondary);
+        }
+
+        .contact-form {
+            background-color: var(--light);
+            padding: 3rem;
+            border-radius: 4px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background-color: var(--white);
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 140px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 5rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #22bf5b;
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3rem; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-images { max-width: 500px; margin: 0 auto; }
+            .services-grid, .benefits-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                padding: 2rem;
+                text-align: center;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 { font-size: 2.4rem; }
+            .hero-btns { flex-direction: column; }
+            .section-title { font-size: 2.2rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">GLORY <span>APPAREL</span></a>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Collections</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#benefits">Why Us</a></li>
+                    <li><a href="#contact" class="nav-cta">Book Consultation</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-subtitle">Classic Fashion Designer</span>
+                <h1>Exquisite Dresses for Men & Women</h1>
+                <p>Redefining elegance with custom-crafted, beautiful outfits tailored perfectly to your unique style at wonderfully affordable prices.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Book Consultation <i class="fas fa-arrow-right"></i></a>
+                    <a href="#services" class="btn btn-outline">Explore Collections</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Fashion Design Process" class="about-img-main">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600&auto=format&fit=crop" alt="Tailoring Details" class="about-img-sub">
+                </div>
+                <div class="about-content">
+                    <span class="section-subtitle">About Glory Apparel</span>
+                    <h3>Crafting Timeless Style With Exceptional Precision</h3>
+                    <p>At Glory Apparel, we believe that exceptional fashion shouldn't come with an exorbitant price tag. As a dedicated fashion designer, I take pride in creating beautiful, sophisticated dresses and attire for both men and women.</p>
+                    <p>Whether you need a statement piece for a grand celebration, elegant casual wear, or professional bespoke tailoring, every garment is crafted with meticulous attention to detail and personalized fit.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Custom Tailoring</h4>
+                                <p>Designed precisely to your measurements</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Affordable Luxury</h4>
+                                <p>Premium styling without compromise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Collections Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Expertise</span>
+                <h2 class="section-title">Featured Collections</h2>
+                <p class="section-desc">Explore our custom design offerings crafted to highlight your personality and elegance.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=800&auto=format&fit=crop" alt="Women's Evening Wear" class="service-img">
+                    <div class="service-info">
+                        <h3>Women's Haute Couture</h3>
+                        <p>Stunning evening dresses, sophisticated gowns, and chic daily wear tailored to turn heads wherever you go.</p>
+                        <div class="service-footer">
+                            <span class="service-price">Custom Order</span>
+                            <a href="#contact" class="btn btn-dark-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?q=80&w=800&auto=format&fit=crop" alt="Men's Tailoring" class="service-img">
+                    <div class="service-info">
+                        <h3>Men's Bespoke Tailoring</h3>
+                        <p>Sharp, refined suits, traditional attire, and stylish casual wear cut with absolute precision and unmatched fit.</p>
+                        <div class="service-footer">
+                            <span class="service-price">Custom Order</span>
+                            <a href="#contact" class="btn btn-dark-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop" alt="Event & Bridal Styling" class="service-img">
+                    <div class="service-info">
+                        <h3>Event & Special Occasion</h3>
+                        <p>Bespoke outfits designed specifically for weddings, galas, parties, and milestones that require absolute perfection.</p>
+                        <div class="service-footer">
+                            <span class="service-price">Custom Order</span>
+                            <a href="#contact" class="btn btn-dark-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Visual Showcase</span>
+                <h2 class="section-title">Design Gallery</h2>
+                <p class="section-desc">A glimpse into our recent creations designed and fitted for our esteemed clients.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=600&auto=format&fit=crop" alt="Fashion Design 1">
+                    <div class="gallery-overlay">
+                        <h4>Evening Elegance</h4>
+                        <p>Women's Collection</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop" alt="Fashion Design 2">
+                    <div class="gallery-overlay">
+                        <h4>Classic Gentleman</h4>
+                        <p>Men's Collection</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1550639525-c97d455acf70?q=80&w=600&auto=format&fit=crop" alt="Fashion Design 3">
+                    <div class="gallery-overlay">
+                        <h4>Modern Grace</h4>
+                        <p>Custom Dress</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=600&auto=format&fit=crop" alt="Fashion Design 4">
+                    <div class="gallery-overlay">
+                        <h4>Bespoke Suit</h4>
+                        <p>Men's Styling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">The Glory Advantage</span>
+                <h2 class="section-title">Why Choose Glory Apparel</h2>
+                <p class="section-desc">Experience professional design focused entirely on your satisfaction and style.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Enjoy premium, high-end fashion design and tailored clothing at prices that truly respect your budget.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Perfect Fit Guarantee</h3>
+                    <p>Every outfit is meticulously cut and constructed to complement your unique body shape and personal posture.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Uncompromising Quality</h3>
+                    <p>From fine fabrics to sturdy stitching, we ensure durable, beautiful clothing built to last and impress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Client Words</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Glory Apparel brought my vision to life! The dress fit like a glove for my event, and the quality is incredible considering how affordable it was. I'm definitely coming back for more."</p>
+                    <div class="client-info">
+                        <h4>Amina K.</h4>
+                        <span>Satisfied Client</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready to Wear Your Confidence?</h2>
+            <p>Let's design your next favorite outfit together. Reach out today to discuss your measurements and design ideas.</p>
+            <a href="#contact" class="btn btn-primary">Get in Touch Now</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-box">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h3>Let's Create Something Beautiful</h3>
+                    <p>Have a design in mind or need expert styling advice for men or women? Call us or send a message directly. We are always excited to bring your fashion ideas to life.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Call / WhatsApp</h4>
+                                <a href="tel:07055341270">0705 534 1270</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Direct Chat</h4>
+                                <a href="https://wa.me/2347055341270" target="_blank">Chat on WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;" class="serif-font">Send a Message</h3>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Request / Design Details</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us what you'd like us to design for you (Men/Women wear, date needed, etc.)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo">GLORY <span>APPAREL</span></h3>
+                    <p>Professional fashion design creating beautiful, bespoke, and affordable dresses for both men and women who value elegance and quality craftsmanship.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Collections</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-links">
+                        <a href="tel:07055341270"><i class="fas fa-phone-alt"></i> 07055341270</a>
+                        <a href="https://wa.me/2347055341270" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Glory Apparel. All Rights Reserved.</p>
+                <p>Designed for Classic Elegance</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/2347055341270" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)';
+                header.style.padding = '5px 0';
+            } else {
+                header.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+                header.style.padding = '0';
+            }
+        });
+
+        // Form Submission Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            // Construct WhatsApp redirect message for immediate real functionality
+            const whatsappUrl = `https://wa.me/2347055341270?text=Hello%20Glory%20Apparel,%20my%20name%20is%20${encodeURIComponent(name)}%20(${encodeURIComponent(phone)}).%20${encodeURIComponent(message)}`;
+            
+            alert('Thank you for reaching out! Redirecting you to WhatsApp to complete your request...');
+            window.open(whatsappUrl, '_blank');
+            
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
