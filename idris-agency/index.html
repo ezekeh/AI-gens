@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idris Agency — Modern Web Design & Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0c',
+                            800: '#131318',
+                            700: '#1c1c24',
+                            600: '#2a2a35'
+                        },
+                        accent: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            400: '#818cf8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0a0c;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 12, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glow-effect {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(10, 10, 12, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 selection:bg-accent-500 selection:text-white">
+
+    <!-- Ambient Glows -->
+    <div class="glow-effect top-0 left-1/4 -translate-x-1/2"></div>
+    <div class="glow-effect top-1/3 right-10"></div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-display text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-accent-500 inline-block"></span>
+                Idris Agency
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#process" class="hover:text-white transition-colors">Process</a>
+                <a href="#work" class="hover:text-white transition-colors">Work</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:+2349039549262" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                    +234 903 954 9262
+                </a>
+                <a href="https://wa.me/2349039549262?text=Hello%20Idris%20Agency,%20I'd%20like%20to%20discuss%20a%20web%20project." target="_blank" rel="noopener noreferrer" class="bg-accent-500 hover:bg-accent-600 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-accent-500/20">
+                    Let's Talk
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-white/5 px-6 py-6 space-y-4">
+            <a href="#services" class="block text-gray-300 hover:text-white font-medium">Services</a>
+            <a href="#process" class="block text-gray-300 hover:text-white font-medium">Process</a>
+            <a href="#work" class="block text-gray-300 hover:text-white font-medium">Work</a>
+            <a href="#faq" class="block text-gray-300 hover:text-white font-medium">FAQ</a>
+            <div class="pt-4 border-t border-white/5 flex flex-col gap-4">
+                <a href="tel:+2349039549262" class="text-sm font-medium text-gray-300">+234 903 954 9262</a>
+                <a href="https://wa.me/2349039549262?text=Hello%20Idris%20Agency,%20I'd%20like%20to%20discuss%20a%20web%20project." target="_blank" rel="noopener noreferrer" class="bg-accent-500 text-center text-white py-3 rounded-xl font-medium shadow-lg shadow-accent-500/20">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="pt-36 pb-20 md:pt-48 md:pb-32 px-6 max-w-7xl mx-auto">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-xs font-semibold tracking-wide uppercase mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse"></span>
+                    Modern Web Design & Development
+                </div>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6">
+                    Digital experiences built to <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-indigo-200">perform.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 font-normal leading-relaxed mb-10 max-w-2xl">
+                    Idris Agency crafts stunning, highly responsive, and high-converting websites designed to elevate your brand and drive measurable growth.
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="https://wa.me/2349039549262?text=Hello%20Idris%20Agency,%20I%20want%20to%20start%20a%20web%20project." target="_blank" rel="noopener noreferrer" class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-medium text-center transition-all shadow-xl shadow-accent-500/25 flex items-center justify-center gap-3">
+                        Start Your Project
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <a href="#services" class="bg-dark-700 hover:bg-dark-600 text-white px-8 py-4 rounded-xl font-medium text-center transition-all border border-white/5">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
+            <div class="max-w-2xl mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-accent-400 mb-3">Our Expertise</h2>
+                <h3 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Tailored digital solutions for modern businesses</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-white/5 hover:border-accent-500/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center text-accent-400 font-bold text-xl mb-6 group-hover:scale-110 transition-transform">
+                        01
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Web Design</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Custom UI/UX designs built around your brand identity. Clean aesthetics combined with intuitive user journeys to maximize engagement.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent-400 rounded-full"></span> Modern Minimalist Layouts</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent-400 rounded-full"></span> User Experience (UX) Strategy</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent-400 rounded-full"></span> Wireframing & Prototyping</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-white/5 hover:border-accent-500/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center text-accent-400 font-bold text-xl mb-6 group-hover:scale-110 transition-transform">
+                        02
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Web Development</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Robust, scalable, and lightning-fast websites coded with clean architecture. Optimized for peak performance and search engine visibility.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent-400 rounded-full"></span> Responsive Mobile-First Build</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent-400 rounded-full"></span> Speed & Performance Optimization</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent-400 rounded-full"></span> Secure & Scalable Code</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-white/5 hover:border-accent-500/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-accent-500/10 flex items-center justify-center text-accent-400 font-bold text-xl mb-6 group-hover:scale-110 transition-transform">
+                        03
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Brand & Redesign</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Revamp your outdated digital presence into a high-performing modern asset that sets you apart from competitors in your industry.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent-400 rounded-full"></span> Website Audits & Overhauls</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent-400 rounded-full"></span> Conversion Rate Optimization</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent-400 rounded-full"></span> Continuous Support</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
+            <div class="max-w-2xl mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-accent-400 mb-3">How We Work</h2>
+                <h3 class="text-3xl md:text-4xl font-bold tracking-tight text-white">A structured approach to exceptional results</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-dark-800 p-6 rounded-xl border border-white/5">
+                    <span class="text-accent-400 font-mono text-sm block mb-4">Phase 01</span>
+                    <h4 class="text-lg font-bold text-white mb-2">Discovery</h4>
+                    <p class="text-gray-400 text-sm">We analyze your goals, target audience, and business requirements to formulate a strategic roadmap.</p>
+                </div>
+                <div class="bg-dark-800 p-6 rounded-xl border border-white/5">
+                    <span class="text-accent-400 font-mono text-sm block mb-4">Phase 02</span>
+                    <h4 class="text-lg font-bold text-white mb-2">Design</h4>
+                    <p class="text-gray-400 text-sm">We create clean wireframes and high-fidelity prototypes tailored specifically to your brand identity.</p>
+                </div>
+                <div class="bg-dark-800 p-6 rounded-xl border border-white/5">
+                    <span class="text-accent-400 font-mono text-sm block mb-4">Phase 03</span>
+                    <h4 class="text-lg font-bold text-white mb-2">Development</h4>
+                    <p class="text-gray-400 text-sm">We build your website using modern, clean code ensuring absolute responsiveness and high speed.</p>
+                </div>
+                <div class="bg-dark-800 p-6 rounded-xl border border-white/5">
+                    <span class="text-accent-400 font-mono text-sm block mb-4">Phase 04</span>
+                    <h4 class="text-lg font-bold text-white mb-2">Launch</h4>
+                    <p class="text-gray-400 text-sm">Rigorous testing across devices precedes a smooth launch to introduce your brand to the world.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Showcase Placeholder / Featured Output -->
+        <section id="work" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-accent-400 mb-3">Featured Projects</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Crafted with precision & purpose</h3>
+                </div>
+                <a href="https://wa.me/2349039549262?text=Hello%20Idris%20Agency,%20I'd%20like%20to%20see%20more%20of%20your%20portfolio." target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-accent-400 hover:text-accent-300 flex items-center gap-2">
+                    Request Portfolio <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="group bg-dark-800 rounded-2xl overflow-hidden border border-white/5">
+                    <div class="h-64 bg-dark-700 relative overflow-hidden flex items-center justify-center p-8">
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-transparent"></div>
+                        <div class="text-center">
+                            <span class="text-xs text-accent-400 font-mono uppercase tracking-wider block mb-2">Corporate Web Application</span>
+                            <span class="text-xl font-bold text-white font-display">Fintech & SaaS Platform</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 text-sm">A modern minimal dashboard and landing page ecosystem built for seamless financial transactions.</p>
+                    </div>
+                </div>
+
+                <div class="group bg-dark-800 rounded-2xl overflow-hidden border border-white/5">
+                    <div class="h-64 bg-dark-700 relative overflow-hidden flex items-center justify-center p-8">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent"></div>
+                        <div class="text-center">
+                            <span class="text-xs text-accent-400 font-mono uppercase tracking-wider block mb-2">E-Commerce & Brand Identity</span>
+                            <span class="text-xl font-bold text-white font-display">Luxury Retail Experience</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 text-sm">High-end digital storefront optimized for rapid loading, seamless checkout, and mobile conversion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 px-6 max-w-4xl mx-auto border-t border-white/5">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-accent-400 mb-3">Common Questions</h2>
+                <h3 class="text-3xl font-bold tracking-tight text-white">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-dark-800 border border-white/5 rounded-xl p-6">
+                    <h4 class="font-bold text-white text-base mb-2">How long does it take to build a website?</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Timelines vary depending on project scope and complexity. Standard business websites typically take between 2 to 4 weeks from initial discovery to launch.</p>
+                </div>
+                <div class="bg-dark-800 border border-white/5 rounded-xl p-6">
+                    <h4 class="font-bold text-white text-base mb-2">Will my website be mobile-friendly?</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Yes. Every website we build follows a strict mobile-first design approach, ensuring flawless performance across smartphones, tablets, and desktop displays.</p>
+                </div>
+                <div class="bg-dark-800 border border-white/5 rounded-xl p-6">
+                    <h4 class="font-bold text-white text-base mb-2">How do we get started?</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Getting started is simple. Reach out via phone or WhatsApp at +234 903 954 9262 to discuss your vision and receive a tailored project overview.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 px-6 max-w-5xl mx-auto">
+            <div class="bg-gradient-to-br from-dark-800 to-dark-700 rounded-3xl p-8 md:p-16 border border-white/10 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.1),transparent_50%)]"></div>
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">Ready to transform your digital presence?</h2>
+                    <p class="text-gray-400 text-base md:text-lg mb-8">Let's collaborate to build a website that reflects the true quality of your business.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://wa.me/2349039549262?text=Hello%20Idris%20Agency,%20I'm%20ready%20to%20start%20my%20project." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-medium transition-all shadow-xl shadow-accent-500/25">
+                            Chat on WhatsApp
+                        </a>
+                        <a href="tel:+2349039549262" class="w-full sm:w-auto bg-dark-600 hover:bg-dark-500 text-white px-8 py-4 rounded-xl font-medium transition-all border border-white/10">
+                            Call +234 903 954 9262
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 px-6 bg-dark-900 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent-500 inline-block"></span>
+                <span class="font-display font-bold text-white text-base">Idris Agency</span>
+            </div>
+            
+            <p class="text-gray-500 text-center md:text-left">
+                &copy; <span id="current-year"></span> Idris Agency. Professional Web Design & Development. All rights reserved.
+            </p>
+
+            <div class="flex items-center gap-6 text-gray-400">
+                <a href="tel:+2349039549262" class="hover:text-white transition-colors">Phone</a>
+                <a href="https://wa.me/2349039549262" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click of link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
