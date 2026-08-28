@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eazee Lighthouse | Bulk Electrical Devices & New Home Packs</title>
+    <title>Eazee Lighthouse | Bulk Electrical Devices & New House Packages</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for Icons -->
@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -19,719 +19,591 @@
                 extend: {
                     colors: {
                         dark: {
-                            900: '#070b0e',
-                            800: '#0c1319',
-                            700: '#131e28',
-                            600: '#1d2c3b',
+                            900: '#070b0f',
+                            800: '#0c141d',
+                            700: '#131f2d',
+                            600: '#1c2d42',
                         },
                         brand: {
                             green: '#10b981',
-                            teal: '#06b6d4',
                             emerald: '#059669',
-                            light: '#a7f3d0'
+                            teal: '#14b8a6',
+                            cyan: '#06b6d4',
+                            glow: 'rgba(16, 185, 129, 0.15)'
                         }
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Outfit"', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
                     }
                 }
             }
         }
     </script>
     <style>
+        body {
+            background-color: #070b0f;
+            color: #e2e8f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
         .glow-effect {
-            box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.15);
+            box-shadow: 0 0 40px -10px rgba(20, 184, 166, 0.2);
         }
-        .glow-teal {
-            box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.2);
+        .glow-button {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.7);
+            transform: translateY(-2px);
         }
         .glass-card {
-            background: rgba(19, 30, 40, 0.7);
+            background: rgba(19, 31, 45, 0.7);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(20, 184, 166, 0.15);
         }
-        .glass-card:hover {
-            border-color: rgba(16, 185, 129, 0.4);
+        .glass-nav {
+            background: rgba(7, 11, 15, 0.85);
+            backdrop-filter: blur(12px);
         }
-        /* Custom scrollbar */
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #070b0e;
+            background: #070b0f;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1d2c3b;
+            background: #1c2d42;
             border-radius: 5px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #10b981;
+            background: #14b8a6;
         }
     </style>
 </head>
-<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-brand-green selection:text-dark-900">
+<body class="bg-dark-900 text-slate-300 antialiased selection:bg-brand-teal selection:text-dark-900">
 
-    <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-dark-700/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-dark-900 font-bold text-xl shadow-lg shadow-brand-green/20 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-                <div>
-                    <span class="text-xl font-bold tracking-tight text-white">Eazee <span class="gradient-text">Lighthouse</span></span>
-                    <span class="block text-[10px] tracking-widest text-brand-light/70 uppercase font-semibold">Bulk Electrical Supply</span>
-                </div>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-brand-green transition-colors">About Us</a>
-                <a href="#packs" class="text-sm font-medium text-gray-300 hover:text-brand-green transition-colors">New House Packs</a>
-                <a href="#services" class="text-sm font-medium text-gray-300 hover:text-brand-green transition-colors">Bulk Supply</a>
-                <a href="#faq" class="text-sm font-medium text-gray-300 hover:text-gray-100 transition-colors">FAQ</a>
-                <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-gray-100 transition-colors">Contact</a>
-            </nav>
-
-            <!-- Action Button -->
-            <div class="hidden md:flex items-center gap-4">
-                <a href="tel:09112768891" class="flex items-center gap-2 text-brand-green font-semibold text-sm bg-dark-800 px-4 py-2.5 rounded-xl border border-brand-green/20 hover:bg-brand-green/10 transition-all">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <span>09112768891</span>
-                </a>
-                <a href="#packs" class="gradient-bg text-dark-900 font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-brand-green/20 hover:opacity-95 transition-all transform hover:-translate-y-0.5">
-                    Get Pack Quote
+    <!-- Top Bar -->
+    <div class="bg-dark-800 border-b border-dark-600 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-slate-400">
+                <span><i class="fa-solid fa-bolt text-brand-teal mr-1.5"></i> Bulk Electrical Device Specialists</span>
+                <span class="hidden md:inline text-dark-600">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-house-chimney text-brand-green mr-1.5"></i> Special New House Pack Discounts Available</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:09112768891" class="flex items-center gap-1.5 text-brand-teal hover:text-brand-green font-medium transition-colors">
+                    <i class="fa-solid fa-phone-volume"></i> 09112768891
                 </a>
             </div>
+        </div>
+    </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 focus:outline-none">
-                <i class="fa-solid fa-bars text-2xl"></i>
-            </button>
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-dark-600/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-green to-brand-teal flex items-center justify-center text-dark-900 font-bold text-xl shadow-lg shadow-brand-teal/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-extrabold text-xl tracking-tight text-white">Eazee <span class="text-brand-teal">Lighthouse</span></span>
+                        <span class="text-[10px] tracking-wider uppercase text-brand-green font-semibold">Bulk Electrical Supply</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-sm font-medium hover:text-brand-teal transition-colors">Why Us</a>
+                    <a href="#services" class="text-sm font-medium hover:text-brand-teal transition-colors">Bulk Supply</a>
+                    <a href="#packages" class="text-sm font-medium text-brand-teal hover:text-brand-green transition-colors flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-brand-green animate-ping"></span>
+                        New House Pack
+                    </a>
+                    <a href="#faq" class="text-sm font-medium hover:text-brand-teal transition-colors">FAQ</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-brand-teal transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="tel:09112768891" class="glow-button px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-green to-brand-teal text-dark-900 font-bold text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Call Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
 
-        <!-- Mobile Menu Modal/Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-dark-800 border-b border-dark-700 p-6 flex flex-col gap-4 shadow-2xl">
-            <a href="#about" class="mobile-link text-gray-300 hover:text-brand-green font-medium py-2 border-b border-dark-700">About Us</a>
-            <a href="#packs" class="mobile-link text-gray-300 hover:text-brand-green font-medium py-2 border-b border-dark-700">New House Packs</a>
-            <a href="#services" class="mobile-link text-gray-300 hover:text-brand-green font-medium py-2 border-b border-dark-700">Bulk Supply</a>
-            <a href="#faq" class="mobile-link text-gray-300 hover:text-brand-green font-medium py-2 border-b border-dark-700">FAQ</a>
-            <a href="#contact" class="mobile-link text-gray-300 hover:text-brand-green font-medium py-2">Contact</a>
-            <div class="pt-2 flex flex-col gap-3">
-                <a href="tel:09112768891" class="flex items-center justify-center gap-2 text-brand-green font-semibold text-sm bg-dark-700 py-3 rounded-xl border border-brand-green/20">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <span>09112768891</span>
-                </a>
-                <a href="#packs" class="gradient-bg text-dark-900 font-bold text-sm py-3 rounded-xl text-center shadow-lg">
-                    Get Pack Quote
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-600 px-4 pt-2 pb-6 space-y-3">
+            <a href="#features" class="block py-2 text-base font-medium hover:text-brand-teal transition-colors">Why Us</a>
+            <a href="#services" class="block py-2 text-base font-medium hover:text-brand-teal transition-colors">Bulk Supply</a>
+            <a href="#packages" class="block py-2 text-base font-medium text-brand-teal transition-colors">New House Pack & Discount</a>
+            <a href="#faq" class="block py-2 text-base font-medium hover:text-brand-teal transition-colors">FAQ</a>
+            <a href="#contact" class="block py-2 text-base font-medium hover:text-brand-teal transition-colors">Contact</a>
+            <div class="pt-4">
+                <a href="tel:09112768891" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-green to-brand-teal text-dark-900 font-bold text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call: 09112768891
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
-        <!-- Background Glow Elements -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-green/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-brand-teal/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <section class="relative pt-20 pb-28 overflow-hidden">
+        <!-- Background Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-teal/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-brand-green/10 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Hero Content -->
-                <div class="lg:col-span-7 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-700 border border-brand-green/30 text-brand-light text-xs font-semibold mb-6 shadow-inner">
-                        <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
-                        Special Bulk Pricing & House Packs Available
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-700 border border-brand-teal/30 text-brand-teal text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-tags text-brand-green"></i> Special Discount Packs Available Now
                     </div>
                     
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6">
-                        Power Your Property With <span class="gradient-text">Eazee Lighthouse</span>
+                    <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-[1.1]">
+                        Power Your Home With <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-green via-brand-teal to-brand-cyan">Bulk Electrical Devices</span>
                     </h1>
                     
-                    <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                        Your reliable source for premium electrical devices in bulk. Building or moving into a new home? Take advantage of our specially discounted complete house electrical packs.
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Welcome to Eazee Lighthouse. We specialize in high-quality bulk electrical devices for contractors, developers, and homeowners. Building a new home? Take advantage of our specially discounted complete house packs to fill your property with all necessary electrical installations.
                     </p>
-                    
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#packs" class="w-full sm:w-auto gradient-bg text-dark-900 font-bold px-8 py-4 rounded-xl shadow-xl shadow-brand-green/20 hover:opacity-95 transition-all text-center flex items-center justify-center gap-2">
-                            <span>Explore House Packs</span>
-                            <i class="fa-solid fa-arrow-right text-sm"></i>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#packages" class="w-full sm:w-auto glow-button px-8 py-4 rounded-xl bg-gradient-to-r from-brand-green to-brand-teal text-dark-900 font-extrabold text-base flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-house-circle-check"></i> View New House Pack
                         </a>
-                        <a href="tel:09112768891" class="w-full sm:w-auto bg-dark-800 hover:bg-dark-700 text-white font-semibold px-8 py-4 rounded-xl border border-dark-600 hover:border-brand-green/50 transition-all text-center flex items-center justify-center gap-3">
-                            <i class="fa-solid fa-phone text-brand-green"></i>
-                            <span>Call 09112768891</span>
+                        <a href="tel:09112768891" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-dark-700 hover:bg-dark-600 border border-brand-teal/40 text-white font-semibold text-base flex items-center justify-center gap-3 transition-all">
+                            <i class="fa-solid fa-phone text-brand-teal"></i> 09112768891
                         </a>
                     </div>
 
                     <!-- Trust indicators -->
-                    <div class="mt-12 pt-8 border-t border-dark-700/60 grid grid-cols-3 gap-6 text-center lg:text-left">
+                    <div class="pt-6 border-t border-dark-600 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
                         <div>
-                            <div class="text-2xl font-bold text-white">Bulk</div>
-                            <div class="text-xs text-gray-400 mt-1">Wholesale Supply</div>
+                            <span class="block font-heading font-bold text-2xl text-white">Bulk</span>
+                            <span class="text-xs text-slate-400">Direct Supply</span>
                         </div>
                         <div>
-                            <div class="text-2xl font-bold text-brand-green">Discount</div>
-                            <div class="text-xs text-gray-400 mt-1">For New Homes</div>
+                            <span class="block font-heading font-bold text-2xl text-brand-teal">Discount</span>
+                            <span class="text-xs text-slate-400">For New Houses</span>
                         </div>
                         <div>
-                            <div class="text-2xl font-bold text-white">Complete</div>
-                            <div class="text-xs text-gray-400 mt-1">All-in-One Packs</div>
+                            <span class="block font-heading font-bold text-2xl text-brand-green">Complete</span>
+                            <span class="text-xs text-slate-400">Device Packages</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero Visual / Graphic Card -->
-                <div class="lg:col-span-5">
-                    <div class="glass-card rounded-3xl p-6 sm:p-8 relative glow-effect">
-                        <div class="absolute -top-3 -right-3 bg-brand-green text-dark-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
-                            Best Value
-                        </div>
+                <!-- Right Visual Column -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Card Glow Backdrop -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-green/20 to-brand-teal/20 rounded-3xl blur-xl"></div>
                         
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-dark-800 border border-brand-green/30 flex items-center justify-center text-brand-green text-2xl">
-                                <i class="fa-solid fa-house-chimney-crack"></i>
+                        <!-- Main Visual Card -->
+                        <div class="relative glass-card rounded-3xl p-6 sm:p-8 border border-brand-teal/20 shadow-2xl space-y-6">
+                            <div class="flex items-center justify-between pb-4 border-b border-dark-600">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-2xl bg-brand-teal/10 border border-brand-teal/30 flex items-center justify-center text-brand-teal text-xl">
+                                        <i class="fa-solid fa-box-open"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-heading font-bold text-white text-base">New House Pack</h3>
+                                        <p class="text-xs text-brand-green font-medium">Special Discount Price Active</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-brand-green/10 text-brand-green text-xs font-bold border border-brand-green/20">Bundle & Save</span>
+                            </div>
+
+                            <p class="text-sm text-slate-300">
+                                Get everything required to fully equip your new house with reliable, modern electrical devices in one affordable bundle.
+                            </p>
+
+                            <!-- Package features list -->
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-center gap-3 text-slate-300">
+                                    <div class="w-5 h-5 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <span>Complete switches & socket sets</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-slate-300">
+                                    <div class="w-5 h-5 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <span>Circuit breakers & distribution boxes</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-slate-300">
+                                    <div class="w-5 h-5 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <span>Lighting fixtures & essential accessories</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-2">
+                                <a href="tel:09112768891" class="w-full py-3 rounded-xl bg-dark-800 hover:bg-dark-700 border border-brand-teal/30 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors">
+                                    <i class="fa-solid fa-headset text-brand-teal"></i> Inquire About Package Pricing
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-dark-800/50 border-y border-dark-600/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-brand-teal font-bold">Why Choose Eazee Lighthouse</h2>
+                <h3 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Your Trusted Partner For Bulk Electrical Supply</h3>
+                <p class="text-slate-400">We make sourcing electrical devices seamless, reliable, and cost-effective for construction projects and new homes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card rounded-2xl p-8 border border-dark-600 hover:border-brand-teal/40 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-teal/10 border border-brand-teal/30 flex items-center justify-center text-brand-teal text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl text-white mb-3">Bulk Order Specialists</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Equipped to handle large quantity orders for residential and commercial property developments without delays.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card rounded-2xl p-8 border border-dark-600 hover:border-brand-green/40 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl text-white mb-3">New House Discount Packs</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Enjoy special bundle discount pricing designed specifically to fill brand new houses with all necessary electrical devices efficiently.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card rounded-2xl p-8 border border-dark-600 hover:border-brand-teal/40 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-teal/10 border border-brand-teal/30 flex items-center justify-center text-brand-teal text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl text-white mb-3">Reliable & Safe Devices</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        All our electrical inventory meets high safety and durability standards to ensure long-lasting performance in every home.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Package Section -->
+    <section id="packages" class="py-24 relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-green/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-700 border border-brand-green/30 text-brand-green text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-house"></i> Featured Offer
+                    </div>
+
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight">
+                        Complete House Electrical Pack with <span class="text-brand-teal">Special Discount Prices</span>
+                    </h2>
+
+                    <p class="text-slate-300 leading-relaxed">
+                        When finishing a new house, buying electrical devices individually can be overwhelming and expensive. At Eazee Lighthouse, we have curated a comprehensive pack containing all the essential electrical devices needed to fully outfit your property.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-brand-teal/10 border border-brand-teal/30 flex items-center justify-center text-brand-teal shrink-0 mt-1">
+                                <span class="font-bold text-sm">1</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold text-white">New House Electrical Pack</h3>
-                                <p class="text-xs text-brand-light">Fill your entire house instantly</p>
+                                <h4 class="font-heading font-bold text-white text-base">All-In-One Convenience</h4>
+                                <p class="text-sm text-slate-400">Everything you need bundled together so you don't miss any essential components.</p>
                             </div>
                         </div>
 
-                        <div class="space-y-3 mb-8">
-                            <div class="flex items-center justify-between text-sm p-3 rounded-xl bg-dark-800/80 border border-dark-700">
-                                <span class="text-gray-300 flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> Switches & Sockets</span>
-                                <span class="text-xs text-brand-light font-semibold bg-brand-green/10 px-2 py-1 rounded">Included</span>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green shrink-0 mt-1">
+                                <span class="font-bold text-sm">2</span>
                             </div>
-                            <div class="flex items-center justify-between text-sm p-3 rounded-xl bg-dark-800/80 border border-dark-700">
-                                <span class="text-gray-300 flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> Circuit Breakers & DB Box</span>
-                                <span class="text-xs text-brand-light font-semibold bg-brand-green/10 px-2 py-1 rounded">Included</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm p-3 rounded-xl bg-dark-800/80 border border-dark-700">
-                                <span class="text-gray-300 flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> Lighting Fixtures & Bulbs</span>
-                                <span class="text-xs text-brand-light font-semibold bg-brand-green/10 px-2 py-1 rounded">Included</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm p-3 rounded-xl bg-dark-800/80 border border-dark-700">
-                                <span class="text-gray-300 flex items-center gap-2"><i class="fa-solid fa-check text-brand-green"></i> Essential Wiring & Accessories</span>
-                                <span class="text-xs text-brand-light font-semibold bg-brand-green/10 px-2 py-1 rounded">Included</span>
+                            <div>
+                                <h4 class="font-heading font-bold text-white text-base">Discounted Bulk Pricing</h4>
+                                <p class="text-sm text-slate-400">Benefit from reduced package rates specifically structured for new house builds.</p>
                             </div>
                         </div>
 
-                        <a href="#packs" class="w-full bg-dark-800 hover:bg-dark-700 text-white font-semibold py-3.5 rounded-xl border border-brand-green/30 transition-all flex items-center justify-center gap-2 group">
-                            <span>View Pack Details</span>
-                            <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-brand-teal/10 border border-brand-teal/30 flex items-center justify-center text-brand-teal shrink-0 mt-1">
+                                <span class="font-bold text-sm">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-white text-base">Direct Consultation</h4>
+                                <p class="text-sm text-slate-400">Call us directly to customize your pack based on your house size and specific requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:09112768891" class="glow-button inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-green to-brand-teal text-dark-900 font-extrabold text-base">
+                            <i class="fa-solid fa-phone-volume"></i> Claim Your House Pack Discount
                         </a>
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-dark-800/50 border-t border-b border-dark-700/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-brand-green font-bold text-xs uppercase tracking-widest bg-brand-green/10 px-3 py-1 rounded-full border border-brand-green/20">Who We Are</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-6">
-                        Your Trusted Partner for <span class="gradient-text">Bulk Electrical Devices</span>
-                    </h2>
-                    <p class="text-gray-300 leading-relaxed mb-6">
-                        At Eazee Lighthouse, we specialize in high-volume supply of essential electrical devices for residential, commercial, and development projects. We understand that outfitting a new property can be overwhelming and costly.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed mb-8">
-                        That is why we created our specialized house packs—curated bundles containing all the necessary electrical devices required to fully equip a new house at a special discounted price. Quality, reliability, and affordability are at the core of everything we supply.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="glass-card p-5 rounded-2xl">
-                            <div class="text-brand-green text-xl mb-2"><i class="fa-solid fa-boxes-stacked"></i></div>
-                            <h4 class="font-bold text-white mb-1">Bulk Availability</h4>
-                            <p class="text-xs text-gray-400">Ready stock for contractors, developers, and homeowners.</p>
+                <!-- Right Card Box -->
+                <div class="lg:col-span-6">
+                    <div class="glass-card rounded-3xl p-8 border border-brand-teal/30 relative shadow-2xl">
+                        <div class="absolute -top-4 right-8 bg-brand-green text-dark-900 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full shadow-lg">
+                            Special Rate
                         </div>
-                        <div class="glass-card p-5 rounded-2xl">
-                            <div class="text-brand-teal text-xl mb-2"><i class="fa-solid fa-tags"></i></div>
-                            <h4 class="font-bold text-white mb-1">Discount Packages</h4>
-                            <p class="text-xs text-gray-400">Special pricing structures for outfitting entirely new houses.</p>
+
+                        <h3 class="font-heading font-bold text-2xl text-white mb-2">New House Electrical Pack</h3>
+                        <p class="text-slate-400 text-sm mb-6">Designed to completely fill your new house with required electrical devices.</p>
+
+                        <div class="bg-dark-900/60 rounded-2xl p-6 border border-dark-600 mb-6 space-y-4">
+                            <div class="flex justify-between items-center text-sm border-b border-dark-600 pb-3">
+                                <span class="text-slate-300 font-medium">Sockets & Switches</span>
+                                <span class="text-brand-teal font-bold">Included</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-b border-dark-600 pb-3">
+                                <span class="text-slate-300 font-medium">Circuit Protection & Breakers</span>
+                                <span class="text-brand-teal font-bold">Included</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-b border-dark-600 pb-3">
+                                <span class="text-slate-300 font-medium">Lighting Outlets & Holders</span>
+                                <span class="text-brand-teal font-bold">Included</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300 font-medium">Essential House Hardware</span>
+                                <span class="text-brand-teal font-bold">Included</span>
+                            </div>
+                        </div>
+
+                        <div class="text-center space-y-4">
+                            <p class="text-xs text-slate-400">Ready to furnish your new house? Speak with our sales desk for immediate package quoting.</p>
+                            <a href="tel:09112768891" class="w-full py-4 rounded-xl bg-dark-700 hover:bg-dark-600 border border-brand-teal/40 text-white font-bold text-base flex items-center justify-center gap-3 transition-colors">
+                                <i class="fa-solid fa-phone text-brand-teal"></i> Call 09112768891 Now
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="relative">
-                    <div class="glass-card p-8 rounded-3xl glow-teal relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-teal/10 rounded-full blur-2xl"></div>
-                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                            <i class="fa-solid fa-lightbulb text-brand-teal"></i>
-                            Why Choose Eazee Lighthouse?
-                        </h3>
-                        
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0 mt-0.5">
-                                    <i class="fa-solid fa-check text-xs"></i>
-                                </div>
-                                <div>
-                                    <h5 class="font-semibold text-white">Complete Convenience</h5>
-                                    <p class="text-xs text-gray-400">Get everything you need in one well-organized package rather than buying piecemeal.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0 mt-0.5">
-                                    <i class="fa-solid fa-check text-xs"></i>
-                                </div>
-                                <div>
-                                    <h5 class="font-semibold text-white">Substantial Cost Savings</h5>
-                                    <p class="text-xs text-gray-400">Enjoy discounted bundle pricing specially tailored for new house completions.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0 mt-0.5">
-                                    <i class="fa-solid fa-check text-xs"></i>
-                                </div>
-                                <div>
-                                    <h5 class="font-semibold text-white">Direct Customer Support</h5>
-                                    <p class="text-xs text-gray-400">Speak directly with our team at <a href="tel:09112768891" class="text-brand-green underline">09112768891</a> for personalized pack orders.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- New House Packs Section -->
-    <section id="packs" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-green font-bold text-xs uppercase tracking-widest bg-brand-green/10 px-3 py-1 rounded-full border border-brand-green/20">Special Offer</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4">
-                    New House Electrical <span class="gradient-text">Packs</span>
-                </h2>
-                <p class="text-gray-300">
-                    Fill your new house with all necessary electrical devices according to our curated packs at special discounted prices. Choose the pack that fits your property size.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Pack 1 -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <div>
-                        <div class="text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Standard Home</div>
-                        <h3 class="text-2xl font-bold text-white mb-4">1-2 Bedroom Pack</h3>
-                        <p class="text-sm text-gray-400 mb-6">Ideal for apartments, studio setups, and small houses needing essential fittings.</p>
-                        
-                        <div class="space-y-3 mb-8 text-sm">
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Complete switch & socket set</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Standard distribution board & breakers</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Essential lighting fixtures & bulb sets</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Bulk discount applied</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="pt-4 border-t border-dark-700 mb-6">
-                            <span class="text-xs text-gray-400 block">Pricing Structure</span>
-                            <span class="text-lg font-bold text-white">Special Discounted Pack Rate</span>
-                        </div>
-                        <a href="tel:09112768891" class="w-full bg-dark-800 hover:bg-dark-700 text-white font-semibold py-3 rounded-xl border border-brand-green/30 transition-all text-center block">
-                            Order This Pack
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Pack 2 (Featured) -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between relative glow-effect border-brand-green/50 transform md:-translate-y-3">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 gradient-bg text-dark-900 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow-lg">
-                        Most Popular
-                    </div>
-
-                    <div>
-                        <div class="text-xs font-bold text-brand-green uppercase tracking-wider mb-2">Family House</div>
-                        <h3 class="text-2xl font-bold text-white mb-4">3-4 Bedroom Pack</h3>
-                        <p class="text-sm text-gray-300 mb-6">Our comprehensive bundle designed to completely outfit a standard family residential home.</p>
-                        
-                        <div class="space-y-3 mb-8 text-sm">
-                            <div class="flex items-center gap-3 text-gray-200">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Full house switch & dual USB sockets</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-200">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Advanced DB box & complete breaker kit</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-200">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Full interior & exterior lighting bundle</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-200">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Maximum new house discount applied</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="pt-4 border-t border-dark-700 mb-6">
-                            <span class="text-xs text-gray-400 block">Pricing Structure</span>
-                            <span class="text-lg font-bold text-white">Special Discounted Pack Rate</span>
-                        </div>
-                        <a href="tel:09112768891" class="w-full gradient-bg text-dark-900 font-bold py-3.5 rounded-xl shadow-lg shadow-brand-green/20 hover:opacity-95 transition-all text-center block">
-                            Order Popular Pack
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Pack 3 -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                    <div>
-                        <div class="text-xs font-bold text-brand-light uppercase tracking-wider mb-2">Large Residence</div>
-                        <h3 class="text-2xl font-bold text-white mb-4">5+ Bedroom / Villa Pack</h3>
-                        <p class="text-sm text-gray-400 mb-6">Heavy-duty, high-capacity package for large houses, villas, and duplexes.</p>
-                        
-                        <div class="space-y-3 mb-8 text-sm">
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Extended multi-room switch & socket kit</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Multi-zone DB boxes & heavy breakers</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Premium lighting fixtures & LED setups</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-300">
-                                <i class="fa-solid fa-circle-check text-brand-green text-xs"></i>
-                                <span>Highest tier wholesale discount</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="pt-4 border-t border-dark-700 mb-6">
-                            <span class="text-xs text-gray-400 block">Pricing Structure</span>
-                            <span class="text-lg font-bold text-white">Special Discounted Pack Rate</span>
-                        </div>
-                        <a href="tel:09112768891" class="w-full bg-dark-800 hover:bg-dark-700 text-white font-semibold py-3 rounded-xl border border-brand-green/30 transition-all text-center block">
-                            Order Villa Pack
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Services / Bulk Supply Section -->
-    <section id="services" class="py-20 bg-dark-800/50 border-t border-b border-dark-700/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-teal font-bold text-xs uppercase tracking-widest bg-brand-teal/10 px-3 py-1 rounded-full border border-brand-teal/20">Our Capabilities</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4">
-                    Bulk Electrical <span class="gradient-text">Supply Solutions</span>
-                </h2>
-                <p class="text-gray-300">
-                    Whether you are completing a single new home or stocking up for ongoing construction projects, we provide reliable bulk inventory.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-3xl">
-                    <div class="w-12 h-12 rounded-xl bg-dark-700 border border-brand-green/30 flex items-center justify-center text-brand-green text-xl mb-6">
-                        <i class="fa-solid fa-house"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">New Home Electrical Kits</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Pre-bundled electrical devices tailored specifically for new houses. Fill your property completely with sockets, switches, breakers, and lights at a discounted pack rate.
-                    </p>
-                </div>
-
-                <div class="glass-card p-8 rounded-3xl">
-                    <div class="w-12 h-12 rounded-xl bg-dark-700 border border-brand-teal/30 flex items-center justify-center text-brand-teal text-xl mb-6">
-                        <i class="fa-solid fa-boxes-packing"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Bulk Wholesale Orders</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        High-volume device supply for contractors, electricians, and real estate developers looking for dependable quality and competitive bulk pricing.
-                    </p>
-                </div>
-
-                <div class="glass-card p-8 rounded-3xl">
-                    <div class="w-12 h-12 rounded-xl bg-dark-700 border border-brand-green/30 flex items-center justify-center text-brand-green text-xl mb-6">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Consultation & Ordering</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Direct assistance over the phone. Call our team to discuss your specific floor plan, pack requirements, and custom bulk supply orders.
-                    </p>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-20">
+    <section id="faq" class="py-20 bg-dark-800/50 border-t border-dark-600/60">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-brand-green font-bold text-xs uppercase tracking-widest bg-brand-green/10 px-3 py-1 rounded-full border border-brand-green/20">Got Questions?</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4">
-                    Frequently Asked <span class="gradient-text">Questions</span>
-                </h2>
-                <p class="text-gray-300">
-                    Find quick answers about our bulk supplies and new house electrical packs.
-                </p>
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-brand-teal font-bold">Got Questions?</h2>
+                <h3 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Frequently Asked Questions</h3>
+                <p class="text-slate-400">Find quick answers about our bulk orders and new house electrical packages.</p>
             </div>
 
             <div class="space-y-4">
-                <!-- FAQ Item 1 -->
-                <div class="glass-card rounded-2xl overflow-hidden transition-all">
-                    <button class="faq-toggle w-full px-6 py-5 text-left font-semibold text-white flex items-center justify-between focus:outline-none">
-                        <span>What is included in the new house electrical pack?</span>
-                        <i class="fa-solid fa-chevron-down text-brand-green transition-transform duration-300"></i>
+                <!-- FAQ 1 -->
+                <div class="glass-card rounded-2xl border border-dark-600 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-heading font-bold text-white text-lg focus:outline-none">
+                        <span>What is included in the New House Electrical Pack?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-teal transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-300 leading-relaxed border-t border-dark-700/50 pt-4">
-                        Our packs are designed to fill a new house with all necessary electrical devices. This typically includes wall switches, power sockets, distribution boxes (DB), circuit breakers, and essential lighting fixtures required for standard residential living.
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-dark-600/40 pt-4">
+                        Our new house pack contains a complete collection of necessary electrical devices required to equip your property, including switches, sockets, circuit breakers, fixtures, and other essential electrical hardware at a discounted bundle price.
                     </div>
                 </div>
 
-                <!-- FAQ Item 2 -->
-                <div class="glass-card rounded-2xl overflow-hidden transition-all">
-                    <button class="faq-toggle w-full px-6 py-5 text-left font-semibold text-white flex items-center justify-between focus:outline-none">
-                        <span>How do I get the discount price for my new house?</span>
-                        <i class="fa-solid fa-chevron-down text-brand-green transition-transform duration-300"></i>
+                <!-- FAQ 2 -->
+                <div class="glass-card rounded-2xl border border-dark-600 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-heading font-bold text-white text-lg focus:outline-none">
+                        <span>How do I claim the discount price for my new house?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-teal transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-300 leading-relaxed border-t border-dark-700/50 pt-4">
-                        To receive the discounted pack price, simply reach out to us directly by calling <a href="tel:09112768891" class="text-brand-green underline font-semibold">09112768891</a>. Our team will verify your pack requirements and apply the special new home discount immediately.
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-dark-600/40 pt-4">
+                        Simply call us directly at 09112768891. Our sales team will discuss your house specifications and apply the special discount pack pricing directly to your order.
                     </div>
                 </div>
 
-                <!-- FAQ Item 3 -->
-                <div class="glass-card rounded-2xl overflow-hidden transition-all">
-                    <button class="faq-toggle w-full px-6 py-5 text-left font-semibold text-white flex items-center justify-between focus:outline-none">
-                        <span>Can I buy electrical devices in bulk without a pack?</span>
-                        <i class="fa-solid fa-chevron-down text-brand-green transition-transform duration-300"></i>
+                <!-- FAQ 3 -->
+                <div class="glass-card rounded-2xl border border-dark-600 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-heading font-bold text-white text-lg focus:outline-none">
+                        <span>Do you sell electrical devices in bulk for contractors?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-teal transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-300 leading-relaxed border-t border-dark-700/50 pt-4">
-                        Yes! While our new house packs offer great bundle discounts, we also supply electrical devices in general bulk quantities for contractors, developers, and larger construction projects. Contact us with your specific item list.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="glass-card rounded-2xl overflow-hidden transition-all">
-                    <button class="faq-toggle w-full px-6 py-5 text-left font-semibold text-white flex items-center justify-between focus:outline-none">
-                        <span>How can I place an order or inquiry?</span>
-                        <i class="fa-solid fa-chevron-down text-brand-green transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-300 leading-relaxed border-t border-dark-700/50 pt-4">
-                        Placing an order is easy and direct. You can call us anytime at <a href="tel:09112768891" class="text-brand-green underline font-semibold">09112768891</a> or use our contact form below to get in touch with our sales team.
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-dark-600/40 pt-4">
+                        Yes! Eazee Lighthouse specializes in bulk electrical supplies for contractors, developers, and large-scale residential projects. Get in touch with our team for bulk availability and pricing.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark-800/50 border-t border-dark-700/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                
-                <!-- Contact Info -->
-                <div class="lg:col-span-5">
-                    <span class="text-brand-green font-bold text-xs uppercase tracking-widest bg-brand-green/10 px-3 py-1 rounded-full border border-brand-green/20">Get In Touch</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-6">
-                        Ready to Fill Your House? <span class="gradient-text">Contact Us Today</span>
-                    </h2>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-8">
-                        Call us directly to claim your new house electrical pack discount or to discuss your bulk device supply needs.
+    <!-- Contact CTA Section -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-teal/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-brand-teal/30 text-center space-y-8 shadow-2xl">
+                <div class="w-16 h-16 rounded-2xl bg-brand-teal/10 border border-brand-teal/30 flex items-center justify-center text-brand-teal text-2xl mx-auto">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="space-y-3 max-w-2xl mx-auto">
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Ready to Order Your Electrical Devices?</h2>
+                    <p class="text-slate-300">
+                        Contact Eazee Lighthouse today to get your bulk order sorted or to claim your discounted New House Pack price!
                     </p>
-
-                    <div class="space-y-6">
-                        <a href="tel:09112768891" class="flex items-center gap-4 glass-card p-5 rounded-2xl group hover:border-brand-green/50 transition-all">
-                            <div class="w-12 h-12 rounded-xl bg-dark-700 flex items-center justify-center text-brand-green text-xl group-hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-phone-volume"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-gray-400 block font-medium">Direct Phone Line</span>
-                                <span class="text-lg font-bold text-white group-hover:text-brand-green transition-colors">09112768891</span>
-                            </div>
-                        </a>
-
-                        <div class="flex items-center gap-4 glass-card p-5 rounded-2xl">
-                            <div class="w-12 h-12 rounded-xl bg-dark-700 flex items-center justify-center text-brand-teal text-xl">
-                                <i class="fa-solid fa-boxes-stacked"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-gray-400 block font-medium">Supply Type</span>
-                                <span class="text-base font-bold text-white">Bulk Electrical Devices & Packs</span>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 glass-card p-5 rounded-2xl">
-                            <div class="w-12 h-12 rounded-xl bg-dark-700 flex items-center justify-center text-brand-green text-xl">
-                                <i class="fa-solid fa-percent"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-gray-400 block font-medium">Special Pricing</span>
-                                <span class="text-base font-bold text-white">New House Discount Packs Available</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Contact Form / Quick Inquiry Card -->
-                <div class="lg:col-span-7">
-                    <div class="glass-card p-8 sm:p-10 rounded-3xl glow-effect">
-                        <h3 class="text-2xl font-bold text-white mb-2">Send an Inquiry</h3>
-                        <p class="text-sm text-gray-400 mb-8">Fill out the quick form below and our team will get back to you promptly regarding your electrical pack.</p>
-                        
-                        <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Your Name</label>
-                                    <input type="text" required class="w-full bg-dark-900 border border-dark-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors text-sm" placeholder="John Doe">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Phone Number</label>
-                                    <input type="tel" required class="w-full bg-dark-900 border border-dark-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors text-sm" placeholder="09112768891">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Select Interest / Pack</label>
-                                <select class="w-full bg-dark-900 border border-dark-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors text-sm">
-                                    <option>New House Pack (1-2 Bedroom)</option>
-                                    <option selected>New House Pack (3-4 Bedroom - Popular)</option>
-                                    <option>New House Pack (5+ Bedroom / Villa)</option>
-                                    <option>General Bulk Electrical Devices Order</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Message / Details</label>
-                                <textarea rows="4" class="w-full bg-dark-900 border border-dark-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors text-sm" placeholder="Tell us about your property or bulk requirements..."></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full gradient-bg text-dark-900 font-bold py-4 rounded-xl shadow-lg shadow-brand-green/20 hover:opacity-95 transition-all text-sm uppercase tracking-wider">
-                                Submit Inquiry
-                            </button>
-
-                            <div id="form-success" class="hidden text-center text-brand-green font-semibold text-sm mt-4">
-                                <i class="fa-solid fa-circle-check mr-2"></i> Thank you! We have received your inquiry and will contact you shortly.
-                            </div>
-                        </form>
-                    </div>
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="tel:09112768891" class="glow-button w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-green to-brand-teal text-dark-900 font-extrabold text-lg flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-phone-volume"></i> Call: 09112768891
+                    </a>
                 </div>
 
+                <div class="pt-6 border-t border-dark-600 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-brand-teal"></i> Bulk Supply Available
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-brand-green"></i> New House Discount Packs
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-brand-cyan"></i> Fast & Direct Service
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-900 border-t border-dark-700/80 py-12">
+    <footer class="bg-dark-900 border-t border-dark-600 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-8 pb-8 border-b border-dark-800">
-                <a href="#" class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-dark-900 font-bold text-xl shadow-lg">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <div>
-                        <span class="text-xl font-bold tracking-tight text-white">Eazee <span class="gradient-text">Lighthouse</span></span>
-                        <span class="block text-[10px] tracking-widest text-brand-light/70 uppercase font-semibold">Bulk Electrical Supply</span>
-                    </div>
-                </a>
-
-                <div class="flex items-center gap-6 text-sm text-gray-400">
-                    <a href="#about" class="hover:text-brand-green transition-colors">About</a>
-                    <a href="#packs" class="hover:text-brand-green transition-colors">House Packs</a>
-                    <a href="#services" class="hover:text-brand-green transition-colors">Bulk Supply</a>
-                    <a href="#faq" class="hover:text-brand-green transition-colors">FAQ</a>
-                    <a href="#contact" class="hover:text-brand-green transition-colors">Contact</a>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <a href="tel:09112768891" class="w-10 h-10 rounded-xl bg-dark-800 border border-dark-700 flex items-center justify-center text-brand-green hover:border-brand-green transition-all" title="Call Us">
-                        <i class="fa-solid fa-phone"></i>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-green to-brand-teal flex items-center justify-center text-dark-900 font-bold text-lg">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <span class="font-heading font-extrabold text-xl text-white">Eazee <span class="text-brand-teal">Lighthouse</span></span>
                     </a>
+                    <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+                        Your reliable provider of bulk electrical devices. Specializing in discounted complete electrical packs to fill new houses efficiently.
+                    </p>
                 </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#features" class="hover:text-brand-teal transition-colors">Why Choose Us</a></li>
+                        <li><a href="#services" class="hover:text-brand-teal transition-colors">Bulk Supply</a></li>
+                        <li><a href="#packages" class="hover:text-brand-teal transition-colors">New House Pack</a></li>
+                        <li><a href="#faq" class="hover:text-brand-teal transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Contact Info</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>
+                            <a href="tel:09112768891" class="flex items-center gap-2 text-brand-teal hover:text-brand-green transition-colors font-medium">
+                                <i class="fa-solid fa-phone"></i> 09112768891
+                            </a>
+                        </li>
+                        <li class="pt-2 text-xs text-slate-500">
+                            Bulk orders & new house pack discounts available via phone inquiry.
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+            <div class="border-t border-dark-600/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
                 <p>&copy; <span id="current-year"></span> Eazee Lighthouse. All rights reserved.</p>
-                <p>Bulk electrical devices & discounted new house packs.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Interactivity -->
+    <!-- JavaScript for Mobile Menu & FAQ Accordions -->
     <script>
-        // Set current year in footer
+        // Set Current Year in Footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Mobile menu toggle
+        // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
 
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // FAQ accordion toggle
+        // FAQ Accordions
         const faqToggles = document.querySelectorAll('.faq-toggle');
+        
         faqToggles.forEach(toggle => {
             toggle.addEventListener('click', () => {
                 const content = toggle.nextElementSibling;
-                const icon = toggle.querySelector('i');
+                const icon = toggle.querySelector('fa-chevron-down');
                 
                 // Toggle current
                 content.classList.toggle('hidden');
-                icon.classList.toggle('rotate-180');
+                
+                // Rotate icon if exists
+                const chevron = toggle.querySelector('.fa-chevron-down');
+                if (chevron) {
+                    chevron.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                }
             });
         });
-
-        // Handle inquiry form submission mock
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const successMsg = document.getElementById('form-success');
-            const form = document.getElementById('inquiry-form');
-            
-            successMsg.classList.remove('hidden');
-            form.reset();
-
-            setTimeout(() => {
-                successMsg.classList.add('hidden');
-            }, 6000);
-        }
     </script>
 </body>
 </html>
