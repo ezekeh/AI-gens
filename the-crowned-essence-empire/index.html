@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Crowned Essence Empire | Luxury Fashion, Beauty & Lifestyle</title>
+    <title>The Crowned Essence Empire | Luxury Fashion, Hair & Lifestyle</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         :root {
-            --primary-gold: #D4AF37;
-            --light-gold: #F3E5AB;
-            --dark-gold: #AA820A;
-            --rich-black: #0B0B0B;
-            --charcoal: #1A1A1A;
-            --soft-gray: #F8F8F8;
-            --pure-white: #FFFFFF;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --bg-black: #0b0b0b;
+            --surface-black: #141414;
+            --card-black: #1a1a1a;
+            --cream: #f4f0ea;
+            --cream-dark: #e3dcd1;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa8c2c;
+            --nude: #c8b9a6;
+            --nude-dark: #a39480;
+            --white: #ffffff;
+            --gray-text: #b3b3b3;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -29,81 +33,93 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
+            background-color: var(--bg-black);
+            color: var(--cream);
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--rich-black);
-            color: var(--pure-white);
-            line-height: 1.6;
             overflow-x: hidden;
         }
 
+        /* Typography */
         h1, h2, h3, h4, .serif-font {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
             letter-spacing: 0.05em;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
+        p, span, a, button, input, select, textarea {
+            font-family: 'Montserrat', sans-serif;
         }
 
-        ul {
-            list-style: none;
-        }
-
+        /* Utility Classes */
         .container {
-            width: 100%;
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* --- BUTTONS --- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2.5rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-weight: 600;
-            border-radius: 0;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
+        .gold-text {
+            color: var(--gold);
         }
 
         .btn-gold {
-            background-color: var(--primary-gold);
-            color: var(--rich-black);
-            border: 1px solid var(--primary-gold);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--bg-black);
+            padding: 15px 35px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
         }
 
         .btn-gold:hover {
-            background-color: transparent;
-            color: var(--primary-gold);
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
         }
 
         .btn-outline {
-            background-color: transparent;
-            color: var(--pure-white);
-            border: 1px solid var(--primary-gold);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: transparent;
+            color: var(--cream);
+            padding: 15px 35px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--nude);
+            cursor: pointer;
+            transition: var(--transition);
         }
 
         .btn-outline:hover {
-            background-color: var(--primary-gold);
-            color: var(--rich-black);
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-2px);
         }
 
-        /* --- HEADER & NAVIGATION --- */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
@@ -112,13 +128,14 @@
             z-index: 1000;
             background: rgba(11, 11, 11, 0.85);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             transition: var(--transition);
         }
 
         header.scrolled {
             background: rgba(11, 11, 11, 0.95);
-            padding: 0.5rem 0;
+            padding: 10px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .nav-container {
@@ -126,76 +143,106 @@
             align-items: center;
             justify-content: space-between;
             height: 90px;
+            transition: var(--transition);
+        }
+
+        header.scrolled .nav-container {
+            height: 75px;
         }
 
         .logo {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary-gold);
+            letter-spacing: 0.2em;
+            color: var(--cream);
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
         }
 
-        .logo span {
-            font-size: 0.7rem;
+        .logo-sub {
+            font-size: 0.65rem;
             letter-spacing: 0.4em;
-            color: var(--pure-white);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-top: -3px;
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
-            gap: 2.5rem;
+            list-style: none;
+            gap: 35px;
             align-items: center;
         }
 
-        .nav-link {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cream);
+            font-size: 0.8rem;
             font-weight: 500;
-            color: var(--pure-white);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: var(--transition);
             position: relative;
         }
 
-        .nav-link::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
             height: 1px;
-            background-color: var(--primary-gold);
+            background-color: var(--gold);
             transition: var(--transition);
         }
 
-        .nav-link:hover::after, .nav-link.active::after {
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
             width: 100%;
         }
 
-        .nav-link:hover {
-            color: var(--primary-gold);
+        .nav-cta {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 25px;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: var(--transition);
         }
 
-        .hamburger {
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--bg-black);
+        }
+
+        .mobile-toggle {
             display: none;
-            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--cream);
             font-size: 1.5rem;
-            color: var(--primary-gold);
+            cursor: pointer;
         }
 
-        /* --- HERO SECTION --- */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
-            background: linear-gradient(rgba(11, 11, 11, 0.6), rgba(11, 11, 11, 0.8)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(11,11,11,0.9), rgba(11,11,11,0.7)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
             padding-top: 90px;
         }
 
@@ -205,147 +252,194 @@
         }
 
         .hero-subtitle {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.3em;
-            color: var(--primary-gold);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: inline-block;
+            font-weight: 600;
         }
 
         .hero-title {
-            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-size:.clamp(2.8rem, 5.5vw, 5.2rem);
             line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--pure-white);
-        }
-
-        .hero-title span {
-            color: var(--primary-gold);
-            font-style: italic;
+            margin-bottom: 25px;
+            color: var(--cream);
         }
 
         .hero-description {
-            font-size: 1.1rem;
-            color: #E0E0E0;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--gray-text);
+            margin-bottom: 40px;
+            max-width: 650px;
             font-weight: 300;
         }
 
-        .hero-btns {
+        .hero-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        /* --- ABOUT SECTION --- */
+        /* Brand Essence / Ticker or Highlight bar */
+        .brand-bar {
+            background: var(--surface-black);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 30px 0;
+        }
+
+        .brand-bar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .brand-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-item i {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+
+        .brand-item h4 {
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            color: var(--cream);
+        }
+
+        .brand-item p {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        /* About Section */
         .about {
-            padding: 8rem 0;
-            background-color: var(--charcoal);
+            background-color: var(--bg-black);
             position: relative;
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            gap: 60px;
             align-items: center;
         }
 
-        .about-img-wrapper {
+        .about-images {
             position: relative;
         }
 
-        .about-img {
-            width: 100%;
-            height: 550px;
+        .about-img-main {
+            width: 85%;
+            height: 500px;
             object-fit: cover;
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .about-img-accent {
+        .about-img-secondary {
             position: absolute;
-            bottom: -30px;
-            right: -30px;
-            width: 250px;
-            height: 300px;
+            bottom: -40px;
+            right: 0;
+            width: 55%;
+            height: 320px;
             object-fit: cover;
-            border: 1px solid var(--primary-gold);
-            display: none;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
         }
 
         .section-header {
-            margin-bottom: 2rem;
+            margin-bottom: 30px;
         }
 
         .section-subtitle {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--primary-gold);
-            margin-bottom: 0.75rem;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+            margin-bottom: 15px;
             display: block;
             font-weight: 600;
         }
 
         .section-title {
-            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
             line-height: 1.2;
-            color: var(--pure-white);
+            color: var(--cream);
         }
 
         .about-text {
-            color: #CCCCCC;
-            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--gray-text);
+            margin-bottom: 25px;
             font-weight: 300;
         }
 
-        .target-audience {
+        .about-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
+            gap: 20px;
+            margin-top: 35px;
+            margin-bottom: 40px;
         }
 
-        .audience-item h4 {
-            color: var(--primary-gold);
+        .about-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .about-feature-item i {
+            color: var(--gold);
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
         }
 
-        .audience-item p {
+        .about-feature-item span {
             font-size: 0.9rem;
-            color: #AAAAAA;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--cream);
         }
 
-        /* --- SERVICES SECTION --- */
+        /* Services & Offerings */
         .services {
-            padding: 8rem 0;
-            background-color: var(--rich-black);
+            background-color: var(--surface-black);
         }
 
-        .services-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 5rem auto;
+        .services-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            gap: 30px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
-            background-color: var(--charcoal);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 3rem 2rem;
+            background: var(--card-black);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 40px;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .service-card::before {
@@ -355,248 +449,223 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background-color: var(--primary-gold);
-            transform: scaleX(0);
-            transform-origin: left;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
             transition: var(--transition);
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-gold);
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
 
         .service-card:hover::before {
-            transform: scaleX(1);
+            opacity: 1;
         }
 
         .service-icon {
             font-size: 2.5rem;
-            color: var(--primary-gold);
-            margin-bottom: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 25px;
         }
 
         .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--pure-white);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--cream);
         }
 
         .service-desc {
-            font-size: 0.95rem;
-            color: #BBBBBB;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--gray-text);
+            margin-bottom: 25px;
             font-weight: 300;
-            margin-bottom: 1.5rem;
         }
 
-        /* --- GALLERY / PORTFOLIO SECTION --- */
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            gap: 15px;
+            color: var(--cream);
+        }
+
+        /* Gallery Section */
         .gallery {
-            padding: 8rem 0;
-            background-color: var(--charcoal);
-        }
-
-        .gallery-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem auto;
+            background-color: var(--bg-black);
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
         }
 
         .gallery-item {
             position: relative;
-            height: 400px;
+            height: 380px;
             overflow: hidden;
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        .gallery-img {
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(11, 11, 11, 0.8);
+            background: linear-gradient(to top, rgba(11,11,11,0.9), transparent);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            text-align: center;
+            justify-content: flex-end;
+            padding: 30px;
             opacity: 0;
             transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
         }
 
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
 
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.1);
-        }
-
         .gallery-title {
-            color: var(--primary-gold);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            transform: translateY(20px);
-            transition: var(--transition);
-        }
-
-        .gallery-subtitle {
-            font-size: 0.85rem;
-            color: #CCCCCC;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transform: translateY(20px);
-            transition: var(--transition);
-            transition-delay: 0.1s;
-        }
-
-        .gallery-item:hover .gallery-title,
-        .gallery-item:hover .gallery-subtitle {
-            transform: translateY(0);
-        }
-
-        /* --- EXPERIENCE / WHY CHOOSE US --- */
-        .features {
-            padding: 8rem 0;
-            background-color: var(--rich-black);
-            position: relative;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .feature-box {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: linear-gradient(145deg, #141414, #0d0d0d);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            transition: var(--transition);
-        }
-
-        .feature-box:hover {
-            border-color: var(--primary-gold);
-        }
-
-        .feature-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            color: var(--primary-gold);
-            opacity: 0.4;
-            margin-bottom: 1rem;
-            line-height: 1;
-        }
-
-        .feature-box h3 {
             font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--pure-white);
+            color: var(--cream);
+            margin-bottom: 5px;
         }
 
-        .feature-box p {
-            font-size: 0.9rem;
-            color: #AAAAAA;
+        .gallery-category {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        /* Experience / Audience Section */
+        .audience {
+            background: linear-gradient(135deg, var(--surface-black), var(--card-black));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .audience-content p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--gray-text);
+            margin-bottom: 25px;
             font-weight: 300;
         }
 
-        /* --- CALL TO ACTION BANNER --- */
-        .cta-banner {
-            padding: 6rem 0;
-            background: linear-gradient(rgba(11, 11, 11, 0.9), rgba(11, 11, 11, 0.9)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+        .audience-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .audience-card {
+            background: var(--bg-black);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 30px;
             text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
         }
 
-        .cta-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .audience-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
         }
 
-        .cta-banner h2 {
-            font-size: clamp(2.5rem, 4vw, 4rem);
-            margin-bottom: 1.5rem;
-            color: var(--pure-white);
+        .audience-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
         }
 
-        .cta-banner h2 span {
-            color: var(--primary-gold);
-            font-style: italic;
-        }
-
-        .cta-banner p {
+        .audience-card h4 {
             font-size: 1.1rem;
-            color: #CCCCCC;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
+            letter-spacing: 0.05em;
+            color: var(--cream);
+            margin-bottom: 10px;
         }
 
-        /* --- FAQ SECTION --- */
+        .audience-card p {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            line-height: 1.5;
+        }
+
+        /* FAQ Section */
         .faq {
-            padding: 8rem 0;
-            background-color: var(--charcoal);
-        }
-
-        .faq-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem auto;
+            background-color: var(--bg-black);
         }
 
         .faq-container {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 50px auto 0;
         }
 
         .faq-item {
-            background-color: var(--rich-black);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            margin-bottom: 1.5rem;
+            background: var(--surface-black);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            margin-bottom: 20px;
             transition: var(--transition);
         }
 
         .faq-question {
-            padding: 1.5rem 2rem;
+            padding: 25px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            font-size: 1.1rem;
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            color: var(--pure-white);
+            font-size: 1.3rem;
+            color: var(--cream);
+            letter-spacing: 0.03em;
         }
 
         .faq-question i {
-            color: var(--primary-gold);
+            color: var(--gold);
             transition: var(--transition);
         }
 
         .faq-answer {
-            padding: 0 2rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            font-size: 0.95rem;
-            color: #AAAAAA;
+            padding: 0 30px 25px;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--gray-text);
+            display: none;
             font-weight: 300;
         }
 
         .faq-item.active {
-            border-color: var(--primary-gold);
+            border-color: rgba(212, 175, 55, 0.4);
         }
 
         .faq-item.active .faq-question i {
@@ -604,495 +673,584 @@
         }
 
         .faq-item.active .faq-answer {
-            padding: 0 2rem 1.5rem 2rem;
-            max-height: 200px;
+            display: block;
         }
 
-        /* --- CONTACT SECTION --- */
+        /* Contact & CTA Section */
         .contact {
-            padding: 8rem 0;
-            background-color: var(--rich-black);
+            background-color: var(--surface-black);
+            position: relative;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
         }
 
-        .contact-info-box {
+        .contact-info-list {
+            margin-top: 40px;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 30px;
         }
 
-        .contact-method {
+        .contact-info-item {
             display: flex;
             align-items: flex-start;
-            gap: 1.5rem;
+            gap: 20px;
         }
 
-        .contact-method i {
-            font-size: 1.5rem;
-            color: var(--primary-gold);
-            margin-top: 0.2rem;
+        .contact-info-item i {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-top: 3px;
         }
 
-        .contact-method h4 {
+        .contact-info-item h4 {
             font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-            color: var(--pure-white);
+            color: var(--cream);
+            margin-bottom: 5px;
         }
 
-        .contact-method p, .contact-method a {
-            font-size: 0.95rem;
-            color: #BBBBBB;
+        .contact-info-item p, .contact-info-item a {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            text-decoration: none;
+            transition: var(--transition);
             font-weight: 300;
         }
 
-        .contact-method a:hover {
-            color: var(--primary-gold);
+        .contact-info-item a:hover {
+            color: var(--gold);
         }
 
-        .contact-form-wrapper {
-            background-color: var(--charcoal);
-            padding: 3rem;
+        .contact-form-box {
+            background: var(--card-black);
             border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 50px;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 25px;
         }
 
         .form-control {
             width: 100%;
-            padding: 1rem 1.25rem;
-            background-color: var(--rich-black);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--pure-white);
-            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-black);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 15px 20px;
+            color: var(--cream);
             font-size: 0.9rem;
             transition: var(--transition);
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--primary-gold);
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: var(--nude-dark);
         }
 
         textarea.form-control {
             resize: vertical;
-            min-height: 150px;
+            min-height: 120px;
         }
 
-        /* --- FOOTER --- */
+        /* Footer */
         footer {
-            background-color: #050505;
+            background-color: var(--bg-black);
             border-top: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 5rem 0 2rem 0;
+            padding: 80px 0 30px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-about p {
-            color: #999999;
-            font-size: 0.9rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-            max-width: 350px;
-            font-weight: 300;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: var(--charcoal);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-gold);
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background-color: var(--primary-gold);
-            color: var(--rich-black);
-            border-color: var(--primary-gold);
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 50px;
+            margin-bottom: 60px;
         }
 
         .footer-col h4 {
             font-size: 1.2rem;
-            color: var(--pure-white);
-            margin-bottom: 1.5rem;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            color: var(--cream);
+            margin-bottom: 25px;
+            letter-spacing: 0.05em;
         }
 
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .footer-link {
-            color: #999999;
-            font-size: 0.9rem;
+        .footer-col p {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            line-height: 1.7;
+            margin-bottom: 25px;
             font-weight: 300;
         }
 
-        .footer-link:hover {
-            color: var(--primary-gold);
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray-text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            font-weight: 300;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
             padding-left: 5px;
         }
 
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--surface-black);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--cream);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--gold);
+            color: var(--bg-black);
+            border-color: var(--gold);
+        }
+
         .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 20px;
         }
 
         .footer-bottom p {
-            color: #777777;
-            font-size: 0.85rem;
-            font-weight: 300;
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            letter-spacing: 0.05em;
         }
 
-        /* --- WHATSAPP FLOATING BUTTON --- */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
+            background: #25d366;
+            color: white;
             width: 60px;
             height: 60px;
-            background-color: #25D366;
-            color: #FFF;
             border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 999;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
             transition: var(--transition);
+            text-decoration: none;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
-            background-color: #20ba5a;
-            color: #FFF;
+            background: #20ba5a;
         }
 
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 992px) {
-            .about-grid, .contact-grid, .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
+        /* Toast Alert Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--gold);
+            color: var(--bg-black);
+            padding: 15px 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease;
+            z-index: 2000;
+            opacity: 0;
+        }
 
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-grid, .contact-grid, .audience-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-images {
+                margin-bottom: 40px;
+            }
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .about-img-wrapper {
-                max-width: 600px;
-                margin: 0 auto;
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-menu {
+            .nav-links {
                 position: fixed;
-                top: 90px;
+                top: 75px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 90px);
-                background-color: var(--rich-black);
+                height: calc(100vh - 75px);
+                background: var(--bg-black);
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 transition: var(--transition);
-                border-top: 1px solid rgba(212, 175, 55, 0.1);
+                border-top: 1px solid rgba(212, 175, 55, 0.15);
             }
-
-            .nav-menu.active {
+            .nav-links.active {
                 left: 0;
             }
-
-            .hamburger {
+            .mobile-toggle {
                 display: block;
             }
-
+            .nav-cta-container {
+                display: none;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
-
-            .target-audience {
+            .about-features {
                 grid-template-columns: 1fr;
             }
-
-            .hero-btns {
-                flex-direction: column;
-                width: 100%;
+            .audience-cards {
+                grid-template-columns: 1fr;
             }
-
-            .hero-btns .btn {
-                width: 100%;
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER & NAVIGATION -->
+    <!-- Header & Navigation -->
     <header id="header">
         <div class="container nav-container">
             <a href="#" class="logo">
-                The Crowned Essence
-                <span>Empire</span>
+                <span class="logo-main">Crowned Essence</span>
+                <span class="logo-sub">Empire</span>
             </a>
             
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#gallery" class="nav-link">Collection</a></li>
+                <li><a href="#features" class="nav-link">Collections</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-cta-container mobile-only-cta">
+                    <a href="tel:07080081410" class="nav-cta">Call Now</a>
+                </li>
             </ul>
 
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <a href="tel:07080081410" class="nav-cta nav-cta-container">Book / Call</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-subtitle">Luxury Fashion, Beauty & Lifestyle</span>
-                <h1 class="hero-title">Elevate Your <span>Essence</span> & Redefine Luxury</h1>
-                <p class="hero-description">Welcome to The Crowned Essence Empire. Your premier destination for professional hair artistry, bespoke wig production, exquisite fashion, and signature fragrances curated for the elite.</p>
-                <div class="hero-btns">
-                    <a href="#services" class="btn btn-gold">Explore Services</a>
-                    <a href="tel:07080081410" class="btn btn-outline"><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> 07080081410</a>
+                <span class="hero-subtitle">Welcome to Luxury & Elegance</span>
+                <h1 class="hero-title serif-font">The Crowned <span class="gold-text">Essence</span> Empire</h1>
+                <p class="hero-description">Your premier destination for professional hair-making, custom wig installation, exquisite braiding, signature fragrances, luxury fashion, and statement footwear. Define your signature look with us.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-gold">Explore Services <i class="fas fa-arrow-right"></i></a>
+                    <a href="tel:07080081410" class="btn-outline"><i class="fas fa-phone-alt"></i> 0708 008 1410</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="about" id="about">
+    <!-- Brand Highlights Bar -->
+    <div class="brand-bar">
+        <div class="container">
+            <div class="brand-bar-grid">
+                <div class="brand-item">
+                    <i class="fas fa-crown"></i>
+                    <h4>Master Hair Artistry</h4>
+                    <p>Wigs, styling & precision braiding</p>
+                </div>
+                <div class="brand-item">
+                    <i class="fas fa-gem"></i>
+                    <h4>Luxury Fashion</h4>
+                    <p>Curated clothing & exquisite footwear</p>
+                </div>
+                <div class="brand-item">
+                    <i class="fas fa-spray-can"></i>
+                    <h4>Signature Scents</h4>
+                    <p>Captivating fragrances & essences</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop" alt="Luxury Beauty Model" class="about-img">
+                <div class="about-images">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" alt="Luxury Lifestyle Professional" class="about-img-main">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600" alt="Hair Styling Artistry" class="about-img-secondary">
                 </div>
                 <div class="about-content">
                     <div class="section-header">
-                        <span class="section-subtitle">Distinguished Heritage</span>
-                        <h2 class="section-title">Where Elegance Meets Modern Lifestyle</h2>
+                        <span class="section-subtitle">About Our Empire</span>
+                        <h2 class="section-title serif-font">Redefining Style, Beauty & Sophistication</h2>
                     </div>
-                    <p class="about-text">The Crowned Essence Empire is a premier fashion, beauty, and lifestyle powerhouse dedicated to delivering unmatched sophistication. We specialize in professional hair-making and styling services, bespoke wig production and installation, exquisite braiding, luxury fragrances and scents, and a curated selection of elite clothing, footwear, and lifestyle products.</p>
-                    <p class="about-text">We cater to young women and men, students, working professionals, and all fashion- and beauty-conscious individuals who refuse to compromise on quality, standard, and personal aesthetic.</p>
+                    <p class="about-text">At The Crowned Essence Empire, we curate an uncompromising standard of elegance. We cater to fashion- and beauty-conscious individuals—from dynamic young professionals and students to style enthusiasts—who desire exceptional quality in every detail of their appearance.</p>
+                    <p class="about-text">Whether you are stepping into a boardroom, preparing for a high-profile event, or elevating your everyday aesthetic, our elite hair stylists, fashion selectors, and scent curators are dedicated to revealing your ultimate self.</p>
                     
-                    <div class="target-audience">
-                        <div class="audience-item">
-                            <h4>Professionals & Students</h4>
-                            <p>Refined, effortless styles and wardrobe essentials tailored for the modern ambitious lifestyle.</p>
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Wig Production & Installation</span>
                         </div>
-                        <div class="audience-item">
-                            <h4>Conscious Individuals</h4>
-                            <p>Discerning clients looking for premium hair care, signature fragrances, and luxury fashion pieces.</p>
+                        <div class="about-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Professional Hair Styling</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Curated Fashion & Footwear</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Signature Fragrances</span>
                         </div>
                     </div>
+
+                    <a href="#contact" class="btn-gold">Get in Touch</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="services" id="services">
+    <!-- Services & Offerings -->
+    <section id="services" class="services">
         <div class="container">
-            <div class="services-header">
-                <span class="section-subtitle">What We Offer</span>
-                <h2 class="section-title">Our Exclusive Services & Products</h2>
+            <div class="services-header-flex">
+                <div>
+                    <span class="section-subtitle">What We Offer</span>
+                    <h2 class="section-title serif-font">Our Premium Services & Collections</h2>
+                </div>
+                <p style="max-width: 450px; color: var(--gray-text); font-size: 0.9rem; font-weight: 300;">
+                    Immerse yourself in our comprehensive suite of beauty, fashion, and lifestyle offerings designed to elevate your personal brand.
+                </p>
             </div>
-            
+
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cut"></i>
+                    <div>
+                        <div class="service-icon"><i class="fas fa-cut"></i></div>
+                        <h3 class="service-title serif-font">Hair Making & Styling</h3>
+                        <p class="service-desc">Professional hair care, maintenance, and bespoke styling tailored to enhance your natural beauty with precision and creativity.</p>
                     </div>
-                    <h3 class="service-title">Hair Styling & Making</h3>
-                    <p class="service-desc">Professional hair making, precision styling, and intricate braiding services designed to match your distinct facial structure and lifestyle.</p>
+                    <a href="#contact" class="service-link">Book Appointment <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-crown"></i>
+                    <div>
+                        <div class="service-icon"><i class="fas fa-magic"></i></div>
+                        <h3 class="service-title serif-font">Wig Production & Install</h3>
+                        <p class="service-desc">Custom-made luxury wig construction and seamless, natural-looking lace installations that guarantee effortless glamour.</p>
                     </div>
-                    <h3 class="service-title">Wig Production & Installation</h3>
-                    <p class="service-desc">Custom-crafted premium wig production and flawless, natural-looking installations that guarantee absolute comfort and longevity.</p>
+                    <a href="#contact" class="service-link">Book Appointment <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-spray-can"></i>
+                    <div>
+                        <div class="service-icon"><i class="fas fa-feather-alt"></i></div>
+                        <h3 class="service-title serif-font">Exquisite Braiding</h3>
+                        <p class="service-desc">Clean, intricate, and stylish braiding services executed with care, protecting your hair while turning heads.</p>
                     </div>
-                    <h3 class="service-title">Fragrances & Scents</h3>
-                    <p class="service-desc">An elite collection of captivating, long-lasting fragrances and signature scents designed to leave an unforgettable impression wherever you go.</p>
+                    <a href="#contact" class="service-link">Book Appointment <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tshirt"></i>
+                    <div>
+                        <div class="service-icon"><i class="fas fa-spray-can"></i></div>
+                        <h3 class="service-title serif-font">Fragrances & Scents</h3>
+                        <p class="service-desc">An exclusive selection of long-lasting, captivating niche fragrances and scents that leave a lasting impression wherever you go.</p>
                     </div>
-                    <h3 class="service-title">Clothing & Fashion</h3>
-                    <p class="service-desc">Selected luxury fashion apparel tailored for trendsetters, working professionals, and those who demand high-end style statements.</p>
+                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shoe-prints"></i>
+                    <div>
+                        <div class="service-icon"><i class="fas fa-tshirt"></i></div>
+                        <h3 class="service-title serif-font">Clothing & Footwear</h3>
+                        <p class="service-desc">Trendy, chic, and statement apparel alongside premium footwear designed for young men, women, and fashion icons.</p>
                     </div>
-                    <h3 class="service-title">Footwear Collection</h3>
-                    <p class="service-desc">Exquisite, high-quality footwear merging optimum comfort with uncompromised elegance for every high-fashion occasion.</p>
+                    <a href="#contact" class="service-link">Explore Collection <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-gem"></i>
+                    <div>
+                        <div class="service-icon"><i class="fas fa-gem"></i></div>
+                        <h3 class="service-title serif-font">Luxury Lifestyle Products</h3>
+                        <p class="service-desc">Selected premium accessories and lifestyle essentials curated exclusively for individuals with sophisticated tastes.</p>
                     </div>
-                    <h3 class="service-title">Luxury Lifestyle Products</h3>
-                    <p class="service-desc">Carefully handpicked luxury lifestyle items created to complement your personal aesthetic and elevate your daily living standard.</p>
+                    <a href="#contact" class="service-link">Discover More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
-    <section class="gallery" id="gallery">
+    <!-- Target Audience / Features Section -->
+    <section id="features" class="audience">
         <div class="container">
-            <div class="gallery-header">
-                <span class="section-subtitle">Visual Aesthetics</span>
-                <h2 class="section-title">The Empire Showcase</h2>
+            <div class="audience-grid">
+                <div class="audience-content">
+                    <span class="section-subtitle">Tailored For You</span>
+                    <h2 class="section-title serif-font">Crafted For The Modern Trendsetter</h2>
+                    <p>We understand that your appearance is an extension of your identity. Whether you are an ambitious student building your future, a busy working professional commanding attention in the corporate space, or a trend-conscious lifestyle seeker, The Crowned Essence Empire is your trusted partner.</p>
+                    <p>We bring convenience, superior quality, and trendsetting style together under one unified empire so you never have to compromise.</p>
+                    <a href="tel:07080081410" class="btn-gold"><i class="fas fa-phone-alt"></i> Speak With Our Team</a>
+                </div>
+                <div class="audience-cards">
+                    <div class="audience-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Students</h4>
+                        <p>Affordable luxury looks, trendy styles & everyday elegance.</p>
+                    </div>
+                    <div class="audience-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h4>Professionals</h4>
+                        <p>Polished corporate hair, clean styles & sophisticated outfits.</p>
+                    </div>
+                    <div class="audience-card">
+                        <i class="fas fa-star"></i>
+                        <h4>Trendsetters</h4>
+                        <p>Bold fashion pieces, unique wigs & signature scents.</p>
+                    </div>
+                    <div class="audience-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>All Genders</h4>
+                        <p>Inclusive lifestyle and beauty solutions for men & women.</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container" style="text-align: center;">
+            <span class="section-subtitle">Visual Showcase</span>
+            <h2 class="section-title serif-font">Glimpse Into The Empire</h2>
+            <p style="color: var(--gray-text); max-width: 600px; margin: 15px auto 0; font-weight: 300;">A snapshot of our immaculate wig installations, pristine styling, chic apparel, and luxury lifestyle curation.</p>
+            
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=800&auto=format&fit=crop" alt="Hair Styling" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&q=80&w=600" alt="Wig Styling & Hair">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Professional Wig Artistry</h3>
-                        <span class="gallery-subtitle">Hair & Installation</span>
+                        <h4 class="gallery-title serif-font">Lace Wig Installation</h4>
+                        <span class="gallery-category">Hair Artistry</span>
                     </div>
                 </div>
-
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=800&auto=format&fit=crop" alt="Luxury Fragrance" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=600" alt="Luxury Fashion">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Signature Scents</h3>
-                        <span class="gallery-subtitle">Fragrances</span>
+                        <h4 class="gallery-title serif-font">High Fashion Apparel</h4>
+                        <span class="gallery-category">Clothing & Style</span>
                     </div>
                 </div>
-
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=800&auto=format&fit=crop" alt="High Fashion" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=600" alt="Fragrances">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Elite Wardrobe</h3>
-                        <span class="gallery-subtitle">Clothing & Footwear</span>
+                        <h4 class="gallery-title serif-font">Signature Fragrances</h4>
+                        <span class="gallery-category">Scents & Essence</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=600" alt="Luxury Footwear">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title serif-font">Designer Footwear</h4>
+                        <span class="gallery-category">Lifestyle Products</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES / WHY CHOOSE US -->
-    <section class="features">
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-box">
-                    <div class="feature-number">01</div>
-                    <h3>Uncompromising Quality</h3>
-                    <p>Every hair strand, fabric texture, and fragrance note is hand-selected to meet global elite luxury standards.</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-number">02</div>
-                    <h3>Tailored Precision</h3>
-                    <p>Personalized attention to every client, ensuring that your hair styling, fitting, and looks align with your identity.</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-number">03</div>
-                    <h3>Modern Sophistication</h3>
-                    <p>Stay ahead of trends with styles, products, and lifestyle accessories designed for modern, ambitious individuals.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CALL TO ACTION BANNER -->
-    <section class="cta-banner">
-        <div class="container cta-container">
-            <h2>Ready to Upgrade Your <span>Look & Lifestyle?</span></h2>
-            <p>Step into absolute confidence today. Contact us for professional appointments, consultations, and luxury product inquiries.</p>
-            <a href="tel:07080081410" class="btn btn-gold">Call Us Now: 07080081410</a>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="faq-header">
+            <div style="text-align: center;">
                 <span class="section-subtitle">Got Questions?</span>
-                <h2 class="section-title">Frequently Asked Questions</h2>
+                <h2 class="section-title serif-font">Frequently Asked Questions</h2>
             </div>
 
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How can I book a hair styling or wig installation appointment?</span>
+                        <span>How do I book a hair styling or wig installation appointment?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        You can easily book or make inquiries by calling us directly at 07080081410 or reaching out via our direct messaging lines. We recommend booking in advance to secure your preferred slot.
+                        Booking is simple! You can reach out directly via phone at 07080081410 or connect with us instantly through our WhatsApp link to schedule your slot with our professional stylists.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Do you offer custom wig production?</span>
+                        <span>Do you offer custom wig production services?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Yes! We specialize in custom wig production tailored precisely to your head size, preferred length, texture, color, and styling requirements.
+                        Yes, we specialize in high-end wig production, custom construction, revamping, and professional lace installations tailored precisely to your head size and desired look.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>What types of luxury lifestyle products and clothing do you carry?</span>
+                        <span>What categories of clothing and footwear do you offer?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        We offer a handpicked selection of premium clothing, footwear, and signature scents curated specifically for young professionals, students, and fashion-conscious individuals.
+                        We curate trendy, high-quality clothing, statement footwear, and selected luxury lifestyle products suitable for both young men and women seeking to elevate their everyday or event wardrobe.
                     </div>
                 </div>
 
@@ -1102,42 +1260,40 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Absolutely. We source only high-grade, premium fragrances and scents designed to offer incredible longevity and a sophisticated aura.
+                        Absolutely. We source premium, captivating fragrances and scents guaranteed to offer exceptional projection and longevity.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
             <div class="contact-grid">
                 <div>
-                    <div class="section-header">
-                        <span class="section-subtitle">Get in Touch</span>
-                        <h2 class="section-title">Connect With The Empire</h2>
-                    </div>
-                    <p class="about-text">Ready to experience true luxury? Reach out to us today for bookings, inquiries, or custom orders. Our team is dedicated to providing prompt, elite assistance.</p>
-                    
-                    <div class="contact-info-box">
-                        <div class="contact-method">
+                    <span class="section-subtitle">Connect With Us</span>
+                    <h2 class="section-title serif-font">Step Into The Empire</h2>
+                    <p style="color: var(--gray-text); margin-top: 15px; font-weight: 300;">Ready for a transformation or have an inquiry about our products and services? Contact us today.</p>
+
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
                             <i class="fas fa-phone-alt"></i>
                             <div>
                                 <h4>Direct Line</h4>
-                                <p><a href="tel:07080081410">07080081410</a></p>
+                                <a href="tel:07080081410">0708 008 1410</a>
                             </div>
                         </div>
 
-                        <div class="contact-method">
+                        <div class="contact-info-item">
                             <i class="fab fa-whatsapp"></i>
                             <div>
                                 <h4>WhatsApp Support</h4>
-                                <p><a href="https://wa.me/2347080081410" target="_blank">Chat with us on WhatsApp</a></p>
+                                <a href="https://wa.me/2347080081410" target="_blank">Chat with us on WhatsApp</a>
                             </div>
                         </div>
 
-                        <div class="contact-method">
+                        <div class="contact-info-item">
                             <i class="fas fa-clock"></i>
                             <div>
                                 <h4>Operating Hours</h4>
@@ -1147,8 +1303,9 @@
                     </div>
                 </div>
 
-                <div class="contact-form-wrapper">
-                    <form id="contact-form">
+                <div class="contact-form-box">
+                    <h3 class="serif-font" style="font-size: 1.8rem; margin-bottom: 25px; color: var(--cream);">Send Us a Message</h3>
+                    <form id="contactForm">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Your Full Name" required>
                         </div>
@@ -1158,80 +1315,91 @@
                         <div class="form-group">
                             <select class="form-control" required>
                                 <option value="" disabled selected>Select Service / Inquiry Type</option>
-                                <option value="hair">Hair Styling / Making / Wigs</option>
-                                <option value="fragrance">Fragrances & Scents</option>
-                                <option value="fashion">Clothing & Footwear</option>
-                                <option value="other">Other Luxury Products</option>
+                                <option value="Hair Styling & Making">Hair Styling & Making</option>
+                                <option value="Wig Production & Install">Wig Production & Install</option>
+                                <option value="Braiding">Braiding</option>
+                                <option value="Fragrances & Scents">Fragrances & Scents</option>
+                                <option value="Clothing & Footwear">Clothing & Footwear</option>
+                                <option value="Luxury Lifestyle Products">Luxury Lifestyle Products</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                            <textarea class="form-control" placeholder="Your Message or Booking Details" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-gold" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn-gold" style="width: 100%;">Submit Inquiry</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-about">
-                    <a href="#" class="logo">
-                        The Crowned Essence
-                        <span>Empire</span>
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 20px;">
+                        <span class="logo-main">Crowned Essence</span>
+                        <span class="logo-sub">Empire</span>
                     </a>
-                    <p>Elevating fashion, beauty, hair artistry, and luxury lifestyles for students, professionals, and trendsetters.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/2347080081410" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <p>Your ultimate luxury destination for elite hair artistry, exquisite braiding, bespoke wig production, signature fragrances, fashion, and lifestyle products.</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/2347080081410" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:07080081410" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#home" class="footer-link">Home</a></li>
-                        <li><a href="#about" class="footer-link">About Us</a></li>
-                        <li><a href="#services" class="footer-link">Services</a></li>
-                        <li><a href="#gallery" class="footer-link">Collection</a></li>
-                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#features">Collections</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Our Offerings</h4>
                     <ul class="footer-links">
-                        <li><a href="#services" class="footer-link">Hair & Wig Production</a></li>
-                        <li><a href="#services" class="footer-link">Braiding & Styling</a></li>
-                        <li><a href="#services" class="footer-link">Signature Fragrances</a></li>
-                        <li><a href="#services" class="footer-link">Clothing & Footwear</a></li>
-                        <li><a href="#services" class="footer-link">Luxury Lifestyle</a></li>
+                        <li><a href="#services">Hair Making & Styling</a></li>
+                        <li><a href="#services">Wig Production & Install</a></li>
+                        <li><a href="#services">Braiding Services</a></li>
+                        <li><a href="#services">Fragrances & Scents</a></li>
+                        <li><a href="#services">Clothing & Footwear</a></li>
                     </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone-alt gold-text" style="margin-right: 10px;"></i> <a href="tel:07080081410" style="color: var(--gray-text); text-decoration: none;">0708 008 1410</a></p>
+                    <p><i class="fab fa-whatsapp gold-text" style="margin-right: 10px;"></i> <a href="https://wa.me/2347080081410" target="_blank" style="color: var(--gray-text); text-decoration: none;">WhatsApp Chat Available</a></p>
+                    <p><i class="fas fa-map-marker-alt gold-text" style="margin-right: 10px;"></i> Professional Luxury Services</p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> The Crowned Essence Empire. All Rights Reserved.</p>
-                <p>Designed for Elegance & Luxury</p>
+                <p>&copy; <span id="currentYear"></span> The Crowned Essence Empire. All Rights Reserved.</p>
+                <p>Designed for Luxury & Elegance</p>
             </div>
         </div>
     </footer>
 
-    <!-- WHATSAPP FLOATING WIDGET -->
+    <!-- Floating WhatsApp Widget -->
     <a href="https://wa.me/2347080081410" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        // Set Current Year in Footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+    <!-- Toast Notification -->
+    <div class="toast" id="toastNotification">Message Sent Successfully! We will contact you shortly.</div>
 
-        // Sticky Header on Scroll
+    <!-- JavaScript -->
+    <script>
+        // Current Year in Footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1241,15 +1409,15 @@
             }
         });
 
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-        const navLinks = document.querySelectorAll('.nav-link');
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navItems = document.querySelectorAll('.nav-link');
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const icon = hamburger.querySelector('i');
-            if (navMenu.classList.contains('active')) {
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -1258,12 +1426,11 @@
             }
         });
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                const icon = hamburger.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
             });
         });
 
@@ -1272,23 +1439,35 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                const currentActive = document.querySelector('.faq-item.active');
-                if (currentActive && currentActive !== item) {
-                    currentActive.classList.remove('active');
-                }
+                // Close other items
+                faqItems.forEach(other => {
+                    if (other !== item) {
+                        other.classList.remove('active');
+                    }
+                });
+                // Toggle current item
                 item.classList.toggle('active');
             });
         });
 
-        // Contact Form Submission Simulation
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you for reaching out to The Crowned Essence Empire. Your message has been received, and we will contact you shortly.');
-                contactForm.reset();
-            });
-        }
+        // Contact Form Handling with Toast
+        const contactForm = document.getElementById('contactForm');
+        const toast = document.getElementById('toastNotification');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show toast
+            toast.classList.add('show');
+            
+            // Reset form
+            contactForm.reset();
+
+            // Hide toast after 4 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        });
     </script>
 </body>
 </html>
