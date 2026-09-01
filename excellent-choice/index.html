@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excellent Choice - Engineering Business Consultancy</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a', // Deep Engineering Blue
+                        secondary: '#d97706', // Accent amber/orange
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark font-sans antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-3">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788253141/Products/lclqxlaopw2nuxdb5f4t.png" 
+                             alt="Excellent Choice" 
+                             class="h-12 w-auto object-contain"
+                             onerror="this.style.display='none'">
+                        <span class="text-xl font-bold tracking-tight text-primary">Excellent Choice</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary font-medium transition-colors">About Us</a>
+                    <a href="#services" class="text-gray-600 hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="#benefits" class="text-gray-600 hover:text-primary font-medium transition-colors">Why Choose Us</a>
+                    <a href="#faq" class="text-gray-600 hover:text-primary font-medium transition-colors">FAQ</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://wa.me/2349039033177" target="_blank" rel="noopener noreferrer" 
+                       class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-medium transition shadow-sm flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block text-gray-600 hover:text-primary font-medium py-2">About Us</a>
+            <a href="#services" class="block text-gray-600 hover:text-primary font-medium py-2">Services</a>
+            <a href="#benefits" class="block text-gray-600 hover:text-primary font-medium py-2">Why Choose Us</a>
+            <a href="#faq" class="block text-gray-600 hover:text-primary font-medium py-2">FAQ</a>
+            <a href="#contact" class="block text-gray-600 hover:text-primary font-medium py-2">Contact</a>
+            <div class="pt-2">
+                <a href="https://wa.me/2349039033177" target="_blank" rel="noopener noreferrer" 
+                   class="w-full bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg font-medium transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary to-slate-900 text-white py-24 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block bg-secondary text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-6">
+                    Engineering Business Consultancy
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                    Bridging Startup Engineers with Seasoned Global Professionals
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+                    We connect startup engineers with seasoned professionals all around the world to connect and answer/solve critical and practical problems startups encounter. Transitioning you successfully from a civil engineering professional to a thriving civil engineering business owner.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-secondary hover:bg-amber-600 text-white font-semibold px-8 py-4 rounded-xl transition shadow-lg text-center">
+                        Get Started Today
+                    </a>
+                    <a href="https://wa.me/2349039033177" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-8 py-4 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i> Connect via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-dark sm:text-4xl mb-6">
+                        Empowering Civil Engineering Startups for Sustainable Growth
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        At <span class="font-semibold text-primary">Excellent Choice</span>, we understand the unique hurdles engineering startups face. Technical brilliance alone doesn't build a profitable business. That is why we bridge the gap by connecting ambitious startup founders with elite industry veterans who have walked the path and mastered the market.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Our specialized coaching model is designed to pivot your perspective—transforming brilliant civil engineering professionals into visionary, effective business owners capable of scaling operations, managing risk, and driving revenue.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border-l-4 border-primary pl-4">
+                            <h3 class="font-bold text-xl text-dark">Global Network</h3>
+                            <p class="text-gray-500 text-sm mt-1">Access to seasoned mentors from around the world.</p>
+                        </div>
+                        <div class="border-l-4 border-secondary pl-4">
+                            <h3 class="font-bold text-xl text-dark">Practical Guidance</h3>
+                            <p class="text-gray-500 text-sm mt-1">Solutions tailored to critical startup challenges.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-100 p-8 rounded-2xl border border-slate-200">
+                    <h3 class="text-2xl font-bold text-dark mb-4">Our Core Focus</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-primary mt-1 text-lg"></i>
+                            <span class="text-gray-700">Connecting startups with global industry veterans for real-time problem solving.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-primary mt-1 text-lg"></i>
+                            <span class="text-gray-700">Coaching civil engineering professionals through the entrepreneurship mindset shift.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-primary mt-1 text-lg"></i>
+                            <span class="text-gray-700">Addressing practical operational, structural, and scaling hurdles encountered daily.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-primary mt-1 text-lg"></i>
+                            <span class="text-gray-700">Building resilient business frameworks for long-term industry success.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Expertise Section -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-dark sm:text-4xl mb-4">Our Core Consultancy Services</h2>
+                <p class="text-gray-600 text-lg">Comprehensive guidance built to elevate your engineering practice into an enterprise.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Global Professional Networking</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Connect directly with experienced global mentors who provide actionable insights and answers to complex technical and business challenges your startup faces.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Professional-to-Business Coaching</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Specialized coaching programs designed to transition civil engineers from technical experts to strategic business leaders and enterprise owners.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Practical Problem Solving</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Tackle day-to-day startup obstacles—from project execution dilemmas to client acquisition and operational scaling—with seasoned advisory support.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits / Why Choose Us Section -->
+    <section id="benefits" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-dark sm:text-4xl mb-4">Why Partner With Excellent Choice</h2>
+                <p class="text-gray-600 text-lg">We provide the roadmap, network, and guidance required to outpace standard startup growth curves.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <h4 class="font-bold text-lg mb-2 text-dark">Targeted Connections</h4>
+                    <p class="text-gray-600 text-sm">Direct access to vetted engineering leaders who understand your exact industry sector.</p>
+                </div>
+
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4 class="font-bold text-lg mb-2 text-dark">Business Acumen</h4>
+                    <p class="text-gray-600 text-sm">Bridge the gap between technical site execution and profitable enterprise management.</p>
+                </div>
+
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 class="font-bold text-lg mb-2 text-dark">Risk Mitigation</h4>
+                    <p class="text-gray-600 text-sm">Avoid costly trial-and-error mistakes by leveraging decades of accumulated veteran experience.</p>
+                </div>
+
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-primary text-3xl mb-4"><i class="fa-solid fa-bolt"></i></div>
+                    <h4 class="font-bold text-lg mb-2 text-dark">Rapid Execution</h4>
+                    <p class="text-gray-600 text-sm">Quick answers and solutions to critical bottlenecks slowing down your startup's momentum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-dark sm:text-4xl mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 text-lg">Got questions about our consultancy or coaching programs? Find answers below.</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg text-dark mb-2">Who is eligible for your startup networking and coaching program?</h3>
+                    <p class="text-gray-600">Our programs are specifically designed for startup engineers, civil engineering professionals looking to launch their own firms, and early-stage engineering business owners seeking growth guidance.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg text-dark mb-2">How are the global professionals matched with startups?</h3>
+                    <p class="text-gray-600">We evaluate the specific practical problems, project scale, and growth goals of the startup and connect them with seasoned veterans whose expertise directly aligns with those challenges.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg text-dark mb-2">How can I get started or schedule a consultation?</h3>
+                    <p class="text-gray-600">You can easily reach out to us directly through WhatsApp at 09039033177 or send an email to peculiarikiakhele@gmail.com, and our team will get back to you promptly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-dark sm:text-4xl mb-6">Let's Build Your Engineering Business Together</h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Ready to connect with global engineering leaders and transition from a professional to a powerhouse business owner? Reach out to us today via WhatsApp or email.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-500 text-sm">WhatsApp</h4>
+                                <a href="https://wa.me/2349039033177" target="_blank" rel="noopener noreferrer" class="font-bold text-lg text-dark hover:text-primary transition">
+                                    09039033177
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-500 text-sm">Email Address</h4>
+                                <a href="mailto:peculiarikiakhele@gmail.com" class="font-bold text-lg text-dark hover:text-primary transition">
+                                    peculiarikiakhele@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white p-8 lg:p-12 rounded-2xl shadow-xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Start Your Journey Now</h3>
+                        <p class="text-gray-300 mb-8">
+                            Take the first step toward solving your startup's critical problems and scaling your civil engineering business.
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <a href="https://wa.me/2349039033177" target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-xl font-semibold transition flex items-center justify-center gap-3 text-lg shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i> Message on WhatsApp
+                        </a>
+                        <a href="mailto:peculiarikiakhele@gmail.com" 
+                           class="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white py-4 rounded-xl font-semibold transition flex items-center justify-center gap-3 text-lg">
+                            <i class="fa-solid fa-envelope text-xl"></i> Send an Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788253141/Products/lclqxlaopw2nuxdb5f4t.png" 
+                     alt="Excellent Choice" 
+                     class="h-10 w-auto object-contain"
+                     onerror="this.style.display='none'">
+                <span class="text-white font-bold tracking-tight text-lg">Excellent Choice</span>
+            </div>
+
+            <p class="text-sm text-center md:text-left">
+                &copy; <span id="current-year"></span> Excellent Choice. All rights reserved. Engineering Business Consultancy.
+            </p>
+
+            <div class="flex space-x-6 text-xl">
+                <a href="https://wa.me/2349039033177" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="mailto:peculiarikiakhele@gmail.com" class="hover:text-white transition">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Current Year for Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
