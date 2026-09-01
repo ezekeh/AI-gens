@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazee clothings - Premium Bulk Clothing Around UniAbuja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #111111;
+            --accent: #d4af37;
+            --accent-hover: #b4942c;
+            --bg-light: #f8f9fa;
+            --bg-dark: #0a0a0a;
+            --text-dark: #222222;
+            --text-light: #777777;
+            --white: #ffffff;
+            --gray-border: #e5e7eb;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-border);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary);
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .hero-badge-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .hero-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .hero-feature-text h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.2rem;
+        }
+
+        .hero-feature-text p {
+            font-size: 0.9rem;
+            color: #999999;
+            margin: 0;
+        }
+
+        /* About Section */
+        .section {
+            padding: 120px 0;
+        }
+
+        .about {
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .stat-card h4 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .about-visual {
+            background: var(--bg-dark);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-visual::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+        }
+
+        .about-visual h4 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .about-visual ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .about-visual li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .about-visual li i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Products Section (Mandatory strict application) */
+        .products {
+            background-color: var(--bg-light);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid var(--gray-border);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-img-wrapper {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            position: relative;
+            background: #eee;
+        }
+
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        /* Features/Why Choose Us Section */
+        .features {
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            background: var(--white);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            color: var(--accent);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon-box {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 14px;
+            border: 1px solid var(--gray-border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            user-select: none;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+            color: var(--accent);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 2rem;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: var(--white);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .contact-info h2 span {
+            color: var(--accent);
+        }
+
+        .contact-info p {
+            color: #cccccc;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888888;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-text a, .contact-text p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .contact-text a:hover {
+            color: var(--accent);
+        }
+
+        .contact-card-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3.5rem;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .contact-card-box h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card-box p {
+            color: #bbbbbb;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            color: #888888;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666666;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            width: 65px;
+            height: 65px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(15deg);
+            background-color: #20ba5a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo-container">
+                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788236607/Products/d4yd4zz2idijsumkwpfj.png" alt="Eazee clothings" onerror="this.style.display='none'">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#products">Collection</a>
+                <a href="#features">Why Us</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://wa.me/2348146618591" class="nav-cta" target="_blank">Order on WhatsApp</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Elevate Your Style With <span>Premium Bulk</span> Clothings</h1>
+                    <p>The ultimate plug for premium clothes around UniAbuja. Unmatched quality, trending styles, and unbeatable bulk availability tailored for individuals and campus fashion entrepreneurs.</p>
+                    <div class="hero-btns">
+                        <a href="https://wa.me/2348146618591" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                        <a href="#products" class="btn btn-secondary">
+                            View Collection
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-badge-container">
+                    <div class="hero-feature-item">
+                        <div class="hero-feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="hero-feature-text">
+                            <h3>Fast Delivery Around UniAbuja</h3>
+                            <h3>Quick campus drop-offs and prompt pickups</h3>
+                        </div>
+                    </div>
+                    <div class="hero-feature-item">
+                        <div class="hero-feature-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="hero-feature-text">
+                            <h3>Top-Tier Quality</h3>
+                            <p>Carefully curated premium fabrics and designs</p>
+                        </div>
+                    </div>
+                    <div class="hero-feature-item">
+                        <div class="hero-feature-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <div class="hero-feature-text">
+                            <h3>Bulk Supply Expert</h3>
+                            <p>Best rates for wholesale and bulk purchases</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Who We Are</span>
+                <h2 class="section-title">Redefining Campus Fashion Standards Around UniAbuja</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Your Most Reliable Bulk Clothing Destination</h3>
+                    <p>At Eazee clothings, we specialize in supplying high-end, premium clothing pieces designed to make a statement. Whether you are stocking up your store, reselling on campus, or upgrading your personal wardrobe, we bring top-tier fashion directly to your doorstep around UniAbuja.</p>
+                    <p>We pride ourselves on reliability, transparency, and a strict commitment to quality apparel that stands out in any crowd.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4>100%</h4>
+                            <p>Premium Quality Guaranteed</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Fast</h4>
+                            <p>UniAbuja Campus Logistics</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <h4>The Eazee Advantage</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Direct wholesale pricing for bulk buyers</li>
+                        <li><i class="fas fa-check-circle"></i> Handpicked contemporary fashion trends</li>
+                        <li><i class="fas fa-check-circle"></i> Dedicated customer support via WhatsApp</li>
+                        <li><i class="fas fa-check-circle"></i> Seamless and secure order processing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section (Strictly using provided images and rules) -->
+    <section class="section products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Collection</span>
+                <h2 class="section-title">A Look At Some Of What We Offer</h2>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788236608/Products/e19tdmn2tvnzbqdcdclh.jpg" alt="Product photo" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788236609/Products/pixqmqevykdkdxz4tihc.jpg" alt="Product photo" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788236610/Products/ie9m69j049vpndr8tnyq.jpg" alt="Product photo" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788236612/Products/dew1d5wwzqfeod9v0ggv.jpg" alt="Product photo" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788236613/Products/tszpmh2ecsgwrnnftlpj.jpg" alt="Product photo" onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Why Choose Us</span>
+                <h2 class="section-title">Built For Style, Trusted For Bulk Supply</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Bulk Sales Expertise</h3>
+                    <p>We specialize in massive inventory supply, making us the ideal plug for campus vendors, boutique owners, and bulk shoppers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Uncompromised Premium Feel</h3>
+                    <p>Every piece in our stock is hand-selected to ensure superior texture, durability, and modern aesthetic appeal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>UniAbuja Centric Logistics</h3>
+                    <p>Strategically positioned to serve the entire University of Abuja community and surrounding neighborhoods swiftly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does bulk ordering work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ordering in bulk is easy! Simply reach out to us directly via WhatsApp with your clothing preferences and quantities, and we will provide you with our available catalogue and wholesale pricing.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you deliver around UniAbuja?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer fast and reliable delivery services across the University of Abuja campus and immediate residential areas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are your clothes premium quality?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We source only top-tier apparel designed to offer maximum comfort, durability, and high fashion appeal.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I contact Eazee clothings?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can quickly reach us via WhatsApp at 08146618591 or send an email to ezekieljames494@gmail.com for prompt responses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Ready to Upgrade Your Inventory or Wardrobe? <span>Let's Talk.</span></h2>
+                    <p>Get in touch with Eazee clothings today for premium bulk clothing offers around UniAbuja. We are active and ready to process your orders.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/2348146618591" target="_blank">08146618591</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <a href="mailto:ezekieljames494@gmail.com">ezekieljames494@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-card-box">
+                    <h3>Place Your Order Now</h3>
+                    <p>Click below to connect instantly with our sales representative on WhatsApp.</p>
+                    <a href="https://wa.me/2348146618591" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788236607/Products/d4yd4zz2idijsumkwpfj.png" alt="Eazee clothings" onerror="this.style.display='none'">
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Collection</a></li>
+                    <li><a href="#features">Why Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Eazee clothings. All rights reserved. Premium Bulk Clothing Around UniAbuja.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Widget -->
+    <a href="https://wa.me/2348146618591" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const currentActive = document.querySelector('.faq-item.active');
+                if (currentActive && currentActive !== item) {
+                    currentActive.classList.remove('active');
+                }
+                item.classList.toggle('active');
+            });
+        });
+
+        // Dynamic Copyright Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
