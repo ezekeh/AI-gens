@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EAZEE Headwears - Bold, Modern & Affordable Headwear</title>
-    <!-- Google Fonts -->
+    <title>EAZEE Headwears - Bold, Modern, Affordable Headwear</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --milk-white: #FAF9F6;
-            --soft-pink: #FADADD;
-            --deep-pink: #E07A93;
-            --azure-blue: #3A86EF;
-            --warm-brown: #8D6B54;
-            --dark-text: #2B2D42;
-            --light-bg: #FFFFFF;
+            --milk-white: #FDFBF7;
+            --pure-white: #FFFFFF;
+            --soft-pink: #FCE8E6;
+            --deep-pink: #E05A47;
+            --azure-blue: #2A6F97;
+            --warm-brown: #8D6B5C;
+            --dark-charcoal: #1D1D1D;
+            --light-gray: #F4F1EA;
             --transition: all 0.3s ease;
         }
 
@@ -35,7 +33,7 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--milk-white);
-            color: var(--dark-text);
+            color: var(--dark-charcoal);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -49,215 +47,166 @@
             list-style: none;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* BUTTONS */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 0.85rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--deep-pink);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(224, 122, 147, 0.4);
-        }
-
-        .btn-primary:hover {
-            background-color: #cc6781;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(224, 122, 147, 0.6);
-        }
-
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #20ba5a;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--deep-pink);
-            color: var(--deep-pink);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--deep-pink);
-            color: #fff;
-        }
-
-        /* HEADER & NAVIGATION */
+        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(250, 249, 246, 0.9);
+            background-color: rgba(253, 251, 247, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(224, 122, 147, 0.15);
-            transition: var(--transition);
+            border-bottom: 1px solid rgba(141, 107, 92, 0.1);
         }
 
         .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            height: 80px;
+            align-items: center;
         }
 
-        .logo-wrapper img {
+        .logo-container img {
             height: 45px;
             width: auto;
             object-fit: contain;
             display: block;
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
+            gap: 2rem;
             align-items: center;
-            gap: 2.5rem;
         }
 
-        .nav-link {
+        .nav-links a {
             font-weight: 500;
             font-size: 0.95rem;
-            color: var(--dark-text);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--deep-pink);
+            color: var(--dark-charcoal);
             transition: var(--transition);
         }
 
-        .nav-link:hover, .nav-link.active {
-            color: var(--deep-pink);
+        .nav-links a:hover {
+            color: var(--azure-blue);
         }
 
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-actions {
-            display: flex;
+        .btn-whatsapp-nav {
+            background-color: var(--azure-blue);
+            color: var(--pure-white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: inline-flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
         }
 
-        .hamburger {
+        .btn-whatsapp-nav:hover {
+            background-color: var(--warm-brown);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
             display: none;
+            background: none;
+            border: none;
             cursor: pointer;
             font-size: 1.5rem;
-            color: var(--dark-text);
+            color: var(--dark-charcoal);
         }
 
-        /* HERO SECTION */
+        /* Hero Section */
         .hero {
-            padding: 160px 0 100px;
+            padding: 10rem 2rem 6rem;
             background: linear-gradient(135deg, var(--milk-white) 0%, var(--soft-pink) 100%);
-            position: relative;
-            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
         }
 
-        .hero-grid {
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
         .hero-content h1 {
-            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            line-height: 1.2;
+            font-weight: 800;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            color: var(--dark-text);
+            color: var(--dark-charcoal);
         }
 
         .hero-content h1 span {
-            color: var(--deep-pink);
-            font-style: italic;
+            color: var(--azure-blue);
         }
 
         .hero-content p {
             font-size: 1.15rem;
             color: #555;
-            margin-bottom: 2.5rem;
-            max-width: 540px;
+            margin-bottom: 2rem;
         }
 
         .hero-btns {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(224, 122, 147, 0.15);
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
+        .btn-primary {
+            background-color: var(--azure-blue);
+            color: var(--pure-white);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
             font-weight: 600;
-            color: var(--deep-pink);
-            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(42, 111, 151, 0.2);
         }
 
-        .hero-image-box {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            background: var(--light-bg);
-            border: 4px solid #fff;
-            transform: rotate(2deg);
+        .btn-primary:hover {
+            background-color: var(--warm-brown);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--dark-charcoal);
+            border: 2px solid var(--warm-brown);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
             transition: var(--transition);
         }
 
-        .hero-image-box:hover {
-            transform: rotate(0deg) scale(1.02);
+        .btn-secondary:hover {
+            background-color: var(--warm-brown);
+            color: var(--pure-white);
         }
 
-        .hero-image-box img {
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-wrapper img {
             width: 100%;
-            height: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
             object-fit: cover;
-            display: block;
+            aspect-ratio: 4/5;
         }
 
-        /* ABOUT SECTION */
+        /* About Section */
         .about {
-            padding: 100px 0;
-            background-color: var(--light-bg);
+            padding: 7rem 2rem;
+            background-color: var(--pure-white);
         }
 
         .section-header {
@@ -266,117 +215,96 @@
             margin: 0 auto 4rem;
         }
 
-        .section-tag {
-            font-size: 0.85rem;
+        .section-header span {
+            color: var(--azure-blue);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--deep-pink);
-            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
             display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .section-title {
+        .section-header h2 {
             font-size: 2.5rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
+            font-weight: 800;
+            color: var(--dark-charcoal);
         }
 
         .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
 
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-text);
-        }
-
-        .about-text p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .core-values-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .value-card {
-            background: var(--milk-white);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--deep-pink);
+        .about-card {
+            background-color: var(--light-gray);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
             transition: var(--transition);
         }
 
-        .value-card:hover {
+        .about-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            background-color: var(--soft-pink);
         }
 
-        .value-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark-text);
+        .about-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-charcoal);
         }
 
-        .value-card p {
-            font-size: 0.9rem;
-            margin: 0;
+        .about-card p {
             color: #666;
+            font-size: 0.95rem;
         }
 
-        /* PRODUCTS SECTION */
+        /* Products Section (Strictly restricted to Product Photos as per rules) */
         .products {
-            padding: 100px 0;
+            padding: 7rem 2rem;
             background-color: var(--milk-white);
         }
 
         .products-grid {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .product-card {
-            background: var(--light-bg);
+            background: var(--pure-white);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             transition: var(--transition);
-            border: 1px solid rgba(224, 122, 147, 0.1);
-            position: relative;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(224, 122, 147, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
         }
 
-        .product-img-wrapper {
+        .product-img-wrap {
             width: 100%;
-            height: 280px;
+            aspect-ratio: 1/1;
             overflow: hidden;
-            background: #f1f1f1;
+            background-color: var(--light-gray);
         }
 
-        .product-img-wrapper img {
+        .product-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.5s ease;
         }
 
-        .product-card:hover .product-img-wrapper img {
+        .product-card:hover .product-img-wrap img {
             transform: scale(1.05);
         }
 
@@ -385,849 +313,515 @@
             text-align: center;
         }
 
-        .product-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark-text);
-        }
-
         .product-info p {
-            font-size: 0.9rem;
-            color: #777;
+            font-weight: 600;
+            color: var(--warm-brown);
+            font-size: 1.1rem;
+        }
+
+        /* Mission & Vision Section */
+        .mission-vision {
+            padding: 5rem 2rem;
+            background-color: var(--pure-white);
+        }
+
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .mv-box {
+            background: linear-gradient(135deg, var(--light-gray), var(--soft-pink));
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .mv-box h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 1rem;
+            color: var(--azure-blue);
         }
 
-        /* FEATURES / WHY CHOOSE US */
-        .features {
-            padding: 100px 0;
-            background-color: var(--light-bg);
+        .mv-box p {
+            font-size: 1.05rem;
+            color: #444;
         }
 
-        .features-grid {
+        /* Core Values */
+        .values {
+            padding: 7rem 2rem;
+            background-color: var(--milk-white);
+        }
+
+        .values-grid {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 3rem;
+            gap: 1.5rem;
         }
 
-        .feature-box {
-            background: var(--milk-white);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
+        .value-badge {
+            background-color: var(--pure-white);
+            border: 1px solid rgba(141, 107, 92, 0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
             text-align: center;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .feature-box:hover {
-            border-color: var(--deep-pink);
-            background: var(--light-bg);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--soft-pink);
-            color: var(--deep-pink);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            margin: 0 auto 1.5rem;
+            font-weight: 600;
+            color: var(--dark-charcoal);
             transition: var(--transition);
         }
 
-        .feature-box:hover .feature-icon {
-            background: var(--deep-pink);
-            color: #fff;
-            transform: scale(1.1);
+        .value-badge:hover {
+            border-color: var(--azure-blue);
+            color: var(--azure-blue);
         }
 
-        .feature-box h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
+        /* FAQ Section */
+        .faq {
+            padding: 7rem 2rem;
+            background-color: var(--pure-white);
         }
 
-        .feature-box p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* AUDIENCE SECTION */
-        .audience {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--milk-white) 100%);
-        }
-
-        .audience-content {
-            text-align: center;
+        .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .audience-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2.5rem;
-        }
-
-        .audience-tag {
-            background: var(--light-bg);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--dark-text);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .audience-tag:hover {
-            background: var(--deep-pink);
-            color: #fff;
-            transform: translateY(-3px);
-        }
-
-        /* FAQ SECTION */
-        .faq {
-            padding: 100px 0;
-            background-color: var(--light-bg);
-        }
-
-        .faq-accordion {
-            max-width: 800px;
-            margin: 3rem auto 0;
-        }
-
         .faq-item {
-            background: var(--milk-white);
-            border-radius: 12px;
+            background-color: var(--light-gray);
             margin-bottom: 1rem;
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(224, 122, 147, 0.15);
             transition: var(--transition);
         }
 
         .faq-question {
-            padding: 1.25rem 1.5rem;
-            font-weight: 600;
-            font-size: 1.05rem;
+            padding: 1.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-            color: var(--dark-text);
-        }
-
-        .faq-question i {
-            color: var(--deep-pink);
-            transition: var(--transition);
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
         }
 
         .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 1.5rem;
-            color: #666;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
+            padding: 0 1.5rem 1.5rem;
+            color: #555;
+            display: none;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding-bottom: 1.25rem;
+            display: block;
         }
 
-        /* CONTACT SECTION */
-        .contact {
-            padding: 100px 0;
-            background-color: var(--milk-white);
+        /* Contact & CTA */
+        .contact-cta {
+            padding: 7rem 2rem;
+            background: linear-gradient(135deg, var(--azure-blue), var(--warm-brown));
+            color: var(--pure-white);
+            text-align: center;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-            align-items: center;
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .contact-info-box h3 {
-            font-size: 2rem;
-            font-family: 'Playfair Display', serif;
+        .contact-container h2 {
+            font-size: 3rem;
+            font-weight: 800;
             margin-bottom: 1rem;
-            color: var(--dark-text);
         }
 
-        .contact-info-box p {
-            color: #666;
-            margin-bottom: 2rem;
+        .contact-container p {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
 
-        .contact-details {
+        .contact-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
+            justify-content: center;
             gap: 1rem;
         }
 
-        .contact-icon-wrap {
-            width: 50px;
-            height: 50px;
-            background: var(--soft-pink);
-            color: var(--deep-pink);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-        }
-
-        .contact-text h4 {
-            font-size: 0.9rem;
-            color: #777;
-            margin-bottom: 0.2rem;
-        }
-
-        .contact-text a, .contact-text span {
-            font-weight: 600;
-            color: var(--dark-text);
-            font-size: 1.05rem;
+        .btn-white {
+            background-color: var(--pure-white);
+            color: var(--azure-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
             transition: var(--transition);
         }
 
-        .contact-text a:hover {
-            color: var(--deep-pink);
+        .btn-white:hover {
+            background-color: var(--soft-pink);
+            transform: translateY(-2px);
         }
 
-        .contact-form-card {
-            background: var(--light-bg);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border: 1px solid rgba(224, 122, 147, 0.15);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--dark-text);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.9rem 1.2rem;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            background: var(--milk-white);
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--deep-pink);
-            background: #fff;
-            box-shadow: 0 0 0 3px rgba(224, 122, 147, 0.15);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* FOOTER */
+        /* Footer */
         footer {
-            background-color: var(--dark-text);
-            color: #fff;
-            padding: 80px 0 30px;
+            background-color: var(--dark-charcoal);
+            color: var(--pure-white);
+            padding: 4rem 2rem 2rem;
         }
 
-        .footer-grid {
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 60px;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
-        .footer-brand .logo-wrapper img {
+        .footer-brand img {
+            height: 40px;
+            width: auto;
+            margin-bottom: 1rem;
             filter: brightness(0) invert(1);
-            margin-bottom: 1.5rem;
         }
 
         .footer-brand p {
             color: #aaa;
             max-width: 350px;
             font-size: 0.95rem;
-            margin-bottom: 1.5rem;
         }
 
         .footer-links h4 {
             font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #fff;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
         }
 
         .footer-links ul {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.8rem;
         }
 
         .footer-links a {
             color: #aaa;
-            font-size: 0.95rem;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         .footer-links a:hover {
-            color: var(--deep-pink);
-            padding-left: 5px;
+            color: var(--pure-white);
         }
 
         .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
             color: #888;
             font-size: 0.9rem;
         }
 
-        /* FLOATING WHATSAPP BUTTON */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: #FFF;
-            width: 60px;
-            height: 60px;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-            z-index: 99;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #20ba5a;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 992px) {
-            .hero-grid, .about-grid, .contact-grid {
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-container, .mv-container, .footer-container {
                 grid-template-columns: 1fr;
-                gap: 3rem;
             }
 
-            .hero-content {
-                text-align: center;
+            .hero-content h1 {
+                font-size: 2.8rem;
             }
 
-            .hero-content p {
-                margin: 0 auto 2.5rem;
+            .hero-image-wrapper {
+                max-width: 500px;
+                margin: 0 auto;
             }
 
-            .hero-btns {
-                justify-content: center;
-            }
-
-            .hero-badge {
-                margin: 0 auto 1.5rem;
-            }
-
-            .products-grid, .features-grid {
+            .about-grid, .products-grid, .values-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--milk-white);
+            .nav-links {
+                display: none;
                 flex-direction: column;
-                justify-content: center;
-                gap: 2rem;
-                transition: var(--transition);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            }
-
-            .nav-menu.active {
+                position: absolute;
+                top: 100%;
                 left: 0;
+                width: 100%;
+                background-color: var(--milk-white);
+                padding: 2rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                border-bottom: 1px solid rgba(141, 107, 92, 0.1);
             }
 
-            .hamburger {
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
                 display: block;
             }
 
-            .hero-content h1 {
-                font-size: 2.75rem;
-            }
-
-            .products-grid, .features-grid, .core-values-grid {
+            .about-grid, .products-grid, .values-grid {
                 grid-template-columns: 1fr;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .hero {
+                padding: 8rem 1.5rem 4rem;
             }
 
-            .contact-form-card {
-                padding: 1.5rem;
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- Header & Navigation -->
     <header>
-        <div class="container nav-container">
-            <a href="#" class="logo-wrapper">
-                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235474/Products/cpxjk45ydvdrmvwsps3n.png" alt="EAZEE Headwears" onerror="this.style.display='none'">
+        <div class="nav-container">
+            <a href="#" class="logo-container">
+                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235474/Products/cpxjk45ydvdrmvwsps3n.png" alt="EAZEE Headwears Logo" onerror="this.style.display='none'">
             </a>
-            <nav class="nav-menu" id="navMenu">
-                <a href="#hero" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="#products" class="nav-link">Our Products</a>
-                <a href="#features" class="nav-link">Why Choose Us</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="#mission">Mission</a>
+                <a href="#values">Values</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://wa.me/2348146618591" class="btn-whatsapp-nav" target="_blank" rel="noopener">WhatsApp Us</a>
             </nav>
-            <div class="nav-actions">
-                <a href="https://wa.me/2348146618591" target="_blank" class="btn btn-whatsapp" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">
-                    <i class="fab fa-whatsapp"></i> Chat Us
-                </a>
-                <div class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
+            <button class="mobile-menu-btn" id="menuBtn">&#9776;</button>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-crown"></i> Bold Self-Expression & Style
-                    </div>
-                    <h1>Elevate Your Identity With Premium <span>Headwear</span></h1>
-                    <p>Discover premium, affordable, and stylish headwear designed for the modern generation. Beanies, caps, bucket hats, and more built for confidence and everyday practicality.</p>
-                    <div class="hero-btns">
-                        <a href="#products" class="btn btn-primary">
-                            Explore Collection <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="https://wa.me/2348146618591" target="_blank" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-                        </a>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Bold Self-Expression, <span>Everyday Style.</span></h1>
+                <p>EAZEE Headwears delivers premium, affordable, and stylish headwear designed for the modern generation. Make a statement of identity with every piece.</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn-primary">Explore Collection</a>
+                    <a href="https://wa.me/2348146618591" class="btn-secondary" target="_blank" rel="noopener">Chat on WhatsApp</a>
                 </div>
-                <div class="hero-image-box">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235475/Products/nspmur4i9cmcvjmhbrhf.png" alt="EAZEE Headwears Collection" onerror="this.src='https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235475/Products/nspmur4i9cmcvjmhbrhf.png" alt="EAZEE Headwear Feature" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=800&q=80'">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <span>Who We Are</span>
+            <h2>Built For The Modern Generation</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>Identity & Style</h3>
+                <p>What you wear on your head is more than an accessory—it is a statement of identity, confidence, and originality.</p>
+            </div>
+            <div class="about-card">
+                <h3>Our Community</h3>
+                <p>Serving students, young professionals, creatives, and streetwear lovers who value self-expression and comfort.</p>
+            </div>
+            <div class="about-card">
+                <h3>Contemporary Aesthetic</h3>
+                <p>Blending modern minimalism with youthful energy, designed to help you stand out effortlessly in any environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section (Strictly using provided Product Photo URLs in exact grid format) -->
+    <section id="products" class="products">
+        <div class="section-header">
+            <span>Our Offerings</span>
+            <h2>Headwear Crafted For You</h2>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235475/Products/nspmur4i9cmcvjmhbrhf.png" alt="Product photo" onerror="this.style.display='none'">
+                </div>
+                <div class="product-info">
+                    <p>EAZEE Signature Piece</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235477/Products/c6lwzikhh0creulfcgya.png" alt="Product photo" onerror="this.style.display='none'">
+                </div>
+                <div class="product-info">
+                    <p>EAZEE Signature Piece</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235479/Products/riav8fukqfjahmecnqnb.png" alt="Product photo" onerror="this.style.display='none'">
+                </div>
+                <div class="product-info">
+                    <p>EAZEE Signature Piece</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235481/Products/lolbdzefzkv8livfvaeg.png" alt="Product photo" onerror="this.style.display='none'">
+                </div>
+                <div class="product-info">
+                    <p>EAZEE Signature Piece</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-wrap">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235482/Products/qnhrs12oj3mmixkttodo.png" alt="Product photo" onerror="this.style.display='none'">
+                </div>
+                <div class="product-info">
+                    <p>EAZEE Signature Piece</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Who We Are</span>
-                <h2 class="section-title">More Than Just An Accessory</h2>
-                <p>EAZEE Headwears is a Nigerian fashion and lifestyle brand dedicated to young people who value confidence, individuality, and bold self-expression.</p>
+    <!-- Mission & Vision -->
+    <section id="mission" class="mission-vision">
+        <div class="mv-container">
+            <div class="mv-box">
+                <h3>Our Mission</h3>
+                <p>To provide stylish, high-quality, and affordable headwear that empowers young people to express themselves confidently and authentically.</p>
             </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <h3>Wear Your Confidence Boldly</h3>
-                    <p>We believe that what you wear on your head is a powerful statement of identity. Every product in our collection is thoughtfully selected and designed to help you stand out, express your unique personality, and feel exceptionally confident in any environment.</p>
-                    <p>Serving students, creatives, entrepreneurs, and streetwear lovers, we seamlessly blend modern minimalism with vibrant youthful energy.</p>
-                    
-                    <div class="core-values-grid">
-                        <div class="value-card">
-                            <h4>Confidence</h4>
-                            <p>Empowering you to step out boldly.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Authenticity</h4>
-                            <p>True to your unique style and identity.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Quality</h4>
-                            <p>Premium materials for lasting comfort.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Affordability</h4>
-                            <p>High fashion accessible to all.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image-stack" style="display: grid; gap: 1.5rem;">
-                    <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235477/Products/c6lwzikhh0creulfcgya.png" alt="EAZEE Headwear Style" style="width: 100%; height: 320px; object-fit: cover; display: block;" onerror="this.src='https://images.unsplash.com/photo-1534349762230-e0cadf39f574?auto=format&fit=crop&w=600&q=80'">
-                    </div>
-                </div>
+            <div class="mv-box">
+                <h3>Our Vision</h3>
+                <p>To become one of Africa's most recognized youth fashion brands, known for premium headwear, strong community engagement, and a culture of confidence.</p>
             </div>
         </div>
     </section>
 
-    <!-- PRODUCTS SECTION -->
-    <section class="products" id="products">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Collection</span>
-                <h2 class="section-title">Headwear That Speaks For You</h2>
-                <p>A look at some of what we offer—trendy beanies, sharp caps, stylish bucket hats, and versatile accessories designed to complement both casual and streetwear fashion.</p>
+    <!-- Core Values -->
+    <section id="values" class="values">
+        <div class="section-header">
+            <span>What Drives Us</span>
+            <h2>Our Core Values</h2>
+        </div>
+        <div class="values-grid">
+            <div class="value-badge">Confidence</div>
+            <div class="value-badge">Authenticity</div>
+            <div class="value-badge">Quality</div>
+            <div class="value-badge">Affordability</div>
+            <div class="value-badge">Creativity</div>
+            <div class="value-badge">Customer Satisfaction</div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="section-header">
+            <span>Got Questions?</span>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What types of headwear does EAZEE offer? <span>+</span></div>
+                <div class="faq-answer">We specialize in a variety of trendy headwear products including beanies, caps, bucket hats, and streetwear accessories designed to complement casual outfits.</div>
             </div>
-            
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235475/Products/nspmur4i9cmcvjmhbrhf.png" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=500&q=80'">
-                    </div>
-                    <div class="product-info">
-                        <h3>Signature Headwear</h3>
-                        <p>Comfortable & Stylish</p>
-                        <a href="https://wa.me/2348146618591?text=Hi,%20I%20am%20interested%20in%20ordering%20this%20headwear." target="_blank" class="btn btn-outline" style="width: 100%; padding: 0.6rem; font-size: 0.9rem;">Order via WhatsApp</a>
-                    </div>
-                </div>
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235477/Products/c6lwzikhh0creulfcgya.png" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1534349762230-e0cadf39f574?auto=format&fit=crop&w=500&q=80'">
-                    </div>
-                    <div class="product-info">
-                        <h3>Streetwear Essential</h3>
-                        <p>Bold & Contemporary</p>
-                        <a href="https://wa.me/2348146618591?text=Hi,%20I%20am%20interested%20in%20ordering%20this%20headwear." target="_blank" class="btn btn-outline" style="width: 100%; padding: 0.6rem; font-size: 0.9rem;">Order via WhatsApp</a>
-                    </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235479/Products/riav8fukqfjahmecnqnb.png" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=500&q=80'">
-                    </div>
-                    <div class="product-info">
-                        <h3>Trendy Daily Piece</h3>
-                        <p>Everyday Practicality</p>
-                        <a href="https://wa.me/2348146618591?text=Hi,%20I%20am%20interested%20in%20ordering%20this%20headwear." target="_blank" class="btn btn-outline" style="width: 100%; padding: 0.6rem; font-size: 0.9rem;">Order via WhatsApp</a>
-                    </div>
-                </div>
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235481/Products/lolbdzefzkv8livfvaeg.png" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=500&q=80'">
-                    </div>
-                    <div class="product-info">
-                        <h3>Urban Vibe Cap</h3>
-                        <p>Designed for the Modern Gen</p>
-                        <a href="https://wa.me/2348146618591?text=Hi,%20I%20am%20interested%20in%20ordering%20this%20headwear." target="_blank" class="btn btn-outline" style="width: 100%; padding: 0.6rem; font-size: 0.9rem;">Order via WhatsApp</a>
-                    </div>
-                </div>
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235482/Products/qnhrs12oj3mmixkttodo.png" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=500&q=80'">
-                    </div>
-                    <div class="product-info">
-                        <h3>Statement Bucket Hat</h3>
-                        <p>Premium & Accessible</p>
-                        <a href="https://wa.me/2348146618591?text=Hi,%20I%20am%20interested%20in%20ordering%20this%20headwear." target="_blank" class="btn btn-outline" style="width: 100%; padding: 0.6rem; font-size: 0.9rem;">Order via WhatsApp</a>
-                    </div>
-                </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I place an order? <span>+</span></div>
+                <div class="faq-answer">You can easily place an order or make inquiries by reaching out to us directly via WhatsApp at 08146618591 or sending us an email.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Are your products affordable for students and young professionals? <span>+</span></div>
+                <div class="faq-answer">Yes! Affordability is one of our core values. We provide premium-looking fashion accessories tailored to fit the budgets of students and young adults.</div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES SECTION -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Why Choose Us</span>
-                <h2 class="section-title">Built For The Modern Generation</h2>
-                <p>We combine fashion, comfort, and everyday practicality to give you accessories that truly elevate your appearance.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fas fa-tag"></i>
-                    </div>
-                    <h3>Premium Yet Affordable</h3>
-                    <p>High-end contemporary aesthetic designed to be accessible without compromising on quality or style.</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fas fa-feather-alt"></i>
-                    </div>
-                    <h3>Unmatched Comfort</h3>
-                    <p>Crafted for everyday wear, ensuring you feel as good as you look from morning to night.</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Vibrant Community</h3>
-                    <p>More than a brand—a movement inspiring young people to embrace their uniqueness and boldness.</p>
-                </div>
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="contact-container">
+            <h2>Ready to Elevate Your Style?</h2>
+            <p>Connect with EAZEE Headwears today and find the perfect accessory to match your unique vibe.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/2348146618591" class="btn-white" target="_blank" rel="noopener">Chat on WhatsApp</a>
+                <a href="mailto:utenwojo4jesus@gmail.com" class="btn-secondary" style="border-color: #fff; color: #fff;">Send an Email</a>
             </div>
         </div>
     </section>
 
-    <!-- TARGET AUDIENCE -->
-    <section class="audience">
-        <div class="container">
-            <div class="audience-content">
-                <span class="section-tag">Who We Serve</span>
-                <h2 class="section-title">Designed For Trendsetters</h2>
-                <p>Whether you're hitting campus, heading to the office, or running a creative enterprise, EAZEE Headwears fits your lifestyle perfectly.</p>
-                <div class="audience-tags">
-                    <span class="audience-tag">Students (16–30 years)</span>
-                    <span class="audience-tag">Young Professionals</span>
-                    <span class="audience-tag">Fashion Enthusiasts</span>
-                    <span class="audience-tag">Streetwear Lovers</span>
-                    <span class="audience-tag">Creatives & Entrepreneurs</span>
-                    <span class="audience-tag">Trend-conscious Gen Z & Millennials</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Got Questions?</span>
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p>Find quick answers about our products, ordering process, and brand.</p>
-            </div>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How do I place an order?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Placing an order is easy! You can click on any product's WhatsApp order button or reach out directly to us on WhatsApp at 08146618591 to discuss your preferred style and delivery.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What types of headwear do you offer?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We specialize in a wide variety of trendy headwear products including beanies, caps, bucket hats, and other lifestyle accessories suitable for casual and streetwear fashion.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Are your products suitable for everyday wear?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely! Every product is specifically designed to combine fashion, comfort, and everyday practicality so you can rock them in any environment.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How can I contact EAZEE Headwears?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>You can reach us anytime via WhatsApp at 08146618591 or send us an email at utenwojo4jesus@gmail.com. We'd love to hear from you!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info-box">
-                    <span class="section-tag">Get In Touch</span>
-                    <h3>Let's Connect & Elevate Your Style</h3>
-                    <p>Have questions about our collection or ready to make a statement with your next headwear piece? Reach out to us directly!</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon-wrap">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>WhatsApp</h4>
-                                <a href="https://wa.me/2348146618591" target="_blank">08146618591</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon-wrap">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email Us</h4>
-                                <a href="mailto:utenwojo4jesus@gmail.com">utenwojo4jesus@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-card">
-                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Your Phone / WhatsApp</label>
-                            <input type="text" id="phone" class="form-control" placeholder="Enter your phone number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="Tell us what you're looking for..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            Send Message <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="logo-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235474/Products/cpxjk45ydvdrmvwsps3n.png" alt="EAZEE Headwears" onerror="this.style.display='none'">
-                    </a>
-                    <p>EAZEE Headwears delivers fashionable, comfortable, and affordable headwear that helps customers look good, feel confident, and express their unique style every day.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#features">Why Choose Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Get In Touch</h4>
-                    <ul>
-                        <li><a href="https://wa.me/2348146618591" target="_blank"><i class="fab fa-whatsapp"></i> 08146618591</a></li>
-                        <li><a href="mailto:utenwojo4jesus@gmail.com"><i class="fas fa-envelope"></i> utenwojo4jesus@gmail.com</a></li>
-                    </ul>
-                </div>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788235474/Products/cpxjk45ydvdrmvwsps3n.png" alt="EAZEE Headwears Logo" onerror="this.style.display='none'">
+                <p>EAZEE Headwears is a Nigerian fashion and lifestyle brand focused on premium, affordable, and stylish headwear for the modern generation.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> EAZEE Headwears. All rights reserved. Designed for Bold Self-Expression.</p>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#mission">Mission & Vision</a></li>
+                    <li><a href="#values">Values</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
             </div>
+            <div class="footer-links">
+                <h4>Get in Touch</h4>
+                <ul>
+                    <li><a href="https://wa.me/2348146618591" target="_blank" rel="noopener">WhatsApp: 08146618591</a></li>
+                    <li><a href="mailto:utenwojo4jesus@gmail.com">utenwojo4jesus@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EAZEE Headwears. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/2348146618591" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- JAVASCRIPT -->
+    <!-- JavaScript for Mobile Menu & FAQ Accordion -->
     <script>
-        // Set Current Year in Footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
         // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.querySelector('i').classList.toggle('fa-bars');
-            hamburger.querySelector('i').classList.toggle('fa-times');
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
 
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-link').forEach(link => {
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.querySelector('i').classList.add('fa-bars');
-                hamburger.querySelector('i').classList.remove('fa-times');
+                navLinks.classList.remove('active');
             });
         });
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
+
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                const activeItem = document.querySelector('.faq-item.active');
-                if (activeItem && activeItem !== item) {
-                    activeItem.classList.remove('active');
+                const currentActive = document.querySelector('.faq-item.active');
+                if (currentActive && currentActive !== item) {
+                    currentActive.classList.remove('active');
                 }
                 item.classList.toggle('active');
             });
-        });
-
-        // Contact Form Submission handler (Redirects message to WhatsApp)
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-
-            const whatsappUrl = `https://wa.me/2348146618591?text=Hello%20EAZEE%20Headwears,%0A*Name:*%20${encodeURIComponent(name)}%0A*Phone:*%20${encodeURIComponent(phone)}%0A*Message:*%20${encodeURIComponent(message)}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
         });
     </script>
 </body>
