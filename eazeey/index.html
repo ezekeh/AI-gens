@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eazeey - Eazy and Smooth Automations for Real Estate</title>
+    <title>eazeey - Easy & Smooth Automations for Real Estate</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -14,28 +16,35 @@
             --primary-light: #1E293B;
             --accent: #2563EB;
             --accent-hover: #1D4ED8;
-            --whatsapp: #25D366;
-            --whatsapp-hover: #20BA5A;
+            --success: #10B981;
             --text-main: #334155;
             --text-light: #64748B;
             --bg-light: #F8FAFC;
-            --bg-white: #FFFFFF;
-            --border-color: #E2E8F0;
+            --white: #FFFFFF;
+            --border: #E2E8F0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
             --transition: all 0.3s ease;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-main);
-            background-color: var(--bg-white);
+            background-color: var(--white);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -53,7 +62,57 @@
             padding: 0 2rem;
         }
 
-        /* Header & Navigation */
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background-color: var(--bg-light);
+        }
+
+        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -61,14 +120,15 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
         }
 
         .nav-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             height: 80px;
         }
 
@@ -76,12 +136,13 @@
             height: 40px;
             width: auto;
             object-fit: contain;
+            display: block;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
             align-items: center;
+            gap: 2.5rem;
         }
 
         .nav-links a {
@@ -92,20 +153,6 @@
 
         .nav-links a:hover {
             color: var(--accent);
-        }
-
-        .nav-cta {
-            background-color: var(--accent);
-            color: white !important;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .nav-cta:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-1px);
         }
 
         .mobile-menu-btn {
@@ -120,7 +167,7 @@
         /* Hero Section */
         .hero {
             padding: 180px 0 100px;
-            background: linear-gradient(135deg, var(--bg-light) 0%, #EFF6FF 100%);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #FFFFFF 100%);
             position: relative;
             overflow: hidden;
         }
@@ -133,7 +180,7 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
             font-weight: 800;
             color: var(--primary);
             line-height: 1.2;
@@ -145,7 +192,7 @@
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.125rem;
             color: var(--text-light);
             margin-bottom: 2.5rem;
         }
@@ -156,56 +203,57 @@
             flex-wrap: wrap;
         }
 
-        .btn-whatsapp {
-            background-color: var(--whatsapp);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
+        .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            transition: var(--transition);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: var(--whatsapp-hover);
-            transform: translateY(-2px);
-            color: white;
-        }
-
-        .btn-secondary {
-            background-color: white;
-            color: var(--primary);
-            border: 1px solid var(--border-color);
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent);
+            border-radius: 50px;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: var(--transition);
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            background-color: var(--bg-light);
-        }
-
-        .hero-image-wrapper {
+        .hero-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
             position: relative;
         }
 
-        .hero-image-wrapper img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        .hero-card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* About Section */
-        .about {
+        .hero-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* About / Intro Section */
+        .section-padding {
             padding: 100px 0;
-            background: white;
         }
 
         .section-header {
@@ -222,176 +270,231 @@
         }
 
         .section-header p {
-            font-size: 1.1rem;
             color: var(--text-light);
+            font-size: 1.1rem;
         }
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .about-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 1.25rem;
-            align-items: flex-start;
-        }
-
-        .feature-icon {
-            background: #EFF6FF;
-            color: var(--accent);
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        .feature-text h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .feature-text p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* Services & Product Photo Implementation */
-        .services {
-            padding: 100px 0;
-            background: var(--bg-light);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
-        .service-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
+        .feature-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
             transition: var(--transition);
         }
 
-        .service-card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-md);
+            background: var(--white);
+            border-color: var(--accent);
         }
 
-        .service-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
         }
 
-        .service-content {
-            padding: 2rem;
-        }
-
-        .service-content h3 {
+        .feature-card h3 {
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.75rem;
         }
 
-        .service-content p {
+        .feature-card p {
             color: var(--text-light);
             font-size: 0.95rem;
         }
 
+        /* Services & Product Photos Section */
+        .services-section {
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .services-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .service-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .service-item i {
+            color: var(--success);
+            font-size: 1.25rem;
+            margin-top: 0.2rem;
+        }
+
+        .service-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .service-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Product Photo Grid Showcase */
+        .product-showcase h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
         /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background: white;
+        .contact-section {
+            position: relative;
         }
 
         .contact-box {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            border-radius: 24px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: calc(var(--radius) * 1.5);
             padding: 4rem;
-            color: white;
-            text-align: center;
-            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
             overflow: hidden;
+            position: relative;
         }
 
-        .contact-box h2 {
+        .contact-info h2 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .contact-box p {
+        .contact-info p {
+            color: var(--text-light);
             font-size: 1.1rem;
-            color: #94A3B8;
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
+            margin-bottom: 2rem;
         }
 
-        .contact-actions {
+        .contact-methods {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             gap: 1.5rem;
-            flex-wrap: wrap;
         }
 
-        .btn-email {
-            background-color: white;
-            color: var(--primary);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            display: inline-flex;
+        .contact-method {
+            display: flex;
             align-items: center;
-            gap: 0.75rem;
-            transition: var(--transition);
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--white);
         }
 
-        .btn-email:hover {
-            background-color: var(--bg-light);
-            transform: translateY(-2px);
+        .contact-method i {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            color: var(--accent);
+        }
+
+        .contact-action-card {
+            background: var(--primary-light);
+            padding: 3rem;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-action-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-action-card p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
         }
 
         /* Footer */
         footer {
-            background: #090D16;
-            color: #94A3B8;
-            padding: 50px 0 30px;
-            border-top: 1px solid #1E293B;
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #1E293B;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .footer-logo img {
@@ -401,220 +504,207 @@
             filter: brightness(0) invert(1);
         }
 
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: #94A3B8;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            padding-top: 30px;
-            text-align: center;
+        .footer-copy {
             font-size: 0.9rem;
         }
 
         /* Responsive Design */
         @media (max-width: 968px) {
-            .hero-grid, .about-grid {
+            .hero-grid, .services-grid, .contact-box {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
 
-            .hero-content h1 {
-                font-size: 2.75rem;
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-md);
+                border-bottom: 1px solid var(--border);
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .mobile-menu-btn {
                 display: block;
             }
+        }
+
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
 
             .contact-box {
-                padding: 2.5rem 1.5rem;
+                padding: 2rem;
             }
-        }
 
-        /* Mobile Menu Modal */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 300px;
-            height: 100%;
-            background: white;
-            z-index: 1001;
-            box-shadow: -5px 0 25px rgba(0,0,0,0.1);
-            transition: 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-        }
-
-        .mobile-menu.active {
-            right: 0;
-        }
-
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .mobile-menu-close {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary);
-        }
-
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .mobile-nav-links a {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary);
+            .hero {
+                padding: 140px 0 60px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation -->
+    <!-- Header / Navigation -->
     <header>
         <div class="container nav-container">
             <a href="#" class="logo-container">
                 <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230821/Products/ts5yhczvaganxepfszvd.png" alt="eazeey" onerror="this.style.display='none'">
             </a>
-            <nav class="nav-links">
+            <nav class="nav-links" id="navLinks">
                 <a href="#about">About</a>
-                <a href="#services">Solutions</a>
+                <a href="#services">Services</a>
+                <a href="#work">Work Showcase</a>
                 <a href="#contact">Contact</a>
-                <a href="https://wa.me/234814899111" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> Let's Talk</a>
+                <a href="https://wa.me/234814899111" class="btn btn-whatsapp" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
             </nav>
-            <button class="mobile-menu-btn" id="menuBtn">
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230821/Products/ts5yhczvaganxepfszvd.png" alt="eazeey" style="height: 30px;" onerror="this.style.display='none'">
-            <button class="mobile-menu-close" id="closeBtn">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="mobile-nav-links">
-            <a href="#about" class="mobile-link">About</a>
-            <a href="#services" class="mobile-link">Solutions</a>
-            <a href="#contact" class="mobile-link">Contact</a>
-            <a href="https://wa.me/234814899111" target="_blank" class="btn-whatsapp" style="justify-content: center; margin-top: 1rem;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-        </div>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-grid">
             <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i> Next-Gen Real Estate Solutions
+                </div>
                 <h1>We build <span>eazy and smooth</span> automations for real estate</h1>
-                <p>Scale your real estate business effortlessly. Eliminate manual bottlenecks, streamline client nurturing, and close deals faster with our tailored automation workflows.</p>
+                <p>Streamline your property listings, client management, and lead follow-ups with customized automated systems designed specifically for modern real estate professionals.</p>
                 <div class="hero-buttons">
-                    <a href="https://wa.me/234814899111" target="_blank" class="btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Get Started on WhatsApp
+                    <a href="https://wa.me/234814899111" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Connect via WhatsApp
                     </a>
-                    <a href="#services" class="btn-secondary">
-                        Explore Solutions <i class="fas fa-arrow-down"></i>
-                    </a>
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
                 </div>
             </div>
-            <div class="hero-image-wrapper">
-                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230823/Products/frnzpj00lpsxuhfl3tw3.jpg" alt="Real Estate Automations" onerror="this.style.display='none'">
+            <div>
+                <div class="hero-card">
+                    <div class="hero-card-icon">
+                        <i class="fas fa-house-chimney-user"></i>
+                    </div>
+                    <h3>Automate Your Pipeline</h3>
+                    <p>Stop losing valuable property leads to manual delays. Our seamless automations ensure instant response, smooth booking, and efficient deal-closing workflows.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section id="about" class="section-padding">
         <div class="container">
             <div class="section-header">
                 <h2>Why Choose eazeey?</h2>
-                <p>We transform complex real estate operations into frictionless, automated journeys.</p>
+                <p>We combine deep real estate industry insight with cutting-edge automation tech to give you back your time.</p>
             </div>
             <div class="about-grid">
-                <div class="about-image">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230824/Products/qbmkhwkxb8ew57yhqknv.jpg" alt="About eazeey" onerror="this.style.display='none'">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Save Hours Daily</h3>
+                    <p>Eliminate repetitive administrative tasks like data entry, email follow-ups, and calendar scheduling entirely.</p>
                 </div>
-                <div class="about-features">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Lightning Fast Setup</h3>
-                            <p>We deploy clean, reliable automation workflows tailored specifically to your real estate pipeline without the technical headache.</p>
-                        </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Eazy & Smooth Experience</h3>
-                            <p>Designed for absolute simplicity, ensuring your agents and clients enjoy an intuitive process from first contact to closing.</p>
-                        </div>
+                    <h3>Instant Lead Response</h3>
+                    <p>Engage prospective buyers and renters within seconds of inquiry, dramatically increasing your conversion rates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-puzzle-piece"></i>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Built for Growth</h3>
-                            <p>Focus on closing properties while our automated systems handle lead generation follow-ups, scheduling, and property updates.</p>
-                        </div>
-                    </div>
+                    <h3>Seamless Integration</h3>
+                    <p>We connect your CRM, messaging apps, and property listing portals into one harmonious, automated ecosystem.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section (Incorporating Product Photos as supporting visuals for service-based offerings) -->
-    <section class="services" id="services">
+    <!-- Services & Supporting Work Showcase Section -->
+    <section id="services" class="section-padding services-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Automation Solutions</h2>
-                <p>Designed to supercharge your property listings, client management, and deal closures.</p>
-            </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230826/Products/g3jgczrsdswojpkg6mey.png" alt="Lead Nurturing Automation" class="service-img" onerror="this.style.display='none'">
-                    <div class="service-content">
-                        <h3>Lead Nurturing & Follow-up</h3>
-                        <p>Never let a potential buyer or seller slip through the cracks with instant automated responses and smart scheduling sequences.</p>
+                <div class="services-content">
+                    <h3>Specialized Automations Tailored for Real Estate Agents & Agencies</h3>
+                    <div class="services-list">
+                        <div class="service-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                               <h4>Lead Generation & CRM Pipelines</h4>
+                               <p>Automatically capture, qualify, and route incoming leads from multiple channels straight into your sales pipeline.</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                               <h4>Property Tour Scheduling</h4>
+                               <p>Let clients book viewings 24/7 with automated calendar syncing and instant reminder notifications.</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                               <h4>Client Follow-up Sequences</h4>
+                               <p>Nurture prospects with personalized email and SMS drip campaigns customized for buyers, sellers, and renters.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="service-card">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230828/Products/piowegjnksi61ntaq5hd.png" alt="Property Workflow Automations" class="service-img" onerror="this.style.display='none'">
-                    <div class="service-content">
-                        <h3>Pipeline & Document Management</h3>
-                        <p>Automate client onboarding, property matching updates, and document collection workflows to speed up transactions safely.</p>
+
+                <!-- Service Supporting Visuals (Images) -->
+                <div class="product-showcase">
+                    <h3>A Glimpse of Our Systems in Action</h3>
+                    <div class="product-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="product-card">
+                            <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230823/Products/frnzpj00lpsxuhfl3tw3.jpg" alt="Our work" onerror="this.style.display='none'">
+                        </div>
+                        <div class="product-card">
+                            <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230824/Products/qbmkhwkxb8ew57yhqknv.jpg" alt="Our work" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Gallery Product/Work Photos Grid -->
+            <div id="work" class="product-showcase" style="margin-top: 6rem;">
+                <h3>Our Project Gallery & Visuals</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230823/Products/frnzpj00lpsxuhfl3tw3.jpg" alt="Our work" onerror="this.style.display='none'">
+                    </div>
+                    <div class="product-card">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230824/Products/qbmkhwkxb8ew57yhqknv.jpg" alt="Our work" onerror="this.style.display='none'">
+                    </div>
+                    <div class="product-card">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230826/Products/g3jgczrsdswojpkg6mey.png" alt="Our work" onerror="this.style.display='none'">
+                    </div>
+                    <div class="product-card">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230828/Products/piowegjnksi61ntaq5hd.png" alt="Our work" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -622,17 +712,28 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section id="contact" class="section-padding contact-section">
         <div class="container">
             <div class="contact-box">
-                <h2>Ready to Automate Your Real Estate Workflow?</h2>
-                <p>Get in touch with us today. Let’s make your property operations eazy and smooth.</p>
-                <div class="contact-actions">
-                    <a href="https://wa.me/234814899111" target="_blank" class="btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp (0814899111)
-                    </a>
-                    <a href="mailto:utenwojo4jesus@gmail.com" class="btn-email">
-                        <i class="fas fa-envelope"></i> utenwojo4jesus@gmail.com
+                <div class="contact-info">
+                    <h2>Ready to automate your real estate workflow?</h2>
+                    <p>Get in touch with eazeey today and let's make your operations eazy and smooth.</p>
+                    <div class="contact-methods">
+                        <a href="https://wa.me/234814899111" class="contact-method">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>0814899111</span>
+                        </a>
+                        <a href="mailto:utenwojo4jesus@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>utenwojo4jesus@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-action-card">
+                    <h3>Start a Conversation</h3>
+                    <p>Click below to reach out directly via WhatsApp for quick consultations and system setups.</p>
+                    <a href="https://wa.me/234814899111" class="btn btn-whatsapp" style="width: 100%;">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp Now
                     </a>
                 </div>
             </div>
@@ -641,47 +742,44 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230821/Products/ts5yhczvaganxepfszvd.png" alt="eazeey" onerror="this.style.display='none'">
-                </div>
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#services">Solutions</a>
-                    <a href="#contact">Contact</a>
-                </div>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230821/Products/ts5yhczvaganxepfszvd.png" alt="eazeey" onerror="this.style.display='none'">
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> eazeey. All rights reserved. Building eazy and smooth automations for real estate.</p>
-            </div>
+            <p class="footer-copy">&copy; <span id="currentYear"></span> eazeey. All rights reserved. Easy and smooth automations for real estate.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu and Dynamic Year -->
+    <!-- JavaScript -->
     <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Menu Functionality
+        // Mobile Menu Toggle
         const menuBtn = document.getElementById('menuBtn');
-        const closeBtn = document.getElementById('closeBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const navLinks = document.getElementById('navLinks');
 
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
 
-        closeBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-
-        mobileLinks.forEach(link => {
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             });
         });
+
+        // Set Current Year in Footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
