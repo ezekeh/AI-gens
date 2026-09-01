@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EAZEE Headwears | Bold Self-Expression & Premium Headwear</title>
+    <title>Eazee Headwears - Snapbacks, Beanies & Truckers for Campus</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         :root {
-            --milk-white: #F9F8F6;
-            --pure-white: #FFFFFF;
-            --azure-blue: #1A73E8;
-            --azure-light: #E8F0FE;
-            --warm-brown: #8D5B4C;
-            --warm-brown-dark: #6E4437;
-            --dark-charcoal: #1E2124;
-            --gray-light: #EFECE9;
-            --gray-text: #6B7280;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --milk: #FBF9F5;
+            --milk-dark: #F0ECE1;
+            --azure: #007FFF;
+            --azure-dark: #0063CC;
+            --azure-light: #E6F2FF;
+            --text-main: #1A1A1A;
+            --text-muted: #666666;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 127, 255, 0.08);
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -35,10 +34,9 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--milk-white);
-            color: var(--dark-charcoal);
+            background-color: var(--milk);
+            color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         a {
@@ -50,66 +48,10 @@
             list-style: none;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
         .container {
-            width: 100%;
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* BUTTONS */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 0.85rem 1.75rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-
-        .btn-primary {
-            background-color: var(--azure-blue);
-            color: var(--pure-white);
-        }
-
-        .btn-primary:hover {
-            background-color: #1557b0;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(26, 115, 232, 0.25);
-        }
-
-        .btn-secondary {
-            background-color: var(--warm-brown);
-            color: var(--pure-white);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--warm-brown-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(141, 91, 76, 0.25);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border-color: var(--dark-charcoal);
-            color: var(--dark-charcoal);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--dark-charcoal);
-            color: var(--pure-white);
-            transform: translateY(-2px);
+            padding: 0 20px;
         }
 
         /* HEADER & NAVIGATION */
@@ -118,24 +60,18 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(249, 248, 246, 0.95);
+            background: rgba(251, 249, 245, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid var(--gray-light);
+            border-bottom: 1px solid var(--milk-dark);
             transition: var(--transition);
         }
 
-        .navbar {
+        .nav-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 85px;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+            height: 80px;
         }
 
         .logo-container img {
@@ -147,439 +83,417 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2.5rem;
+            gap: 30px;
         }
 
         .nav-links a {
-            font-weight: 500;
-            color: var(--dark-charcoal);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-main);
             transition: var(--transition);
-            position: second;
         }
 
         .nav-links a:hover {
-            color: var(--azure-blue);
+            color: var(--azure);
         }
 
-        .nav-cta {
-            display: flex;
+        .btn {
+            display: inline-flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
         }
 
-        .hamburger {
+        .btn-primary {
+            background-color: var(--azure);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 127, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--azure-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 127, 255, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--azure);
+            color: var(--azure);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--azure-light);
+        }
+
+        .mobile-menu-btn {
             display: none;
-            cursor: pointer;
             font-size: 1.5rem;
-            color: var(--dark-charcoal);
+            cursor: pointer;
+            color: var(--text-main);
         }
 
         /* HERO SECTION */
         .hero {
             padding: 160px 0 100px;
-            background: linear-gradient(135deg, var(--milk-white) 0%, var(--azure-light) 100%);
-            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--milk) 0%, var(--azure-light) 100%);
             overflow: hidden;
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
+            gap: 50px;
             align-items: center;
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-main);
         }
 
         .hero-content h1 span {
-            color: var(--azure-blue);
+            color: var(--azure);
         }
 
         .hero-content p {
             font-size: 1.15rem;
-            color: var(--gray-text);
-            margin-bottom: 2.5rem;
-            max-width: 540px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
         }
 
-        .hero-buttons {
+        .hero-btns {
             display: flex;
-            gap: 1rem;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
+        .hero-image-wrapper {
+            position: relative;
+        }
+
         .hero-badge {
-            display: inline-flex;
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            display: flex;
             align-items: center;
-            gap: 0.5rem;
-            background-color: var(--pure-white);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
+            gap: 15px;
+        }
+
+        .hero-badge i {
+            font-size: 2rem;
+            color: var(--azure);
+        }
+
+        .hero-badge-text h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .hero-badge-text p {
             font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--warm-brown);
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            color: var(--text-muted);
+            margin: 0;
         }
 
-        .hero-visual {
-            position: relative;
-        }
-
-        .hero-card-stack {
-            position: relative;
+        .hero-img-container {
             width: 100%;
             height: 450px;
-            background: var(--pure-white);
             border-radius: 24px;
-            padding: 2rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border: 1px solid var(--gray-light);
+            overflow: hidden;
+            box-shadow: var(--shadow);
         }
 
-        .hero-card-stack i {
-            font-size: 4rem;
-            color: var(--warm-brown);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-card-stack h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-card-stack p {
-            color: var(--gray-text);
-            font-size: 0.95rem;
+        .hero-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ABOUT SECTION */
-        .section-padding {
+        .about {
             padding: 100px 0;
+            background-color: var(--white);
         }
 
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 60px;
         }
 
         .section-tag {
-            font-size: 0.85rem;
+            display: inline-block;
+            background-color: var(--azure-light);
+            color: var(--azure);
+            padding: 6px 16px;
+            border-radius: 50px;
             font-weight: 700;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--azure-blue);
-            margin-bottom: 0.75rem;
-            display: block;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
         .section-header h2 {
-            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-size: 2.5rem;
             font-weight: 800;
-            letter-spacing: -0.01em;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
 
         .section-header p {
-            color: var(--gray-text);
+            color: var(--text-muted);
             font-size: 1.05rem;
         }
 
-        .about-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
-        .about-text h3 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            line-height: 1.3;
-        }
-
-        .about-text p {
-            color: var(--gray-text);
-            margin-bottom: 1.5rem;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .value-item {
-            background: var(--pure-white);
-            padding: 1.5rem;
-            border-radius: 16px;
-            border: 1px solid var(--gray-light);
+        .feature-card {
+            background-color: var(--milk);
+            padding: 40px 30px;
+            border-radius: 20px;
             transition: var(--transition);
+            border: 1px solid var(--milk-dark);
         }
 
-        .value-item:hover {
-            border-color: var(--azure-blue);
-            transform: translateY(-3px);
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--azure);
+            box-shadow: var(--shadow);
         }
 
-        .value-item i {
-            color: var(--azure-blue);
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .value-item h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .value-item p {
-            font-size: 0.85rem;
-            color: var(--gray-text);
-            margin: 0;
-        }
-
-        .mission-vision-box {
-            background: var(--pure-white);
-            padding: 3rem;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid var(--gray-light);
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .mv-item h4 {
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--azure-light);
+            color: var(--azure);
+            border-radius: 16px;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3 {
             font-size: 1.25rem;
-            color: var(--warm-brown);
-            margin-bottom: 0.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .mv-item p {
-            color: var(--gray-text);
+        .feature-card p {
+            color: var(--text-muted);
             font-size: 0.95rem;
-            margin: 0;
         }
 
-        /* PRODUCTS SECTION (Strictly per rules) */
-        .products-section {
-            background-color: var(--pure-white);
-            border-top: 1px solid var(--gray-light);
-            border-bottom: 1px solid var(--gray-light);
+        /* PRODUCTS SECTION */
+        .products {
+            padding: 100px 0;
+            background-color: var(--milk);
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
         .product-card {
-            background-color: var(--milk-white);
+            background-color: var(--white);
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid var(--gray-light);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             transition: var(--transition);
-            display: flex;
-            flex-direction: column;
+            border: 1px solid var(--milk-dark);
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            box-shadow: var(--shadow);
         }
 
-        .product-image-wrapper {
+        .product-img-wrapper {
             width: 100%;
-            height: 320px;
+            height: 300px;
             overflow: hidden;
-            position: relative;
-            background-color: var(--gray-light);
+            background-color: var(--milk-dark);
         }
 
-        .product-image-wrapper img {
+        .product-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: var(--transition);
         }
 
-        .product-card:hover .product-image-wrapper img {
+        .product-card:hover .product-img-wrapper img {
             transform: scale(1.05);
         }
 
         .product-info {
-            padding: 1.5rem;
+            padding: 25px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            flex-grow: 1;
-            justify-content: center;
         }
 
         .product-info h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        /* FEATURES / AUDIENCE SECTION */
-        .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .audience-card {
-            background: var(--pure-white);
-            padding: 2rem;
-            border-radius: 20px;
-            border: 1px solid var(--gray-light);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .audience-card:hover {
-            border-color: var(--warm-brown);
-            transform: translateY(-3px);
-        }
-
-        .audience-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--azure-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.25rem;
-            color: var(--azure-blue);
-            font-size: 1.25rem;
-        }
-
-        .audience-card h3 {
             font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 15px;
         }
 
-        .audience-card p {
-            color: var(--gray-text);
-            font-size: 0.9rem;
+        /* WHY CHOOSE US / BENEFITS */
+        .benefits {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .benefit-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .benefit-content p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .benefit-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .benefit-item i {
+            font-size: 1.25rem;
+            color: var(--azure);
+            background-color: var(--azure-light);
+            padding: 12px;
+            border-radius: 12px;
+        }
+
+        .benefit-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .benefit-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
             margin: 0;
         }
 
-        /* BRAND PROMISE BANNER */
-        .promise-banner {
-            background: linear-gradient(135deg, var(--warm-brown) 0%, var(--warm-brown-dark) 100%);
-            color: var(--pure-white);
-            padding: 5rem 0;
+        .benefit-card-visual {
+            background: linear-gradient(135deg, var(--azure) 0%, var(--azure-dark) 100%);
+            padding: 60px 40px;
+            border-radius: 24px;
+            color: var(--white);
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            box-shadow: var(--shadow);
         }
 
-        .promise-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .promise-content h2 {
-            font-size: clamp(2rem, 3.5vw, 2.75rem);
+        .benefit-card-visual h3 {
+            font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.01em;
+            margin-bottom: 15px;
         }
 
-        .promise-content p {
-            font-size: 1.15rem;
-            opacity: 0.9;
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
+        .benefit-card-visual p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
         }
 
-        .promise-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .btn-light {
+            background-color: var(--white);
+            color: var(--azure);
         }
 
-        .btn-white {
-            background-color: var(--pure-white);
-            color: var(--warm-brown-dark);
-        }
-
-        .btn-white:hover {
-            background-color: var(--milk-white);
-            transform: translateY(-2px);
+        .btn-light:hover {
+            background-color: var(--milk);
+            color: var(--azure-dark);
         }
 
         /* FAQ SECTION */
-        .faq-container {
+        .faq {
+            padding: 100px 0;
+            background-color: var(--milk);
+        }
+
+        .faq-accordion {
             max-width: 800px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 15px;
         }
 
         .faq-item {
-            background: var(--pure-white);
-            border: 1px solid var(--gray-light);
+            background-color: var(--white);
             border-radius: 16px;
+            border: 1px solid var(--milk-dark);
             overflow: hidden;
             transition: var(--transition);
         }
 
         .faq-question {
-            padding: 1.25rem 1.5rem;
+            padding: 20px 25px;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            user-select: none;
         }
 
         .faq-question i {
-            transition: transform 0.3s ease;
-            color: var(--azure-blue);
-        }
-
-        .faq-answer {
-            padding: 0 1.5rem 1.25rem;
-            color: var(--gray-text);
-            font-size: 0.95rem;
-            display: none;
-        }
-
-        .faq-item.active {
-            border-color: var(--azure-blue);
+            color: var(--azure);
+            transition: var(--transition);
         }
 
         .faq-item.active .faq-question i {
             transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px 20px;
+            color: var(--text-muted);
+            display: none;
         }
 
         .faq-item.active .faq-answer {
@@ -587,274 +501,250 @@
         }
 
         /* CONTACT SECTION */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
+            gap: 50px;
         }
 
-        .contact-info-box {
-            background: var(--pure-white);
-            padding: 3rem;
-            border-radius: 24px;
-            border: 1px solid var(--gray-light);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        }
-
-        .contact-info-box h3 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+        .contact-info-box h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
         }
 
         .contact-info-box p {
-            color: var(--gray-text);
-            margin-bottom: 2.5rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
         }
 
         .contact-methods {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 25px;
         }
 
         .contact-method-item {
             display: flex;
-            align-items: flex-start;
-            gap: 1.25rem;
+            align-items: center;
+            gap: 20px;
         }
 
         .contact-method-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--azure-light);
-            color: var(--azure-blue);
-            border-radius: 12px;
+            width: 55px;
+            height: 55px;
+            background-color: var(--azure-light);
+            color: var(--azure);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.25rem;
-            flex-shrink: 0;
         }
 
-        .contact-method-details h4 {
+        .contact-method-text h4 {
             font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .contact-method-text a, .contact-method-text span {
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 0.25rem;
+            color: var(--text-main);
         }
 
-        .contact-method-details a, .contact-method-details span {
-            color: var(--gray-text);
-            font-size: 0.95rem;
-            transition: var(--transition);
+        .contact-method-text a:hover {
+            color: var(--azure);
         }
 
-        .contact-method-details a:hover {
-            color: var(--azure-blue);
-        }
-
-        .contact-form-box {
-            background: var(--pure-white);
-            padding: 3rem;
+        .contact-card-form {
+            background-color: var(--milk);
+            padding: 40px;
             border-radius: 24px;
-            border: 1px solid var(--gray-light);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid var(--milk-dark);
+        }
+
+        .contact-card-form h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
         }
 
         .form-control {
             width: 100%;
-            padding: 0.85rem 1.25rem;
+            padding: 14px 18px;
             border-radius: 12px;
-            border: 1px solid var(--gray-light);
-            background-color: var(--milk-white);
+            border: 1px solid var(--milk-dark);
+            background-color: var(--white);
             font-family: inherit;
             font-size: 0.95rem;
-            color: var(--dark-charcoal);
             transition: var(--transition);
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--azure-blue);
-            background-color: var(--pure-white);
-            box-shadow: 0 0 0 4px var(--azure-light);
+            border-color: var(--azure);
+            box-shadow: 0 0 0 3px var(--azure-light);
         }
 
         textarea.form-control {
             resize: vertical;
-            min-height: 120px;
+            height: 120px;
         }
 
         /* FOOTER */
         footer {
-            background-color: var(--dark-charcoal);
-            color: var(--pure-white);
-            padding: 80px 0 30px;
+            background-color: var(--text-main);
+            color: var(--white);
+            padding: 60px 0 30px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 4rem;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .footer-about p {
-            color: #9CA3AF;
-            margin-top: 1.25rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            max-width: 320px;
+        .footer-brand .logo-container {
+            margin-bottom: 20px;
         }
 
-        .footer-socials {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .footer-socials a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--pure-white);
-            transition: var(--transition);
-        }
-
-        .footer-socials a:hover {
-            background: var(--azure-blue);
-            transform: translateY(-2px);
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            max-width: 350px;
+            margin-bottom: 20px;
         }
 
         .footer-links h4 {
             font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .footer-links ul {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 12px;
         }
 
         .footer-links a {
-            color: #9CA3AF;
-            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
             transition: var(--transition);
         }
 
         .footer-links a:hover {
-            color: var(--pure-white);
-            padding-left: 5px;
+            color: var(--azure);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-bottom p {
-            color: #9CA3AF;
+            color: rgba(255,255,255,0.5);
             font-size: 0.9rem;
         }
 
         /* RESPONSIVE DESIGN */
         @media (max-width: 992px) {
-            .hero-grid, .about-grid, .contact-grid {
+            .hero-grid, .benefits-grid, .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .features-grid, .products-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-            }
-
-            .hero-visual {
-                order: -1;
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
             .nav-links {
-                position: fixed;
-                top: 85px;
-                left: -100%;
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
                 width: 100%;
-                height: calc(100vh - 85px);
-                background-color: var(--milk-white);
+                background-color: var(--white);
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-                transition: 0.4s ease;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                padding: 30px;
+                box-shadow: var(--shadow);
+                border-bottom: 1px solid var(--milk-dark);
             }
 
             .nav-links.active {
-                left: 0;
+                display: flex;
             }
 
-            .nav-cta {
-                display: none;
-            }
-
-            .hamburger {
+            .mobile-menu-btn {
                 display: block;
             }
 
-            .footer-grid {
+            .features-grid, .products-grid {
                 grid-template-columns: 1fr;
             }
 
-            .values-grid {
-                grid-template-columns: 1fr;
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER & NAVBAR -->
-    <header id="header">
-        <div class="container navbar">
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-container">
             <a href="#" class="logo-container">
-                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788282579/Products/eh7ovzbg8kkzbhxlk4no.png" alt="EAZEE Headwears Logo" onerror="this.style.display='none'">
+                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788284449/Products/s2teitwj9r9cc3ia9bqq.png" alt="Eazee Headwears" onerror="this.style.display='none'">
             </a>
             <nav class="nav-links" id="navLinks">
                 <a href="#about">About</a>
                 <a href="#products">Collection</a>
-                <a href="#audience">Who We Serve</a>
+                <a href="#benefits">Why Us</a>
                 <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
-            </nav>
-            <div class="nav-cta">
-                <a href="https://wa.me/2349112636671" target="_blank" class="btn btn-primary">
-                    <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                <a href="https://wa.me/2348146618591?text=Hello%20Eazee%20Headwears,%20I'm%20interested%20in%20your%20caps!" target="_blank" class="btn btn-primary" style="padding: 8px 20px;">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                 </a>
-            </div>
-            <div class="hamburger" id="hamburger">
+            </nav>
+            <div class="mobile-menu-btn" id="menuBtn">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -862,240 +752,218 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-crown"></i> Premium Streetwear & Lifestyle
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="section-tag">Campus Style Essential</span>
+                    <h1>Rock Your Campus Vibe With <span>Eazee Headwears</span></h1>
+                    <p>Upgrade your everyday campus look with our premium collection of caps. From classic snapbacks and cozy beanies to stylish truckers built for young adults on the go.</p>
+                    <div class="hero-btns">
+                        <a href="#products" class="btn btn-primary">
+                            Explore Collection <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://wa.me/2348146618591?text=Hello%20Eazee%20Headwears,%20I'd%20like%20to%20order%20a%20cap." target="_blank" class="btn btn-outline">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
                 </div>
-                <h1>Wear Your Confidence <span>Boldly</span></h1>
-                <p>EAZEE Headwears delivers premium, affordable, and stylish headwear designed for the modern generation. More than an accessory—it's a statement of identity.</p>
-                <div class="hero-buttons">
-                    <a href="#products" class="btn btn-primary">Explore Collection</a>
-                    <a href="https://wa.me/2349112636671" target="_blank" class="btn btn-outline">
-                        <i class="fab fa-whatsapp"></i> Chat with Us
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-card-stack">
-                    <i class="fas fa-hat-cowboy"></i>
-                    <h3>Bold Self-Expression</h3>
-                    <p>Beanies, Caps, Bucket Hats & More. Crafted to elevate your everyday appearance effortlessly.</p>
+                <div class="hero-image-wrapper">
+                    <div class="hero-img-container">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788284451/Products/z9texllgzuxhcl7leyin.jpg" alt="Eazee Headwears Showcase" onerror="this.src='https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="hero-badge">
+                        <i class="fas fa-fire"></i>
+                        <div class="hero-badge-text">
+                            <h4>Trending Styles</h4>
+                            <p>Popular on campus</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="section-padding">
+    <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">About EAZEE Headwears</span>
-                <h2>Crafted for the Modern Generation</h2>
-                <p>We blend modern minimalism with youthful energy to bring you contemporary accessories that speak volumes.</p>
+                <span class="section-tag">Who We Are</span>
+                <h2>Crafted For The Campus Lifestyle</h2>
+                <p>Eazee Headwears is the ultimate plug for young adults looking to make a statement. We provide comfortable, durable, and trend-setting headwear designed for everyday campus life.</p>
             </div>
-            
-            <div class="about-grid" style="margin-bottom: 5rem;">
-                <div class="about-text">
-                    <h3>Confidence, Originality & Bold Self-Expression</h3>
-                    <p>EAZEE Headwears is a Nigerian fashion and lifestyle brand focused on premium, affordable, and stylish headwear designed for young people who value confidence and individuality.</p>
-                    <p>Every product is selected and designed to help customers stand out, express their personality, and feel confident in any environment—whether you are a student, entrepreneur, or creative.</p>
-                    
-                    <div class="values-grid">
-                        <div class="value-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <h4>Quality</h4>
-                            <p>Premium materials built to last and impress.</p>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-tag"></i>
-                            <h4>Affordability</h4>
-                            <p>High fashion without the heavy price tag.</p>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-fire"></i>
-                            <h4>Creativity</h4>
-                            <p>Trendy designs that match modern streetwear.</p>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-smile"></i>
-                            <h4>Authenticity</h4>
-                            <p>Empowering you to stay true to your identity.</p>
-                        </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
+                    <h3>Trendy Snapbacks</h3>
+                    <p>Bold designs and structured fits that elevate your street style instantly between classes.</p>
                 </div>
-                
-                <div class="mission-vision-box">
-                    <div class="mv-item">
-                        <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
-                        <p>To provide stylish, high-quality, and affordable headwear that empowers young people to express themselves confidently and authentically.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-snowflake"></i>
                     </div>
-                    <div class="mv-item">
-                        <h4><i class="fas fa-eye"></i> Our Vision</h4>
-                        <p>To become one of Africa's most recognized youth fashion brands, known for premium headwear, strong community engagement, and a culture of confidence and self-expression.</p>
+                    <h3>Cozy Beanies</h3>
+                    <p>Soft, warm, and effortlessly cool for those chilly morning lectures or late-night hangouts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wind"></i>
                     </div>
+                    <h3>Classic Truckers</h3>
+                    <p>Breathable mesh backs and classic curved brims built for optimal comfort under the sun.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRODUCTS SECTION (Strictly matching requirements & rules) -->
-    <section id="products" class="section-padding products-section">
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="products">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Our Collection</span>
-                <h2>Designed to Make a Statement</h2>
-                <p>A look at some of what we offer to complement your casual and streetwear style.</p>
+                <h2>Check Out What We Sell</h2>
+                <p>A look at some of what we offer to keep your campus wardrobe fresh and versatile.</p>
             </div>
-            
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788282581/Products/dhrhj5mxtpfzq4jnatzz.png" alt="Product photo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534215754734-18e55d134346?auto=format&fit=crop&w=600&q=80';">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788284450/Products/xk5ltmoe70ozwmtuetat.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=600&q=80'">
                     </div>
                     <div class="product-info">
-                        <h3>Signature Headwear Piece</h3>
-                        <a href="https://wa.me/2349112636671?text=Hi,%20I'm%20interested%20in%20purchasing%20this%20headwear%20piece." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Order via WhatsApp</a>
+                        <h3>Campus Snapback Series</h3>
                     </div>
                 </div>
-
                 <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788282582/Products/bexbkunbcjotpzpn2m3h.png" alt="Product photo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=600&q=80';">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788284451/Products/z9texllgzuxhcl7leyin.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=600&q=80'">
                     </div>
                     <div class="product-info">
-                        <h3>Trendy Streetwear Accessory</h3>
-                        <a href="https://wa.me/2349112636671?text=Hi,%20I'm%20interested%20in%20purchasing%20this%20headwear%20piece." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Order via WhatsApp</a>
+                        <h3>Classic Trucker Cap</h3>
                     </div>
                 </div>
-
                 <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788282584/Products/mp4wlvgplo8s8nowt1xa.png" alt="Product photo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=600&q=80';">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788284453/Products/i3agxgun89lrbaacries.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1556306535-0f09a537f0a3?auto=format&fit=crop&w=600&q=80'">
                     </div>
                     <div class="product-info">
-                        <h3>Casual Everyday Beanie / Cap</h3>
-                        <a href="https://wa.me/2349112636671?text=Hi,%20I'm%20interested%20in%20purchasing%20this%20headwear%20piece." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Order via WhatsApp</a>
+                        <h3>Urban Beanie Line</h3>
                     </div>
                 </div>
-
                 <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788282585/Products/k7yxk2kljrp2gme0az5a.png" alt="Product photo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556306535-0f09a537f0a3?auto=format&fit=crop&w=600&q=80';">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788284454/Products/xzktiivenxrehajhobgc.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1534215738363-227945025c27?auto=format&fit=crop&w=600&q=80'">
                     </div>
                     <div class="product-info">
-                        <h3>Bold Statement Headwear</h3>
-                        <a href="https://wa.me/2349112636671?text=Hi,%20I'm%20interested%20in%20purchasing%20this%20headwear%20piece." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Order via WhatsApp</a>
+                        <h3>Streetwear Edition</h3>
                     </div>
                 </div>
-
                 <div class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788282587/Products/xofx3bffsw2gr89ol2ng.png" alt="Product photo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80';">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788284455/Products/jxxoy06pp8euspifnynd.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1533867949352-3a6f44f56f4d?auto=format&fit=crop&w=600&q=80'">
                     </div>
                     <div class="product-info">
-                        <h3>Essential Lifestyle Accessory</h3>
-                        <a href="https://wa.me/2349112636671?text=Hi,%20I'm%20interested%20in%20purchasing%20this%20headwear%20piece." target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Order via WhatsApp</a>
+                        <h3>Signature Headwear</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788284450/Products/xk5ltmoe70ozwmtuetat.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="product-info">
+                        <h3>Limited Drop</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TARGET AUDIENCE SECTION -->
-    <section id="audience" class="section-padding">
+    <!-- BENEFITS SECTION -->
+    <section id="benefits" class="benefits">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Who We Serve</span>
-                <h2>Built for the Trend-Conscious</h2>
-                <p>Designed for young people who value confidence, self-expression, and individuality.</p>
-            </div>
-            
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <div class="audience-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Students (16–30)</h3>
-                    <p>Campus fashion made accessible, stylish, and budget-friendly.</p>
+            <div class="benefits-grid">
+                <div class="benefit-content">
+                    <span class="section-tag">Why Choose Us</span>
+                    <h2>Designed For Students & Trendsetters</h2>
+                    <p>We understand the campus lifestyle. You want gear that looks premium, lasts long, and doesn't break the bank.</p>
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>Student-Friendly Pricing</h4>
+                                <p>Get premium quality headwear that fits easily into a student budget.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>Fast Campus Delivery</h4>
+                                <p>Quick and convenient delivery options right to your hostel or campus lodge.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <h4>All-Day Comfort</h4>
+                                <p>Premium fabrics that ensure you stay comfortable from morning lectures to night events.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="audience-card">
-                    <div class="audience-icon"><i class="fas fa-briefcase"></i></div>
-                    <h3>Young Professionals</h3>
-                    <p>Casual Friday and weekend accessories that effortlessly elevate your look.</p>
+                <div class="benefit-card-visual">
+                    <h3>Ready To Upgrade Your Cap Game?</h3>
+                    <p>Reach out to us directly on WhatsApp or email to check stock availability and place your order instantly.</p>
+                    <a href="https://wa.me/2348146618591?text=Hello%20Eazee%20Headwears,%20I'm%20ready%20to%20order!" target="_blank" class="btn btn-light">
+                        <i class="fab fa-whatsapp"></i> Chat On WhatsApp Now
+                    </a>
                 </div>
-                <div class="audience-card">
-                    <div class="audience-icon"><i class="fas fa-fire"></i></div>
-                    <h3>Streetwear Lovers</h3>
-                    <p>Pieces that perfectly complement hoodies, oversized tees, and urban fits.</p>
-                </div>
-                <div class="audience-card">
-                    <div class="audience-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Creatives & Entrepreneurs</h3>
-                    <p>Stand out in any room and project bold, authentic individuality.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BRAND PROMISE BANNER -->
-    <section class="promise-banner">
-        <div class="container promise-content">
-            <h2>Our Brand Promise</h2>
-            <p>EAZEE Headwears delivers fashionable, comfortable, and affordable headwear that helps customers look good, feel confident, and express their unique style every day.</p>
-            <div class="promise-buttons">
-                <a href="https://wa.me/2349112636671" target="_blank" class="btn btn-white">
-                    <i class="fab fa-whatsapp"></i> Chat with Us on WhatsApp
-                </a>
             </div>
         </div>
     </section>
 
     <!-- FAQ SECTION -->
-    <section id="faq" class="section-padding">
+    <section id="faq" class="faq">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Got Questions?</span>
                 <h2>Frequently Asked Questions</h2>
-                <p>Everything you need to know about our products and ordering process.</p>
+                <p>Everything you need to know about ordering your favorite headwear from us.</p>
             </div>
-
-            <div class="faq-container">
+            <div class="faq-accordion">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>What types of headwear do you offer?</span>
+                        <span>How do I place an order?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We specialize in a variety of trendy headwear products including beanies, caps, bucket hats, and other fashionable accessories suited for casual and streetwear fashion.</p>
+                        <p>Ordering is super easy! Simply click on any of our WhatsApp buttons or send us a direct message on WhatsApp at 08146618591 with the screenshot of the cap you want.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How can I place an order?</span>
+                        <span>Do you deliver directly on campus?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Ordering is simple! You can click on any of the "Order via WhatsApp" buttons on our products or reach out directly to our WhatsApp line at 09112636671 to place your order.</p>
+                        <p>Yes, we do! We facilitate fast and reliable delivery straight to campus locations and student hostels.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Are EAZEE Headwears products affordable?</span>
+                        <span>What types of headwear do you sell?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! Our core mission is to provide premium, high-quality headwear that remains accessible and affordable for students, young professionals, and fashion enthusiasts.</p>
+                        <p>We specialize in snapbacks, beanies, and trucker caps tailored specifically for young adults and students around campus.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Where are you located and do you deliver?</span>
+                        <span>Can I place bulk orders for my department or club?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We are a Nigerian fashion and lifestyle brand. Contact us via WhatsApp or email for details on our delivery coverage and shipping options.</p>
+                        <p>Absolutely! We handle orders for department associations, campus clubs, and social groups. Contact us via email or WhatsApp to discuss your requirements.</p>
                     </div>
                 </div>
             </div>
@@ -1103,58 +971,53 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="section-padding" style="background-color: var(--pure-white); border-top: 1px solid var(--gray-light);">
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Get in Touch</span>
-                <h2>We’d Love to Hear From You</h2>
-                <p>Have questions, feedback, or ready to elevate your style? Reach out to us today.</p>
-            </div>
-
             <div class="contact-grid">
                 <div class="contact-info-box">
-                    <h3>Contact Information</h3>
-                    <p>Connect with us instantly through WhatsApp or send us an email. We're always excited to connect with our community.</p>
+                    <span class="section-tag">Get In Touch</span>
+                    <h2>Let's Talk Headwear</h2>
+                    <p>Have questions about a specific cap, delivery times, or bulk orders? Reach out to us through any of our channels below.</p>
                     
                     <div class="contact-methods">
                         <div class="contact-method-item">
                             <div class="contact-method-icon">
                                 <i class="fab fa-whatsapp"></i>
                             </div>
-                            <div class="contact-method-details">
+                            <div class="contact-method-text">
                                 <h4>WhatsApp</h4>
-                                <a href="https://wa.me/2349112636671" target="_blank">09112636671</a>
+                                <a href="https://wa.me/2348146618591?text=Hello%20Eazee%20Headwears" target="_blank">08146618591</a>
                             </div>
                         </div>
-
                         <div class="contact-method-item">
                             <div class="contact-method-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div class="contact-method-details">
-                                <h4>Email</h4>
+                            <div class="contact-method-text">
+                                <h4>Email Address</h4>
                                 <a href="mailto:utenwojo4jesus@gmail.com">utenwojo4jesus@gmail.com</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="contact-form-box">
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Send a Quick Message</h3>
+                <div class="contact-card-form">
+                    <h3>Send Us A Quick Message</h3>
                     <form id="contactForm" onsubmit="handleFormSubmit(event)">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email5" id="email" class="form-control" placeholder="Enter your email" required>
+                            <label for="email">Your Email / Phone</label>
+                            <input type="text" id="email" class="form-control" placeholder="Enter your email or phone number" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
+                            <textarea id="message" class="form-control" placeholder="Tell us which cap you want..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1165,68 +1028,56 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-about">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788282579/Products/eh7ovzbg8kkzbhxlk4no.png" alt="EAZEE Headwears Logo" style="height: 40px; filter: brightness(0) invert(1);" onerror="this.style.display='none'">
-                    <p>EAZEE Headwears represents confidence, originality, and bold self-expression. Wear your confidence boldly.</p>
-                    <div class="footer-socials">
-                        <a href="https://wa.me/2349112636671" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:utenwojo4jesus@gmail.com"><i class="fas fa-envelope"></i></a>
-                    </div>
+                <div class="footer-brand">
+                    <a href="#" class="logo-container">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788284449/Products/s2teitwj9r9cc3ia9bqq.png" alt="Eazee Headwears" onerror="this.style.display='none'">
+                    </a>
+                    <p>Your number one campus plug for snapbacks, beanies, and trucker caps designed for young adults.</p>
+                    <a href="https://wa.me/2348146618591" target="_blank" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">
+                        <i class="fab fa-whatsapp"></i> 08146618591
+                    </a>
                 </div>
-
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#products">Collection</a></li>
-                        <li><a href="#audience">Who We Serve</a></li>
+                        <li><a href="#benefits">Why Choose Us</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-links">
-                    <h4>Collections</h4>
+                    <h4>Contact</h4>
                     <ul>
-                        <li><a href="#products">Beanies</a></li>
-                        <li><a href="#products">Caps</a></li>
-                        <li><a href="#products">Bucket Hats</a></li>
-                        <li><a href="#products">Streetwear Accessories</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><a href="https://wa.me/2349112636671" target="_blank">WhatsApp: 09112636671</a></li>
-                        <li><a href="mailto:utenwojo4jesus@gmail.com">Email Us</a></li>
+                        <li><a href="https://wa.me/2348146618591" target="_blank">WhatsApp Chat</a></li>
+                        <li><a href="mailto:utenwojo4jesus@gmail.com">Send Email</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> EAZEE Headwears. All rights reserved.</p>
-                <p>Designed for Bold Self-Expression</p>
+                <p>&copy; <span id="currentYear"></span> Eazee Headwears. All rights reserved.</p>
+                <p>Designed for Campus Trendsetters</p>
             </div>
         </div>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
-        // Set current year in footer
+        // Current Year for Footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Mobile menu toggle
-        const hamburger = document.getElementById('hamburger');
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
 
-        hamburger.addEventListener('click', () => {
+        menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            const icon = hamburger.querySelector('i');
+            const icon = menuBtn.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
+                icon.classList.add('fa-xmark');
             } else {
-                icon.classList.remove('fa-times');
+                icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');
             }
         });
@@ -1235,8 +1086,8 @@
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                hamburger.querySelector('i').classList.remove('fa-times');
-                hamburger.querySelector('i').classList.add('fa-bars');
+                menuBtn.querySelector('i').classList.remove('fa-xmark');
+                menuBtn.querySelector('i').classList.add('fa-bars');
             });
         });
 
@@ -1245,23 +1096,25 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
-                const currentlyActive = document.querySelector('.faq-item.active');
-                if (currentlyActive && currentlyActive !== item) {
-                    currentlyActive.classList.remove('active');
-                }
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
                 item.classList.toggle('active');
             });
         });
 
-        // Contact form handler
+        // Contact Form Handler to WhatsApp
         function handleFormSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+            const contact = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
-            const whatsappUrl = `https://wa.me/2349112636671?text=Hello%20EAZEE%20Headwears,%0A%0AMy%20name%20is%20${encodeURIComponent(name)}.%0AMy%20email%20is%20${encodeURIComponent(email)}.%0A%0AMessage:%0A${encodeURIComponent(message)}`;
-            
+            const whatsappUrl = `https://wa.me/2348146618591?text=${encodeURIComponent(`Hello Eazee Headwears,\n\nMy name is ${name}.\nContact: ${contact}\n\nMessage:\n${message}`)}`;
             window.open(whatsappUrl, '_blank');
         }
     </script>
