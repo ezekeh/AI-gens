@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eazeey - Easy & Smooth Automations for Real Estate</title>
-    <meta name="description" content="We build eazy and smooth automations for real estate. Streamline your property business today.">
+    <title>eazeey - Eazy and Smooth Automations for Real Estate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #0F172A;
@@ -17,16 +17,10 @@
             --whatsapp: #25D366;
             --whatsapp-hover: #20BA5A;
             --text-main: #334155;
-            --text-muted: #64748B;
+            --text-light: #64748B;
             --bg-light: #F8FAFC;
-            --white: #FFFFFF;
-            --border: #E2E8F0;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
+            --bg-white: #FFFFFF;
+            --border-color: #E2E8F0;
             --transition: all 0.3s ease;
         }
 
@@ -34,19 +28,14 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html {
             scroll-behavior: smooth;
-            font-size: 16px;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-main);
-            background-color: var(--white);
+            background-color: var(--bg-white);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         a {
@@ -59,10 +48,9 @@
         }
 
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
 
         /* Header & Navigation */
@@ -73,46 +61,32 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            transition: var(--transition);
         }
 
         .nav-container {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             height: 80px;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.75rerm;
-        }
-
-        .logo-img {
+        .logo-container img {
             height: 40px;
             width: auto;
             object-fit: contain;
         }
 
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: -0.5px;
-        }
-
         .nav-links {
             display: flex;
+            gap: 2.5rem;
             align-items: center;
-            gap: 2rem;
         }
 
         .nav-links a {
             font-weight: 500;
-            color: var(--text-muted);
+            color: var(--text-main);
             transition: var(--transition);
         }
 
@@ -120,68 +94,40 @@
             color: var(--accent);
         }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-        }
-
-        .btn-primary {
+        .nav-cta {
             background-color: var(--accent);
-            color: var(--white);
-            box-shadow: var(--shadow-sm);
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
         }
 
-        .btn-primary:hover {
+        .nav-cta:hover {
             background-color: var(--accent-hover);
-            box-shadow: var(--shadow-md);
             transform: translateY(-1px);
         }
 
-        .btn-whatsapp {
-            background-color: var(--whatsapp);
-            color: var(--white);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: var(--whatsapp-hover);
-            transform: translateY(-1px);
-        }
-
-        .menu-toggle {
+        .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            cursor: pointer;
             font-size: 1.5rem;
             color: var(--primary);
+            cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
-            padding: 12rem 0 8rem;
-            background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #EFF6FF 100%);
             position: relative;
             overflow: hidden;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
             align-items: center;
         }
@@ -190,9 +136,8 @@
             font-size: 3.5rem;
             font-weight: 800;
             color: var(--primary);
-            line-height: 1.15;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
-            letter-spacing: -1px;
         }
 
         .hero-content h1 span {
@@ -200,34 +145,67 @@
         }
 
         .hero-content p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
+            font-size: 1.2rem;
+            color: var(--text-light);
             margin-bottom: 2.5rem;
-            max-width: 540px;
         }
 
-        .hero-btns {
+        .hero-buttons {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background-color: var(--bg-light);
         }
 
         .hero-image-wrapper {
             position: relative;
         }
 
-        .hero-main-img {
+        .hero-image-wrapper img {
             width: 100%;
-            height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            object-fit: cover;
-            aspect-ratio: 4/3;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        /* Services / Features Section */
-        .section {
-            padding: 6rem 0;
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
         }
 
         .section-header {
@@ -241,92 +219,13 @@
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 1rem;
-            letter-spacing: -0.5px;
         }
 
         .section-header p {
-            font-size: 1.125rem;
-            color: var(--text-muted);
+            font-size: 1.1rem;
+            color: var(--text-light);
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            border-radius: var(--radius-md);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-4px);
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--accent);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            background-color: var(--bg-light);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            aspect-ratio: 16/10;
-            background: var(--border);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* About Section */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -334,165 +233,233 @@
             align-items: center;
         }
 
-        .about-content h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.5px;
+        .about-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
-        .about-content p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .about-checklist {
+        .about-features {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
         }
 
-        .check-item {
+        .feature-item {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 600;
-            color: var(--primary);
+            gap: 1.25rem;
+            align-items: flex-start;
         }
 
-        .check-icon {
-            width: 24px;
-            height: 24px;
-            background: rgba(37, 211, 102, 0.15);
-            color: var(--whatsapp);
-            border-radius: 50%;
+        .feature-icon {
+            background: #EFF6FF;
+            color: var(--accent);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            font-size: 1.25rem;
+            flex-shrink: 0;
         }
 
-        .about-image-wrapper img {
+        .feature-text h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Services & Product Photo Implementation */
+        .services {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-img {
             width: 100%;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            aspect-ratio: 4/3;
+            height: 220px;
             object-fit: cover;
         }
 
-        /* Contact & CTA Section */
-        .cta-section {
-            padding: 6rem 0;
-            background: var(--primary);
-            color: var(--white);
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 24px;
+            padding: 4rem;
+            color: white;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+        .contact-box h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        .cta-content h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .cta-content p {
-            font-size: 1.15rem;
-            color: #94A3B8;
-            margin-bottom: 2.5rem;
-        }
-
-        .contact-info-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-            text-align: left;
-        }
-
-        .contact-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            backdrop-filter: blur(5px);
-        }
-
-        .contact-card h3 {
+        .contact-box p {
             font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--white);
+            color: #94A3B8;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
         }
 
-        .contact-card a {
-            color: #94A3B8;
+        .contact-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-email {
+            background-color: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
             transition: var(--transition);
         }
 
-        .contact-card a:hover {
-            color: var(--white);
+        .btn-email:hover {
+            background-color: var(--bg-light);
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
             background: #090D16;
-            color: #64748B;
-            padding: 3rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
+            color: #94A3B8;
+            padding: 50px 0 30px;
+            border-top: 1px solid #1E293B;
         }
 
         .footer-content {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            gap: 1.5rem;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #1E293B;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
-        /* Responsive */
+        .footer-logo img {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
         @media (max-width: 968px) {
             .hero-grid, .about-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
+
             .hero-content h1 {
                 font-size: 2.75rem;
             }
-            .nav-links, .header-actions .btn-primary {
+
+            .nav-links {
                 display: none;
             }
-            .menu-toggle {
+
+            .mobile-menu-btn {
                 display: block;
+            }
+
+            .contact-box {
+                padding: 2.5rem 1.5rem;
             }
         }
 
-        /* Mobile Menu Overlay */
+        /* Mobile Menu Modal */
         .mobile-menu {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 80%;
-            max-width: 400px;
-            height: 100vh;
-            background: var(--white);
-            z-index: 2000;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            padding: 2rem;
+            width: 100%;
+            max-width: 300px;
+            height: 100%;
+            background: white;
+            z-index: 1001;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+            transition: 0.4s ease;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-            transition: var(--transition);
+            padding: 2rem;
         }
 
         .mobile-menu.active {
@@ -503,13 +470,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 2rem;
         }
 
-        .close-menu {
+        .mobile-menu-close {
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary);
         }
 
         .mobile-nav-links {
@@ -519,7 +488,7 @@
         }
 
         .mobile-nav-links a {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--primary);
         }
@@ -527,177 +496,144 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header & Navigation -->
     <header>
         <div class="container nav-container">
-            <div class="logo-container">
-                <a href="#">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230821/Products/ts5yhczvaganxepfszvd.png" alt="eazeey logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span class="logo-text" style="display: none;">eazeey</span>
-                </a>
-            </div>
+            <a href="#" class="logo-container">
+                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230821/Products/ts5yhczvaganxepfszvd.png" alt="eazeey" onerror="this.style.display='none'">
+            </a>
             <nav class="nav-links">
-                <a href="#services">Services</a>
                 <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
+                <a href="#services">Solutions</a>
                 <a href="#contact">Contact</a>
+                <a href="https://wa.me/234814899111" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> Let's Talk</a>
             </nav>
-            <div class="header-actions">
-                <a href="https://wa.me/0814899111" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                    WhatsApp Chat
-                </a>
-            </div>
-            <button class="menu-toggle" aria-label="Open Menu" onclick="toggleMenu()">
-                &#9776;
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <!-- Mobile Navigation Drawer -->
+    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
-            <span class="logo-text">eazeey</span>
-            <button class="close-menu" aria-label="Close Menu" onclick="toggleMenu()">&times;</button>
+            <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230821/Products/ts5yhczvaganxepfszvd.png" alt="eazeey" style="height: 30px;" onerror="this.style.display='none'">
+            <button class="mobile-menu-close" id="closeBtn">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
         <div class="mobile-nav-links">
-            <a href="#services" onclick="toggleMenu()">Services</a>
-            <a href="#about" onclick="toggleMenu()">About</a>
-            <a href="#gallery" onclick="toggleMenu()">Gallery</a>
-            <a href="#contact" onclick="toggleMenu()">Contact</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#services" class="mobile-link">Solutions</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="https://wa.me/234814899111" target="_blank" class="btn-whatsapp" style="justify-content: center; margin-top: 1rem;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
         </div>
-        <a href="https://wa.me/0814899111" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="text-align: center; justify-content: center;">
-            Chat on WhatsApp
-        </a>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <h1>Smarter Workflow, <span>Smoother</span> Real Estate.</h1>
-                    <p>We build eazy and smooth automations for real estate. Eliminate manual tasks, respond to clients instantly, and close deals faster.</p>
-                    <div class="hero-btns">
-                        <a href="https://wa.me/0814899111" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                            Get Started on WhatsApp
-                        </a>
-                        <a href="#services" class="btn btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--border);">
-                            Explore Services
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image-wrapper">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230823/Products/frnzpj00lpsxuhfl3tw3.jpg" alt="Real Estate Automation Showcase" class="hero-main-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80';">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>We build <span>eazy and smooth</span> automations for real estate</h1>
+                <p>Scale your real estate business effortlessly. Eliminate manual bottlenecks, streamline client nurturing, and close deals faster with our tailored automation workflows.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/234814899111" target="_blank" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Get Started on WhatsApp
+                    </a>
+                    <a href="#services" class="btn-secondary">
+                        Explore Solutions <i class="fas fa-arrow-down"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Tailored Real Estate Solutions</h2>
-                <p>Designed to save you time, reduce overhead, and keep your pipeline flowing seamlessly.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">01</div>
-                    <h3>Lead Qualification</h3>
-                    <p>Automatically filter and qualify incoming property inquiries so you only spend time on high-intent clients.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">02</div>
-                    <h3>Instant CRM Sync</h3>
-                    <p>Never lose a lead again. Automatically log inquiries from all channels directly into your favorite database or CRM.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">03</div>
-                    <h3>Appointment Booking</h3>
-                    <p>Let clients schedule property viewings or consultations automatically without the back-and-forth messaging friction.</p>
-                </div>
+            <div class="hero-image-wrapper">
+                <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230823/Products/frnzpj00lpsxuhfl3tw3.jpg" alt="Real Estate Automations" onerror="this.style.display='none'">
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section bg-light" style="background-color: var(--bg-light);">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image-wrapper">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230826/Products/g3jgczrsdswojpkg6mey.png" alt="About eazeey" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80';">
-                </div>
-                <div class="about-content">
-                    <h2>Built For Modern Property Professionals</h2>
-                    <p>At eazeey, we understand the dynamic pace of real estate. Juggling clients, viewings, paperwork, and marketing leaves little room for repetitive administrative tasks.</p>
-                    <p>That is why we specialize in creating clean, reliable automations tailored specifically for real estate agents, property managers, and brokerages.</p>
-                    <div class="about-checklist">
-                        <div class="check-item">
-                            <div class="check-icon">&#10003;</div>
-                            <span>Eazy integration with existing tools</span>
-                        </div>
-                        <div class="check-item">
-                            <div class="check-icon">&#10003;</div>
-                            <span>Smooth user experience for clients</span>
-                        </div>
-                        <div class="check-item">
-                            <div class="check-icon">&#10003;</div>
-                            <span>Reliable support and setup</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery / Products Section -->
-    <section id="gallery" class="section gallery-section">
+    <section class="about" id="about">
         <div class="container">
             <div class="section-header">
-                <h2>Automation Workflows in Action</h2>
-                <p>A look at how we structure sleek digital environments for your business.</p>
+                <h2>Why Choose eazeey?</h2>
+                <p>We transform complex real estate operations into frictionless, automated journeys.</p>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230823/Products/frnzpj00lpsxuhfl3tw3.jpg" alt="Automation workflow preview 1" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80';">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230824/Products/qbmkhwkxb8ew57yhqknv.jpg" alt="About eazeey" onerror="this.style.display='none'">
                 </div>
-                <div class="gallery-item">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230824/Products/qbmkhwkxb8ew57yhqknv.jpg" alt="Automation workflow preview 2" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80';">
-                </div>
-                <div class="gallery-item">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230826/Products/g3jgczrsdswojpkg6mey.png" alt="Automation workflow preview 3" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80';">
-                </div>
-                <div class="gallery-item">
-                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230828/Products/piowegjnksi61ntaq5hd.png" alt="Automation workflow preview 4" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80';">
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Lightning Fast Setup</h3>
+                            <p>We deploy clean, reliable automation workflows tailored specifically to your real estate pipeline without the technical headache.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Eazy & Smooth Experience</h3>
+                            <p>Designed for absolute simplicity, ensuring your agents and clients enjoy an intuitive process from first contact to closing.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Built for Growth</h3>
+                            <p>Focus on closing properties while our automated systems handle lead generation follow-ups, scheduling, and property updates.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA & Contact Section -->
-    <section id="contact" class="cta-section">
+    <!-- Services Section (Incorporating Product Photos as supporting visuals for service-based offerings) -->
+    <section class="services" id="services">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Make Your Real Estate Business Eazeey?</h2>
-                <p>Reach out to us today to discuss how we can automate your workflow and let you focus on closing deals.</p>
-                <div class="hero-btns" style="justify-content: center;">
-                    <a href="https://wa.me/0814899111" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                        Chat on WhatsApp (0814899111)
-                    </a>
-                    <a href="mailto:utenwojo4jesus@gmail.com" class="btn btn-primary">
-                        Send an Email
-                    </a>
+            <div class="section-header">
+                <h2>Our Automation Solutions</h2>
+                <p>Designed to supercharge your property listings, client management, and deal closures.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230826/Products/g3jgczrsdswojpkg6mey.png" alt="Lead Nurturing Automation" class="service-img" onerror="this.style.display='none'">
+                    <div class="service-content">
+                        <h3>Lead Nurturing & Follow-up</h3>
+                        <p>Never let a potential buyer or seller slip through the cracks with instant automated responses and smart scheduling sequences.</p>
+                    </div>
                 </div>
+                <div class="service-card">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230828/Products/piowegjnksi61ntaq5hd.png" alt="Property Workflow Automations" class="service-img" onerror="this.style.display='none'">
+                    <div class="service-content">
+                        <h3>Pipeline & Document Management</h3>
+                        <p>Automate client onboarding, property matching updates, and document collection workflows to speed up transactions safely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="contact-info-cards">
-                    <div class="contact-card">
-                        <h3>WhatsApp Direct</h3>
-                        <a href="https://wa.me/0814899111" target="_blank" rel="noopener noreferrer">0814899111</a>
-                    </div>
-                    <div class="contact-card">
-                        <h3>Email Address</h3>
-                        <a href="mailto:utenwojo4jesus@gmail.com">utenwojo4jesus@gmail.com</a>
-                    </div>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Ready to Automate Your Real Estate Workflow?</h2>
+                <p>Get in touch with us today. Let’s make your property operations eazy and smooth.</p>
+                <div class="contact-actions">
+                    <a href="https://wa.me/234814899111" target="_blank" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp (0814899111)
+                    </a>
+                    <a href="mailto:utenwojo4jesus@gmail.com" class="btn-email">
+                        <i class="fas fa-envelope"></i> utenwojo4jesus@gmail.com
+                    </a>
                 </div>
             </div>
         </div>
@@ -705,22 +641,47 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container footer-content">
-            <p>&copy; <span id="currentYear"></span> eazeey. All rights reserved.</p>
-            <p>Building eazy and smooth automations for real estate.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788230821/Products/ts5yhczvaganxepfszvd.png" alt="eazeey" onerror="this.style.display='none'">
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Solutions</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> eazeey. All rights reserved. Building eazy and smooth automations for real estate.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for Mobile Menu and Dynamic Year -->
     <script>
-        // Toggle mobile navigation menu
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-        }
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Auto-update copyright year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Mobile Menu Functionality
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>
