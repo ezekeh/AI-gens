@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avanta Clothing - Premium Fashion & Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #111111;
+            --accent-color: #c5a059;
+            --accent-hover: #b08d48;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --gray-text: #666666;
+            --border-color: #e5e5e5;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            color: var(--primary-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 8px 15px;
+            letter-spacing: 1px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-whatsapp-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp-nav:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 550px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 35px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            color: var(--gray-text);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .features-list {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .feature-item i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        /* Products Section - STRICTLY ONLY PRODUCT PHOTO URLS HERE */
+        .products {
+            padding: 100px 0;
+            background-color: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--gray-text);
+            font-size: 1.05rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .product-overlay-action {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px;
+            text-align: center;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transform: translateY(60px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-overlay-action {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Why Choose Us / Benefits */
+        .benefits {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            background: var(--white);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+        }
+
+        /* Contact & CTA Section */
+        .contact-cta {
+            padding: 100px 0;
+            background: linear-gradient(rgba(17,17,17,0.85), rgba(17,17,17,0.85)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #dddddd;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px 35px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-box i {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+        }
+
+        .contact-box a {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .contact-box a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: #aaaaaa;
+            padding: 60px 0 30px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 40px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            max-width: 350px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-image img {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 25px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .btn-whatsapp-nav {
+                display: none; /* Hide heavy buttons in nav on mobile if space is tight, keep via hamburger/footer */
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-text {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        Discover the Latest Trends in Modern Fashion | Contact us via WhatsApp for Quick Orders
+    </div>
+
+    <!-- Header & Navbar -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo-container">
+                    <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788349788/Products/clkuuwij9gtddiptsiz4.jpg" alt="Avanta clothing" onerror="this.style.display='none'">
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Collection</a></li>
+                    <li><a href="#benefits">Why Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="https://wa.me/2349135962663" target="_blank" class="btn-whatsapp-nav">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                    <div class="hamburger" id="hamburgerBtn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Elevate Your Wardrobe with Avanta Clothing</h1>
+            <p>Discover sophisticated styles and premium everyday wear designed to make you look and feel exceptional.</p>
+            <a href="#products" class="btn-primary">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80" alt="Fashion tailoring and clothing store" onerror="this.style.display='none'">
+                </div>
+                <div class="about-text">
+                    <h2>Redefining Style & Elegance</h2>
+                    <p>At Avanta Clothing, we believe that what you wear is an expression of your unique personality. We curate exceptional pieces that combine modern trends with timeless quality, ensuring you stand out in any crowd.</p>
+                    <p>Whether you're dressing up for a special occasion or updating your casual wardrobe, our collection offers unmatched comfort and sophisticated design tailored to your lifestyle.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i> Premium Fabrics
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i> Modern Cuts
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i> Exceptional Quality
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i> Direct Customer Support
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section - STRICTLY PRODUCT IMAGES ONLY HERE -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Featured Collection</h2>
+                <p>A look at some of what we offer. Contact us directly via WhatsApp or Email to place your order.</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788349790/Products/bnuqmsikcmo60jomvwid.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80'">
+                        <a href="https://wa.me/2349135962663?text=Hello,%20I%20am%20interested%20in%20this%20product%20from%20your%20collection." target="_blank" class="product-overlay-action">Inquire on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788349791/Products/y56lzikzwurnwkqguzu3.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80'">
+                        <a href="https://wa.me/2349135962663?text=Hello,%20I%20am%20interested%20in%20this%20product%20from%20your%20collection." target="_blank" class="product-overlay-action">Inquire on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788349792/Products/bjlghsbneknvkfuayllm.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80'">
+                        <a href="https://wa.me/2349135962663?text=Hello,%20I%20am%20interested%20in%20this%20product%20from%20your%20collection." target="_blank" class="product-overlay-action">Inquire on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788349794/Products/yfmzdn8iyesniwunvijh.jpg" alt="Product photo" onerror="this.src='https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80'">
+                        <a href="https://wa.me/2349135962663?text=Hello,%20I%20am%20interested%20in%20this%20product%20from%20your%20collection." target="_blank" class="product-overlay-action">Inquire on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Avanta Clothing</h2>
+                <p>We are dedicated to providing the ultimate fashion retail experience.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Uncompromising Quality</h3>
+                    <p>Every garment is handpicked and crafted with high-standard fabrics that guarantee durability and luxurious comfort.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast & Easy Ordering</h3>
+                    <p>Found something you love? Reach out directly via WhatsApp for swift communication, availability checks, and prompt ordering.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Dedicated Support</h3>
+                    <p>Have questions about sizing, styling, or availability? Our team is always ready to assist you personally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & CTA Section -->
+    <section class="contact-cta" id="contact">
+        <div class="container">
+            <div class="contact-cta-content">
+                <h2>Ready to Upgrade Your Style?</h2>
+                <p>Get in touch with us today via WhatsApp or email to make inquiries, place orders, or learn more about our clothing line.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-box">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Us</span>
+                        <a href="https://wa.me/2349135962663" target="_blank">09135962663</a>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Us</span>
+                        <a href="mailto:oparagoodluckchibuike129@gmail.com">oparagoodluckchibuike129@gmail.com</a>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/2349135962663" target="_blank" class="btn-primary">Start Shopping Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="http://res.cloudinary.com/dytz7qmuv/image/upload/v1788349788/Products/clkuuwij9gtddiptsiz4.jpg" alt="Avanta clothing" onerror="this.style.display='none'">
+                    </div>
+                    <p class="footer-text">Bringing you the finest selection of contemporary clothing designed for style, comfort, and confidence.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Collection</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><a href="https://wa.me/2349135962663" target="_blank"><i class="fab fa-whatsapp"></i> 09135962663</a></li>
+                        <li><a href="mailto:oparagoodluckchibuike129@gmail.com"><i class="fas fa-envelope"></i> Email Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Avanta Clothing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburgerBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = hamburgerBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Dynamic Copyright Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
